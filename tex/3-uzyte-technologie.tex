@@ -1,0 +1,242 @@
+\newpage
+\section{Użyte technologie}
+Aplikacja jest podzielona na dwie główne części: część serwerową i część kliencką. Obie części są niezbędne do działania mojego systemu.
+Część serwerowa jest odpowiedzialna za przetwarzanie danych, operacje na bazie danych, zarządzanie zapytaniami pochodzącymi z aplikacji klienckiej oraz zapewnieniem bezpieczeństwa użytkownika. Aplikacja została napisana w języku Kotlin z użyciem bardzo popularnej biblioteki Spring. Dodatkowo została także użyta biblioteka graphql-kotlin, która udostępnia przejrzysty interfejs umożliwiający w prosty sposób tworzenie serwisu, z którym można komunikować się zgodnie z specyfikacją GraphQL.
+
+
+Część kliencka jest odpowiedzialna za wyświetlanie aktualnych danych użytkownikowi, udostępnia przejrzysty interfejs, dzięki któremu użytkownik może zarządzać swoim kontem oraz powiązanymi z nim obiektami. 
+
+// todo rysunek obrazujący połączenie i rozmieszczenie elementów systemu.
+
+\subsection{Warstwa serwera}
+Aktualnie istnieje wiele różnych podejść do pisania aplikacji serwerowych, które mają ułatwiać pisanie, rozwijanie i utrzymywanie większych systemów. Jednym z takich podejść jest Architektura Heksagonalna, której użyłem do stworzenia mojej aplikacji.
+\subsubsection{Architektura}
+Podczas tworzenia mojej aplikacji serwerowej kierowałem się podejściem zwanym Architekturą Heksagonalną (lub Architektura Portów i Adapterów).
+Architektura Heksagonalna została udokumentowana przez Alistaira Cockburna w 2005. Aktualnie jest bardzo popularnym podejściem do tworzenia mikroserwisów, ponieważ umożliwia ona w łatwy sposób rozbudowywanie aktualnego rozwiązania jak i wprowadzanie zmian wynikających ze zmian w architekturze systemu.
+Główne cechy Heksagonalnej Architektury to:
+\begin{itemize}
+  \item oddzielenie strony klienckiej, logiki biznesowej oraz strony serwerowej
+  \item podział komponentów serwera na tzw. porty i adaptery
+\end{itemize}
+Główne idee kierujące tą architekturą to:
+\begin{description}
+  \item[Logika biznesowa] \hfill \\ Główną i najważniejszą częścią naszego systemu jest logika biznesowa. Reguły biznesowe i zasady nimi rządzące nie powinny być w żaden sposób mocno bazować na innych komponentach systemu. Powinny zawierać tylko i wyłącznie elementy związane z logiką naszego systemu, a elementy infrastruktury (jak np. bazy danych, zewnętrzne serwisy) powinny być zależne od komponentu logiki biznesowej. Odizolowanie tej części ma kilka zalet:
+\begin{itemize}
+  \item Logika biznesowa jest bardzo łatwo testowalna jednostkowo. Jako że testy nie bazują na zewnętrznych narzędziach lub serwisach, tylko na ich interfejsach, możliwe jest w łatwy sposób pisanie testów symulujących działanie zewnętrznych narzędzi. Rzeczy takie jak komunikacja z bazą danych lub operacje na żądaniach klienckich nie są wymagane do pisania takich testów, więc pisze się je szybko i są one bardzo czytelne.
+  \item Kod logiki jest czytelny i prosty, ponieważ nie powinien on zawierać elementów infrastruktury. Z tego powodu nawet osoby, które znają zasady biznesowe naszego sytemu, ale nie są osobami technicznymi, mogą być w stanie zrozumieć fragmenty kodu domenowego.
+\begin{addmargin}[6mm]{0mm}
+\begin{lstlisting}[
+    numbers=left,
+    firstnumber=1,
+    caption={Przykład kodu domenowego aplikacji w języku Koltin},
+    aboveskip=10pt
+]
+fun deleteParty(id: Long, currentUserId: Long): Party? {
+        val party = partyRepository.getTopById(id)
+
+        if (party?.owner?.id != currentUserId) {
+            throw UnauthorisedException()
+        }
+
+        partyRepository.removeParty(id)
+
+        return party
+}
+\end{lstlisting}
+\end{addmargin}
+  Jak można zauważyć w powyższym kodzie nie ma odwołań do bazy danych ani do żądania, tylko są jedynie zasady dotyczące działania systemu, czyli tylko założyciel grupy ma możliwość usunięcia danej grupy.
+  \item Bardzo łatwo można wymieniać części systemu nie związane z logiką biznesową np. bazy danych, zewnętrzne serwisy. Szczególnie w dobie mikroserwisów, wymiana zewnętrzych serwisów jest rzeczą wcale rzadką, więc gdy chcemy zmienić np. API do zewnętrznej części systemu to jeżeli będziemy się trzymać kontraktu na którym bazuje nasza logika biznesowa, to nie będą potrzebne zmiany w głównej części naszej aplikacji.
+\end{itemize}
+
+
+\item[Adaptery] \hfill \\ Adaptery są elementami które "wychodzą na świat", czyli są one odpowiedzialne za komunikację z zewnętrznymi serwisami. Adapterem jest np. część systemu odpowiadająca za zdefiniowanie kwerend i mutacji GraphQL'owych, komponenty komunikujące się z zewnętrznymi serwisami lub części komunikujące się z bazą danych. Adaptery są zależne od części domenowej aplikacji tj. są zależne od modeli domenowych naszej aplikacji. Komponenty logiki biznesowej używają adapterów z użyciem własnych modeli domenowych, a żeby adaptery mogły korzystać z tych modeli, muszą one je przekonwertować na swoją reprezentację. Przykładowo powiedzmy, że mamy model biznesowy \emph{Grupa}, którą możemy zaprezentować w klasie Kotlinowej tak:
+
+
+\begin{addmargin}[6mm]{0mm}
+\begin{lstlisting}[
+    numbers=left,
+    firstnumber=1,
+    caption={Klasa \emph{Grupa} w domenowej reprezentacji modelu},
+    aboveskip=10pt
+]
+data class Grupa(
+    val id: Long?,
+    val imie: String?,
+)
+\end{lstlisting}
+\end{addmargin}
+
+a model adapteru komunikującego się z bazą danych tak:
+\begin{addmargin}[6mm]{0mm}
+\begin{lstlisting}[
+    numbers=left,
+    firstnumber=1,
+    caption={Klasa \emph{Grupa} w domenowej reprezentacji modelu},
+    aboveskip=10pt
+]
+data class GrupaAdapter(
+    val id: Long?,
+    val imie: String?,
+    val rowId: String?,
+)
+\end{lstlisting}
+\end{addmargin}
+Te dwa modele różnią się tym, że adapterowy model posiada dodatkowy atrybut związany z bazą danych \emph{rowId}. Model domenowy nie potrzebuje tego atrybutu, a nawet nie powinien wiedzieć, że taki atrybut istnieje. W takim wypadku, jeżeli te dwa modele są różne, przy komunikacji pomiędzy częścią domenową i adapterową musi nastąpić translacja modeli. Wcześniej napisałem, że część domenowa nie powinna być zależna od innych części systemu, dlatego tę odpowiedzialność wykonują adaptery. Komponent domenowy, w naszym przykładzie może komunikować z adapterem przez taki interfejs:
+\begin{addmargin}[6mm]{0mm}
+\begin{lstlisting}[
+    label={lst:AdapterBazyDanychPort},
+    numbers=left,
+    firstnumber=1,
+    caption={Interfejs domenowy adaptera bazy danych},
+    aboveskip=10pt
+]
+interface AdapterBazyDanych {
+    fun zapiszNowaGrupa(grupa: Grupa): Grupa
+}
+\end{lstlisting}
+\end{addmargin}
+Jak widzimy komponent domenowy nie posługuje się nigdy klasą adaptera, tylko adapter który implementuje ten interfejs musi przeprowadzić konwersję argumentu \emph{grupa} przy wywoływaniu funkcji oraz przy zwracaniu wartości z tej funkcji.
+
+\item[Porty] \hfill \\ Porty są zwykłym kontraktem pomiędzy komponentem logiki biznesowej, a adapterami. Porty posiadają logiki tylko służą do oddzielenia odpowiedzialności komponentów naszego systemu. Przykładem portu może być wcześniej podany przykład interfejsu \emph{AdapterBazyDanych} w listingu~\ref{lst:AdapterBazyDanychPort}. 
+
+\end{description}
+Moja aplikacja zawiera obiektów reprezentujących cały system. Są to:
+\begin{itemize}
+  \item wydatek
+  \item powiadomienie
+  \item grupa
+  \item zaproszenie
+  \item płatność
+  \item użytkownik
+\end{itemize}
+, a moja aplikacja jest podzielona na trzy części:
+\begin{itemize}
+  \item adapter klienta - adapter zajmujący się definiowaniem i obsługą zapytań klienta
+  \item część domenowa - główna część mojej aplikacji zajmująca się definiowaniem reguł biznesowych
+  \item adapter bazodanowy - zajmujący się obsługą bazy danych
+\end{itemize}
+Dla każdego obiektu jest stworzony osobny komponent w każdej z części. Jeżeli weźmiemy pod uwagę np. obiekt grupa to:
+// todo tu mogą być fragmenty kodu kontrollera serwisu i repozytorium
+\begin{enumerate}
+  \item Adapter klienta będzie nazywał się \emph{GrupaResolver} i będzie definiował wszystkie dostępne kwerendy i mutacje dla grupy.
+    % \begin{addmargin}[6mm]{0mm}
+    % \begin{lstlisting}[
+    %     numbers=left,
+    %     firstnumber=1,
+    %     caption={Interfejs domenowy adaptera bazy danych},
+    %     aboveskip=10pt
+    % ]
+    % class GrupaQuery(private val grupaSerwis: GrupaSerwis): Query {
+    %   fun pobierzWszystkieGrupy(uzytkownikId: String):
+    %     List<GrupaDTO> =
+    %           grupaSerwis.pobierzWszystkieGrupy(
+    %             uzytkownikId
+    %           ).map { it.doDTO() }
+
+    %   fun pobierzGrupe(grupaId: String): GrupaDTO? = 
+    %     grupaSerwis.pobierzGrupe(grupaId)?.doDTO()
+    % }
+    % \end{lstlisting}
+    % \end{addmargin}
+  \item Logika domenowa dla grupy która będzie się nazywała \emph{GrupaSerwis} gdzie będzie znajdowała się logika związana z obsługą grupy.
+  \item Adapter bazodanowy który będzie nazywał się \emph{GrupaPersistentRepository} gdzie będzie znajdowała się komunikacja z bazą danych.
+    
+\end{enumerate}
+
+\subsubsection{Główne użyte technologie}
+Do stworzenia aplikacji serwerowej użyłem następujących technologii:
+
+\begin{description}
+  \item[Kotlin] \hfill \\ Głównym językiem programowania jakiego użyłem do napisania aplikacji serwerowej jest Kotlin. Kotlin jest zorientowanym obiektowo, statycznie typowanym językiem programowania. Kotlin jest oparty na JVM, więc technologie i biblioteki, które zostały stworzone w języku Java, mogą być także używane w języku Kotlin. 
+  \item[Spring] \hfill \\ Spring jest wolnoźródłowym frameworkiem do budowania aplikacji serwerowych w językach opartych na JVM. Posiada on dużą ilość potrzebnych przy tworzeniu aplikacji serwerowych funkcjonalności. 
+
+    Podstawową funkcją udostępnianą przez Spring Framework jest kontener do wstrzykiwania zależności. Spring umożliwia nam tworzenie pojedynczych komponentów, które później mogą być \emph{wstrzyknięte} jako zależności do innych komponentów. Jeżeli komponent \emph{A} zależy od komponentu \emph{B}, czyli \emph{A} używa \emph{B}, aby móc zrealizować swoją własną funkcję, \emph{A} nie musi sam tworzyć instancji \emph{B} tylko może np. dać znać Springowi, że jest zależny od komponentu \emph{B} poprzez umieszczenie \emph{B} np. jako parametr w konstruktorze. W takiej sytuacji gdy obiekt \emph{A} będzie tworzony, kontener będzie automatycznie wywoływał konstruktor \emph{A} z odpowiednimi parametrami.
+
+    Dodatkowo Spring posiada bardzo dużo innych narzędzi, dzięki którym można budować duże serwisy, takie jak:
+    \begin{enumerate}
+      \item \textbf{Spring Boot} - narzędzie pozwalające w bardzo szybki sposób skonfigurować serwer aplikacji wraz z wszystkimi potrzebnymi elementami potrzebnymi do działania takiego serwisu np. autoryzacji lub komunikację z bazą danych. Dzięki niemu możemy otrzymać podstawową konfigurację do modułów wymienionych poniżej, czyli np. Spring Security lub Spring Data JPA
+      \item \textbf{Spring Security} - moduł, która odpowiada za bezpieczeństwo naszej aplikacji. Domyślnie po zainstalowaniu tego modułu mamy dostęp do narzędzi, które pozwalają nam np. autoryzować użytkownika, konfigurować CORS, blokować niektóre endpointy itp.
+      \item \textbf{Spring Data JPA} - JPA jest to standard ORM dla języka Java. Dzięki JPA mamy mechanizmy, które pozwalają nam zarządzać bazą danych z poziomu kodu programu, bez użycia SQL. Przy takim podejściu klasy w języku Kotlin mogą być mapowane na elementy tabel w bazie danych przy zapisie lub ich edycji. Dodatkowo przy odczycie tych danych elementy tabel w bazie danych mogą być mapowane z powrotem na klasy Kotlinowe. Dzięki temu w łatwy sposób możemy zapewnić spójność pomiędzy modelami bazodanowymi a modelami w Kotlinie. Jako że JPA jest tylko standardem, aby móc robić takie rzeczy w Springu potrzebujemy narzędzia, które będzie ten standard implementować. Jednym z takich narzędzi, które wybrałem jest biblioteka Hibernate, która jest domyślnie wspierana przez framework Spring i może być łatwo skonfigurowana z użyciem Spring Boot.
+    \end{enumerate}
+
+  \item[PostgreSQL] \hfill \\ PostgreSQL jest jedną z kilku najpopularniejszych wolnoźródłowych baz danych. Jest to relacyjna baza danych, która jest wspierana przez framework Spring. Baza danych jest obsługiwana z języka Kotlin i przechowywane są w niej wszystkie dane użytkownika.
+  \item[GraphQL-Kotlin] \hfill \\ Biblioteka GraphQL-Kotlin jest zbudowana na innej bibliotece `graphql-java`, która ułatwia tworzenie aplikacji serwerowych udostępniających interfejs poprzez standard graphql. Udostępnia ona domyślnie funkcjonalność odbierania i parsowania zapytań graphqlowych, posiada funkcje pozwalające obsługiwać błędy w zapytaniach oraz tworzenia odpowiedzi do klienta zgodnie ze owym standardem.
+\end{description}
+
+
+\subsection{Warstwa komunikacji - GraphQL}
+W moim projekcie, zamiast użycia bardzo popularnego standardu do komunikacji między klientem a serwerem jakim jest REST, postanowiłem użyć standardu GraphQL.
+
+GraphQL jest specyfikacją utworzoną przez Facebooka, który opisuje sposób, w jaki dwie jednostki mogą się ze sobą komunikować. Jest to językiem zapytań, który może zostać użyty przez klienta, aby otrzymać dane, które wskaże w zapytaniu. W przeciwieństwie do REST, gdzie odpowiedzi serwera dla każdego endpointu są ustalone z góry. GraphQL nie jest protokołem sieciowym, a tylko kontraktem między jednostkami.
+
+Serwer udostępniając interfejs GraphQL, definiuje tzw. schemat GraphQL, czyli statycznie i mocno typowany opis wszystkich możliwych operacji oraz typów dostępnych klientowi używającego danego interfejsu. 
+
+\begin{addmargin}[6mm]{0mm}
+\begin{lstlisting}[
+    numbers=none,
+    firstnumber=1,
+    label={lst:graphqlSchema}
+    caption={Przykład schematu GraphQL},
+    aboveskip=10pt
+]
+type Grupa {
+  id: String!;
+  nazwa: String!;
+  uczestnicy: [Uzytkownik!];
+  opis: String!;
+}
+type Uzytkownik {
+  id: String!;
+  nazwisko String!;
+}
+type Powiadomienie {
+  id: String!;
+  tresc: String!;
+}
+type Query {
+  pobierzGrupe(idGrupy: String!): Grupa
+}
+type Mutation {
+  zapiszNowaGrupa(grupa: Grupa!): Boolean
+}
+type Subscription {
+  pobierajPowiadomienia(): Powiadomienie
+}
+\end{lstlisting}
+\end{addmargin}
+Jak widać każdy atrybut ma swój typ i każdy argument każdej operacji też jest opisany własnym typem. W zależności od implementacji, te typy mogą być sprawdzane podczas działania aplikacji serwerowej, czyli gdy klient wywoła operację, w której argument jest błędnego typu, serwer może zwrócić klientowi błąd o niezgodności typów. Jest to bardzo pomocne w pisaniu aplikacji, ponieważ możemy używać narzędzi, które sprawdzają za nas poprawność naszych danych, zmniejszając przy tym możliwość pomyłki.
+
+GraphQL wyróżnia trzy rodzaje operacji, których klient może użyć, aby uzyskać odpowiedź od serwera.
+\begin{enumerate}
+  \item kwerendy 
+  \item mutacje
+  \item subskrypcje
+\end{enumerate}
+Wszystkie te operacje muszą być zdefiniowane w schemacie GraphQL serwera. W listingu ~\ref{lst:graphqlSchema} te operacje są zdefiniowane w typach odpowiednio \emph{Query}, \emph{Mutation}, \emph{Subscription}. Klient może wykonywać tylko te operacje które są zdefiniowane w schemacie.
+
+\begin{description}
+  \item[Kwerendy] \hfill \\ Kwerendy są konstrukcją pozwalającą odpytywać serwer o dane, nie modyfikując ich. Dzięki nim możemy tworzyć zapytania, które zwracają nam informacje o obiektach znajdujących się w bazie danych.
+  \begin{addmargin}[6mm]{0mm}
+  \begin{lstlisting}[
+      numbers=left,
+      firstnumber=1,
+      caption={Przykład kwerendy w języku zapytań GraphQL},
+      aboveskip=10pt
+  ]
+  query(idGrupy: String!) {
+    pobierzGrupe(idGrupy: $idGrupy) {
+      id
+      nazwa
+      uczestnicy {
+        id
+        nazwisko
+      }
+    }
+  }
+  \end{lstlisting}
+  \end{addmargin}
+
+  Powyższa kwerenda przyjmuje jeden parametr jakim jest identyfikator grupy. Dzięki temu identyfikatorowi możemy użyć danej kwerendy wielokrotnie w zależności od podanego parametru. Możemy też zauważyć, że powyższa kwerenda nie pobiera wszystkich atrybutów grupy. W typie \emph{Grupa} jest także atrybut \emph{opis}, ale jeżeli klient aktualnie nie potrzebuje tej informacji, może nie zamieszczać jej w kwerendzie. Dzięki takiemu zabiegowi, przy pobieraniu obiektów, klient jest w stanie optymalizować ruch sieciowy, pobierając tylko te dane, których potrzebuje.
+
+  
+\end{description}
