@@ -167,6 +167,7 @@ Do stworzenia aplikacji serwerowej użyłem następujących technologii:
 \subsection{Warstwa komunikacji - GraphQL}
 W moim projekcie, zamiast użycia bardzo popularnego standardu do komunikacji między klientem a serwerem jakim jest REST, postanowiłem użyć standardu GraphQL.
 
+\subsubsection{Opis GraphQL}
 GraphQL jest specyfikacją utworzoną przez Facebooka, który opisuje sposób, w jaki dwie jednostki mogą się ze sobą komunikować. Jest to językiem zapytań, który może zostać użyty przez klienta, aby otrzymać dane, które wskaże w zapytaniu. W przeciwieństwie do REST, gdzie odpowiedzi serwera dla każdego endpointu są ustalone z góry. GraphQL nie jest protokołem sieciowym, a tylko kontraktem między jednostkami.
 
 Serwer udostępniając interfejs GraphQL, definiuje tzw. schemat GraphQL, czyli statycznie i mocno typowany opis wszystkich możliwych operacji oraz typów dostępnych klientowi używającego danego interfejsu. 
@@ -183,7 +184,7 @@ type Grupa {
   id: String!;
   nazwa: String!;
   uczestnicy: [Uzytkownik!];
-  opis: String!;
+  opis: String;
 }
 type Uzytkownik {
   id: String!;
@@ -236,7 +237,213 @@ Wszystkie te operacje muszą być zdefiniowane w schemacie GraphQL serwera. W li
   \end{lstlisting}
   \end{addmargin}
 
-  Powyższa kwerenda przyjmuje jeden parametr jakim jest identyfikator grupy. Dzięki temu identyfikatorowi możemy użyć danej kwerendy wielokrotnie w zależności od podanego parametru. Możemy też zauważyć, że powyższa kwerenda nie pobiera wszystkich atrybutów grupy. W typie \emph{Grupa} jest także atrybut \emph{opis}, ale jeżeli klient aktualnie nie potrzebuje tej informacji, może nie zamieszczać jej w kwerendzie. Dzięki takiemu zabiegowi, przy pobieraniu obiektów, klient jest w stanie optymalizować ruch sieciowy, pobierając tylko te dane, których potrzebuje.
+  Powyższa kwerenda przyjmuje jeden parametr jakim jest identyfikator grupy. Dzięki temu identyfikatorowi możemy użyć danej kwerendy wielokrotnie w zależności od podanego parametru. Możemy też zauważyć, że powyższa kwerenda nie pobiera wszystkich atrybutów grupy. W typie \emph{Grupa} jest także atrybut \emph{opis}, ale jeżeli klient aktualnie nie potrzebuje tej informacji, może nie zamieszczać jej w kwerendzie. Dzięki takiemu zabiegowi, przy pobieraniu obiektów, klient jest w stanie optymalizować ruch sieciowy, pobierając tylko te dane, których potrzebuje. 
 
-  
+  Kwerendy mogą też posiadać zagnieżdżone typy. Grupa zawiera listę uczestników, więc w naszej kwerendzie możemy też wyszczególnić jakich atrybutów potrzebujemy w każdym obiekcie użytkownika.
+  \newline
+  \item[Mutacje] \hfill \\ Mutacje są strukturalnie podobne do kwerend, natomiast ich celem jest tworzenie lub zmiana stanu obiektów w naszej aplikacji.
+  \begin{addmargin}[6mm]{0mm}
+  \begin{lstlisting}[
+      numbers=left,
+      firstnumber=1,
+      caption={Przykład mutacji w języku zapytań GraphQL},
+      aboveskip=10pt
+  ]
+  mutation {
+    zapiszNowaGrupa(grupa: {
+      id: "0",
+      nazwa: "nazwa",
+      uczestnicy: [],
+      opis: null 
+    })
+  }
+  \end{lstlisting}
+  \end{addmargin}
+  Powyższa mutacja ma za zadanie zapisanie nowej grupy w bazie danych o podanych parametrach.
+
+\item[Subskrypcje] \hfill \\ Subskrypcje są mechanizmem, który pozwala pobierać dane używając podejścia typu Push. W przypadku wywołania przez klienta subskrypcji, serwer nawiązuje stałe połączenie z klientem np. poprzez gniazda, a następnie gdy nastąpi jakaś zmiana w naszym systemie (np. utworzenie nowego powiadomienia) serwer ma za zadanie powiadomić klienta o tym wydarzeniu.
+  \begin{addmargin}[6mm]{0mm}
+  \begin{lstlisting}[
+      numbers=left,
+      firstnumber=1,
+      caption={Przykład subskrybcji w języku zapytań GraphQL},
+      aboveskip=10pt
+  ]
+  subscribtion {
+    pobierajPowiadomienia() {
+      id
+      opis
+    }
+  }
+  \end{lstlisting}
+  \end{addmargin}
 \end{description}
+Powody dla których wybrałem to podejście to:
+\begin{itemize}
+  \item Jedynym źródłem prawdy dla kontraktu naszej aplikacji serwerowej jest schemat GraphQL. Można ten schemat traktować jako dokumentację, której poprawność mogą zapewnić zewnętrzne automatyczne narzędzia, które ten schemat generują na podstawie kodu źródłowego aplikacji.
+  \item Schemat jest mocno typowany, więc zmniejsza się ilość pomyłek popełnianych przez programistów, ponieważ znowu jesteśmy w stanie użyć narzędzi do automatycznej generacji typów opartych na schemacie.
+  \item To podejście niweluje zjawisko nadmiernego pobierania danych, ponieważ w zapytaniu wskazujemy dokładnie jakich danych potrzebujemy.
+  \item Istnieje dużo implementacji standardu GraphQL w różnych językach, a w szególności do Kotlina i frameworka Spring, którego użyłem do implementacji mojej aplikacji serwerowej.
+\end{itemize}
+
+\subsubsection{Użycie GraphQL w aplikacji serwerowej}
+Do zaimplementowania GraphQL w aplikacji serwerowej użyłem poprzednio wspomnianej biblioteki \emph{graphql-kotlin}. Dzięki niej mogłem w łatwy sposób napisać interfejs spełniający wymagania GraphQL. 
+
+Operacje definiuje się poprzez tworzenie klas, które dziedziczą po odpowiednich klasach bazowych: \emph{Query}, \emph{Mutation}, \emph{Subscription}. 
+
+\begin{addmargin}[6mm]{0mm}
+\begin{lstlisting}[
+    numbers=left,
+    firstnumber=1,
+    caption={Przykład definiowania kwerendy z użyciem \emph{graphql-kotlin}},
+    aboveskip=10pt
+]
+@Component
+class ExpenseQuery : Query {
+    fun pobierzGrupe(
+            grupaId: String,
+    ): Grupa? {
+        return serwis.pobierzGrupe(grupaId)
+    }
+}
+\end{lstlisting}
+\end{addmargin}
+  
+Analogicznie definiujemy mutacje i subskrypcje.
+
+Bardzo ważną funkcjonalnością tej biblioteki jest to, że automatycznie generuje ona schemat GraphQL na podstawie klas definiujących operacje oraz typów, które te operacje używają. Podstawowe (prymitywne) typy takie jak String lub Int są bezpośrednio zamieniane na odpowiednie typy zdefiniowane w GrpaphQL. Jeżeli jednak byśmy chcieli zdefiniować własny typ, który jest walidowany przy zapytaniach mamy taką możliwość z biblioteką \emph{kotlin-graphql}. 
+Dzięki takiemu narzędziu możemy być pewni, że nasz schemat będzie zawsze aktualny z naszym kodem aplikacyjnym.
+// todo może opisać problem n+1
+
+\subsubsection{Użycie GraphQL w aplikacji klienckiej}
+Obsługę zapytań po stronie klienta aplikacji zaimplementowałem z użyciem biblioteki Apollo Client. Ta biblioteka udostępnia prosty interfejs do komunikowania się z serwisami z poziomu kodu Javascript. Używając Apollo Client możemy kwerendy, mutacje i subskrypcje umieszczać w kodzie źródłowym, a następnie wywoływać odpowiednie metody pochodzące z biblioteki. 
+
+Bardzo ciekawym narzędziem którego też użyłem podczas implementacji części klienckiej jest \emph{GraphQL Code Generator}. Jest to narzędzie które na podstawie udostępnionego schematu GraphQL serwera jest w stanie generować odpowiednie typy w języku Typescript. Dzięki takiemu narzędziu dzięki w kodzie klienckim mam zawsze aktualny kontrakt z aplikacją serwerową, przez co mogę być pewien danych. W języku Javascript bardzo często zdarza się błąd wynikający z odnoszenia się do atrybutu, który nie istnieje na danym obiekcie. Bardzo często się to zdarza z tego powodu, że kontrakt, którego używaliśmy już nie jest aktualny. Automatyczna generacja kodu z połączeniem z statycznym typowaniem języka Typescript jest w stanie w dużym stopniu zapobiegać takim błędom.
+
+\subsection{Warstwa kliencka}
+// todo jakiś dobry wstęp
+\subsubsection{Renderowanie po stronie serwera a jednostronicowa alikacja}
+Aby użytkownik mógł używać naszej aplikacji w przeglądarce, po wejściu na moją stronę internetową serwer musi wysłać do klienta pliki definiujące strukturę, wygląd oraz logikę naszej aplikacji. Pliki te to pliki HTML opisujące strukturę, arkusze styli opisujące wygląd aplikacji oraz skrypty Javascript, które definiują zachowanie naszej aplikacji.
+W obecnych czasach dwa najpopularniejsze sposoby na tworzenie i udostępnianie takich plików to:
+\begin{enumerate}
+  \item Renderowanie po stronie serwera (ang. Server Side rendering)
+  \item Jednostronicowa aplikacja (ang. Single Page Application)
+\end{enumerate}
+
+\begin{description}
+  \item[Renderowanie po stronie serwera] \hfill \\ W przypadku renderowania po stronie serwera pliki wysyłane użytkownikowi są zawarte w szablonach. Szablony są to pliki w języku HTML, w których zapisywane są specjalne wyrażenia, które serwer przy obsłudze zapytania może dynamicznie zamieniać na dane użytkownika. Do takich szablonów serwer może też dołączać także arkusze styli oraz skrypty Javascript.
+% https://freemarker.apache.org/docs/dgui_quickstart_basics.html
+  \begin{lstlisting}[language=HTML, caption=Przykład szablonu w Freemaker]
+  <html>
+  <body>
+    <h1>Witaj ${uzytkownik.imie}!</h1>
+    <p>Twoj stan wydatkow:</p>
+    <p class="stan">
+        Jestes winny ${uzytkownik.jestWinny}
+    </p>
+    <p class="stan">
+        Inni sa ci winni ${uzytkownik.saMuWinni}
+    </p>
+  </body>
+  </html>
+  \end{lstlisting}
+
+  Gdy serwer użyje takiego szablonu, może wypełnić podany szablon danymi użytkownika i zwrócić użytkownikowi poprawny kod HTML.
+
+  \begin{lstlisting}[language=HTML, caption=Przykład szablonu w Freemaker]
+  <html>
+  <body>
+    <h1>Witaj Rafal!</h1>
+    <p>Twoj stan wydatkow:</p>
+    <p class="stan">
+        Jestes winny 35.00
+    </p>
+    <p class="stan">
+        Inni sa ci winni 30.00
+    </p>
+  </body>
+  </html>
+  \end{lstlisting}
+  W taki sposób jesteśmy w stanie tworzyć strukturę po stronie serwera indywidualnie dla każdego użytkownika.
+
+  \item[Jednostronicowa aplikacja] \hfill \\ W przypadku jednostronicowej aplikacji przeważającą część struktury strony definiujemy z użyciem skryptów Javascript. Serwer w przypadku otrzymania zapytania dotyczącego strony internetowej z przeglądarki, zwraca użytkownikowi bardzo okrojoną strukturę HTML, oraz dołącza do tej struktury kod Javascript, który przy uruchamianiu strony internetowej dynamicznie tworzy elementy w dokumencie strony przy użyciu interfejsu przeglądarki. Przy takim podejściu mamy większą kontrolę nad naszą aplikacją (np. możemy dynaimicznie sterować paskiem adresu) przez co to podejście jest aktualnie stosowane przy budowaniu interaktywnych i bardziej skomplikowanych interfejsów użytkownika.
+
+  Taką strukturę w kodzie Javascript zazwyczaj definiuje się używając specjalnych bibliotek Javascript, które ułatwiają taki sposób definicji naszej strony.
+
+  \begin{lstlisting}[language=HTML, caption=Przykład aplikacji z użyciem biblioteki Javascriptowej, label={lst:reactCode}]
+  function Aplikacja(uzytkownik) {
+    return (
+      <h1>Witaj {uzytkownik.imie}</h1>
+      <p>Twoj stan wydatkow:</p>
+      <p class="stan">
+        Jestes winny {uzytkownik.jestWinny}
+      </p>
+      <p class="stan">
+        Inni sa ci winni {uzytkownik.saMuWinni}
+      </p>
+    )
+  }
+
+  ReactDOM.render(<Todo />, document.getElementById('root'));
+  \end{lstlisting}
+  \item[Wybór konkretnego podejścia] \hfill \\ W mojej aplikacji postanowiłem użyć podejścia Jednostronicowej aplikacji z kilku powodów:
+  \begin{itemize}
+    \item zachowanie strony bardziej przypomina aplikacje na komputer lub telefon
+    \item przy użytkowaniu aplikacji przejście pomiędzy widokami jest bardziej płynne, z racji tego, że nie musimy odświeżać całej strony przy każdej zmianie widoku
+    \item jest dużo narzędzi i bibliotek do tworzenia jednostronicowych aplikacji
+    \item w aplikacji jest więcej dynamicznych części niż statycznej zawartości, więc aplikacja jednostronicowa bardziej się sprawdzi w przypadku mojej aplikacji
+  \end{itemize}
+\end{description}
+
+// todo zadbaj aby struktura opisu serwera była taka sama jak klienta, czyli to 3.3.2 było na takim samym poziome
+\subsubsection{Wybór biblioteki do tworzenia interfejsów użytkownika}
+Bardzo często aplikacje internetowe są budowane z użyciem bibliotek javascriptowych. Jedną z takich bibliotek jest React, której użyłem do stworzenia mojej aplikacji.
+
+React udostępnia programiście interfejs do deklaratywnego tworzenia widoków użytkownika. Struktura aplikacji jest napisana za pomocą komponentów, czyli zazwyczaj funkcji w języku Javascript, które zwracają obiekty reprezentujące wirtualny DOM przeglądarki. Dodatkowo React udostępnia nam też tzw. reaktywność, czyli automatyczną aktualizację widoków, przy każdej zmianie stanu naszej aplikacji.
+
+\begin{description}
+ \item[Reaktywność w React] \hfill \\ Biblioteka React udostępnia nam deklaratywny mechanizm aktualizacji widoków aplikacji, po zmianie stanu. Używając udostępnionej przez bibliotekę React funkcji zarządzania stanem, możemy w łatwy sposób utrzymywać spójność widoków ze stanem.
+
+\begin{lstlisting}[language=HTML, caption=Użycie mechanizmu zarządzania stanem w React, label={lst:reactCounterCode}]
+function Aplikacja() {
+  const [wartosc, ustawWartosc] = React.useState(1);
+
+  return (
+    <div>
+      <h2>{wartosc}</h2>
+      <button onClick={() => ustawWartosc(wartosc - 1)}>
+        -
+      </button>
+      <button onClick={() => ustawWartosc(wartosc + 1)}>
+        +
+      </button>
+    </div>
+  );
+}
+\end{lstlisting}
+
+Powyższy przykład przedstawia przykład aplikacji, która wyświetla licznik. W tagu \emph{h2} jest wyświetlana aktualna wartość licznika, a dwa przyciski pozwalają ją zwiększyć lub zmniejszyć o 1. W tym przykładzie możemy zauważyć, że nie aktualizujemy widoku (wartości licznika) ręcznie, tylko aktualizujemy stan naszej aplikacji. Jeżeli ten stan zmienimy (używając funkcji \emph{ustawWartosc}) React automatycznie aktualizuje nasz widok w taki sposób, aby wyświetlał wartość zgodną z tym co jest przetrzymywane w stanie. Do tego celu React wykorzystuje technikę zwaną wirtualnym DOM'em.
+
+  \item[Wirtualny DOM] \hfill \\ Wirtualny DOM jest techniką pozwalającą w prosty i szybki sposób przeprowadzać operacje na elementach struktury aplikacji internetowej. Elementy natywne przeglądarki są zazwyczaj skomplikowanymi i rozbudowanymi obiektami. Operacje na nich, takie jak dodawanie, edycja czy usuwanie, mogą trwać dosyć długo, ponieważ przy każdej takiej operacji przeglądarka musi obliczyć klasy CSS, obliczyć poprawne położenie elementów a na końcu umieścić w poprawnych miejscach konkretne elementy. Wirtualny DOM pozwala nam przyspieszyć takie operacje.
+
+  Wirtualny DOM jest tym na co wskazuje nazwa: wirtualną reprezentacją drzewa DOM przeglądarki. Dzięki niej jesteśmy w stanie przedstawić naszą aplikację w postaci zwykłego obiektu Javascript. Obiekt ten zwiera informacje na temat wszystkich elementów, które aktualnie znajdują się w strukturze DOM. 
+
+  Gdy używamy biblioteki React inicjalnie tworzy ona taką wirtualną reprezentację DOM na podstawie komponentów, które napisaliśmy i zawartego w nich stanu, a następnie tworzy je w w przeglądarce używając do tego natywnego interfejsu przeglądarki. Następnie przy każdej zmianie stanu naszej aplikacji, React odtwarza ten sam proces, ale już z innymi danymi pochodzącymi ze zmienionego stanu. Taka czynność (czyli odtworzenie całej struktury DOM) wykonana na dokumencie przeglądarki byłaby bardzo kosztowna, natomiast wykonanie takiej operacji na zwykłych obiektach jest bardzo szybkie. 
+
+  Gdy React posiada już dwie wersje (przed zmianą stanu i po jego zmianie) jest on w stanie obliczyć różnice pomiędzy dwoma reprezentacjami używając heurystycznego algorytmu \cite{ref_heuristic_diffing_algorythm}.
+
+  Gdy React zna już różnice spowodowane zmianą stanu, jest on w stanie nanieść niezbędne zmiany w prawdziwej strukturze DOM, aby odwzorować stan aplikacji w widokach.
+\end{description}
+
+\subsubsection{Użyte technologie}
+Podczas pisania części klienckiej użyłem następujących technologii:
+\begin{description}
+  \item[Typescript] \hfill \\ Typescript jest językiem programowania który jest nadzbiorem języka Javasrcipt. Javasrcipt jest językiem programowania, który jest wykorzystywany przez przeglądarki do kontrolowania stron internetowych przez programistów. Jedną z cech Javascript jest to, że jest on dynamicznie typowany. Podczas pisania aplikacji w Javascript zmienne nie mają zdefiniowanego typu, przez co podczas pisania aplikacji mogą pojawiać się błędy związane z niepoprawnym używaniem zmiennych. Typescript jest nadzbiorem Javascript i bardzo ważną rzeczą którą dodaje do Javascript jest właśnie statyczne typowanie. Typescript zawiera kompilator, który sprawdza poprawność kodu już na etapie pisania kodu, w przeciwieństwie do Javascript gdzie potencjalne błędy syntaktyczne zostaną ukazane programiście dopiero przy uruchamianiu programu. W przypadku dużych aplikacji internetowych liczących wiele tysięcy linii kodu, pomoc kompilatora jest wyjątkowo pomocna. Dodatkowym atutem jest wsparcie narzędzi programistycznych. Gdy IDE ma informacje na temat typów klas i obiektów w naszej aplikacji, jest w stanie łatwiej podpowiadać nam np. odpowiednie atrybuty obiektu podczas pisania kodu, co znacznie przyspiesza pisanie aplikacji.
+  \item[Eslint] \hfill \\ Eslint jest narzędziem ułatiwającym pisanie kodu w Typescript i Javascript. Eslint analizuje składnię kodu programisty i wyświetla komunikaty, które mogą powodować błędy w naszej aplikacji np. zadeklarowanie dwa razy tej samej zmiennej lub brak zdefiniowanego typu w deklaracji funkcji. Eslint jest też w stanie analizować elementy kodu nie związane z logiką naszej aplikacji jak wcięcia w kodzie lub białe znaki, przez co pomaga utrzymać jeden styl kodu w całej aplikacji. Eslint posiada też funkcjonalność naprawiania błędów, co może znacznie przyspieszyć tworzenie aplikacji.
+  \item[Create React App] \hfill \\ Jest to biblioteka, która jedną komendą pozwala utworzyć podstawową strukturę projektu React z użyciem jednej komendy. Podczas pisania takiej aplikacji utworzenie takiego wstępnego projektu może być czasochłonne z powodu dużej ilości konfiguracji, którą trzeba utworzyć aby móc używać Reacta. Create React App udostępnia taką konfigurację która zawiera np. skonfigurowany proces budowania aplikacji, automatyczne odświeżanie aplikacji po każdej zmianie w kodzie, skonfigurowane narzędzia tj. eslint, Typescript.
+  \item[AntD] \hfill \\ AntD jest biblioteką stworzoną dla biblioteki React, która udostępnia zbiór komponentów, które spełniają zasady systemu Ant Design. Ant Design jest zbiorem zasad, którymi programista powinien się kierować podczas implementacji interfejsu użytkownika tj. odpowiednia kolorystyka, rozmieszczenie i wygląd elementów itp. AntD natomiast udostępnia komponenty zaimplementowane przy użyciu biblioteki React, które te zasady spełniają.
+  \item[Apollo Client] \hfill \\ Wcześniej wspomniany Apollo Client, który udostępnia przystępny interfejs do komunikacji poprzez GraphQL.
+  \item[GraphQL Code Generator] \hfill \\ Wcześniej wspomniana biblioteka, która na podstawie schematu GraphQL udostępnianego przez serwer, generuje odpowiednie typy w języku Typescript dla mojej aplikacji.
+
+\end{description}
+

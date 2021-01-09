@@ -2183,15 +2183,19 @@
     <bcf:datasource type="file" datatype="bibtex">bibliografia.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">szczypiorski2015</bcf:citekey>
-    <bcf:citekey order="2">duqu2011</bcf:citekey>
-    <bcf:citekey order="3">shs2015</bcf:citekey>
-    <bcf:citekey order="4">wozniak2018</bcf:citekey>
-    <bcf:citekey order="5">dcp19</bcf:citekey>
-    <bcf:citekey order="6">benzmuller2014</bcf:citekey>
-    <bcf:citekey order="7">goedel95</bcf:citekey>
-    <bcf:citekey order="8">wang97</bcf:citekey>
-    <bcf:citekey order="9">koons2005</bcf:citekey>
+    <bcf:citekey order="1">ref_heuristic_diffing_algorythm</bcf:citekey>
+    <bcf:citekey order="2">ref_rtl_doc</bcf:citekey>
+    <bcf:citekey order="3">ref_jest_doc</bcf:citekey>
+    <bcf:citekey order="4">ref_cypress_doc</bcf:citekey>
+    <bcf:citekey order="5">szczypiorski2015</bcf:citekey>
+    <bcf:citekey order="6">duqu2011</bcf:citekey>
+    <bcf:citekey order="7">shs2015</bcf:citekey>
+    <bcf:citekey order="8">wozniak2018</bcf:citekey>
+    <bcf:citekey order="9">dcp19</bcf:citekey>
+    <bcf:citekey order="10">benzmuller2014</bcf:citekey>
+    <bcf:citekey order="11">goedel95</bcf:citekey>
+    <bcf:citekey order="12">wang97</bcf:citekey>
+    <bcf:citekey order="13">koons2005</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

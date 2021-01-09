@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  7 JAN 2021 17:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  9 JAN 2021 14:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1003,12 +1003,12 @@ LaTeX Info: Redefining \nameref on input line 21.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<eiti/header.png, id=110, 483.7272pt x 76.8471pt>
+<eiti/header.png, id=162, 483.7272pt x 76.8471pt>
 File: eiti/header.png Graphic file (type png)
 <use eiti/header.png>
 Package pdftex.def Info: eiti/header.png  used on input line 41.
 (pdftex.def)             Requested size: 438.17247pt x 69.61084pt.
-<eiti/title-mgr.png, id=111, 483.7272pt x 105.39375pt>
+<eiti/title-mgr.png, id=163, 483.7272pt x 105.39375pt>
 File: eiti/title-mgr.png Graphic file (type png)
 <use eiti/title-mgr.png>
 Package pdftex.def Info: eiti/title-mgr.png  used on input line 41.
@@ -1021,7 +1021,7 @@ Package pdftex.def Info: eiti/title-mgr.png  used on input line 41.
 ] [3] [4]
 
 pdfTeX warning: pdflatex (file ./eiti/oswiadczenie_autora_pracy.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<eiti/oswiadczenie_autora_pracy.pdf, id=131, 597.55246pt x 845.07718pt>
+<eiti/oswiadczenie_autora_pracy.pdf, id=183, 597.55246pt x 845.07718pt>
 File: eiti/oswiadczenie_autora_pracy.pdf Graphic file (type pdf)
 <use eiti/oswiadczenie_autora_pracy.pdf>
 Package pdftex.def Info: eiti/oswiadczenie_autora_pracy.pdf  used on input line 62.
@@ -1060,20 +1060,20 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 4.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 4.
-)
+ [7])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [7] [8
-
-
-] (./tex/1-wstep.tex
-<img/logopw2.png, id=222, 533.995pt x 225.84375pt>
+ [8] (./tex/1-wstep.tex
+<img/logopw2.png, id=287, 533.995pt x 225.84375pt>
 File: img/logopw2.png Graphic file (type png)
 <use img/logopw2.png>
 Package pdftex.def Info: img/logopw2.png  used on input line 21.
 (pdftex.def)             Requested size: 219.08623pt x 92.65855pt.
- [9 <./img/logopw2.png>]) (./tex/2-specyfikacja-wymagan.tex [10]
+ [9
+
+
+ <./img/logopw2.png>]) (./tex/2-specyfikacja-wymagan.tex [10]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
 (Font)              scaled to size 13.24796pt on input line 13.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
@@ -1096,38 +1096,26 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 2065) has occurred while \output is active []
 
  [17] [18]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1540) has occurred while \output is active []
 
  [19]
 
-LaTeX Warning: Reference `lst:graphqlSchema' on page 20 undefined on input line 215.
+LaTeX Warning: Reference `lst:graphqlSchema' on page 20 undefined on input line 216.
 
-) (./tex/2-de-finibus.tex [20]
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 3.
-LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 3.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 6.99199pt on input line 3.
-LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 3.
- [21]
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
-[]|\T1/futs/m/n/12 (+20) Wariant
+
+Underfull \hbox (badness 10000) in paragraph at lines 242--244
+
  []
 
-[22] [23] [24] [25]) (./tex/3-code-listings.tex [26] (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+[20] [21]
+Underfull \vbox (badness 2213) has occurred while \output is active []
+
+ [22] (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-)
-LaTeX Font Info:    Trying to load font information for TS1+futs on input line 48.
+) [23] [24]
+LaTeX Font Info:    Trying to load font information for TS1+futs on input line 414.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
@@ -1135,19 +1123,231 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `futs' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [27]) [28]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [25]
 
- [29] [30]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 91.
- (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
+LaTeX Warning: Citation 'ref_heuristic_diffing_algorythm' on page 26 undefined on input line 433.
+
+
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+ [26] [27]) (./tex/4-testowanie.tex [28]
+Overfull \hbox (8.09486pt too wide) in paragraph at lines 16--17
+[]\T1/futs/m/n/12 (-20) Komponenty mog° po-sia-da¢ stan. Jak wi-da¢ w li-stingu [][]12[][] uªy-wa-j°c funk-cji \T1/futs/m/it/12 (-20) Re-act.useState
+ []
+
+
+LaTeX Warning: Citation 'ref_rtl_doc' on page 29 undefined on input line 22.
+
+
+LaTeX Warning: Citation 'ref_jest_doc' on page 29 undefined on input line 22.
+
+[29] [30]
+Overfull \hbox (66.77576pt too wide) in paragraph at lines 81--82
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (41.43152pt too wide) in paragraph at lines 83--85
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[31]
+
+LaTeX Warning: Citation 'ref_cypress_doc' on page 32 undefined on input line 110.
+
+
+./tex/4-testowanie.tex:125: Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125     cy.contains('Przyk≈Çadowy 
+                                    opis zmieniony').click();
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./tex/4-testowanie.tex:125: Package inputenc Error: Invalid UTF-8 byte "82.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.125     cy.contains('Przyk≈Çadowy 
+                                    opis zmieniony').click();
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./tex/4-testowanie.tex:126: Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126     cy.contains('Usu≈Ñ'
+                             ).click();
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./tex/4-testowanie.tex:126: Package inputenc Error: Invalid UTF-8 byte "84.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.126     cy.contains('Usu≈Ñ'
+                             ).click();
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./tex/4-testowanie.tex:129: Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129     cy.contains('Przyk≈Çadowy 
+                                    wydatek zmieniony').should('not.exist');
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./tex/4-testowanie.tex:129: Package inputenc Error: Invalid UTF-8 byte "82.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.129     cy.contains('Przyk≈Çadowy 
+                                    wydatek zmieniony').should('not.exist');
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+Overfull \hbox (22.42334pt too wide) in paragraph at lines 129--130
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+./tex/4-testowanie.tex:130: Package inputenc Error: Invalid UTF-8 byte sequence.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.130     cy.contains('Przyk≈Çadowy 
+                                    opis zmieniony').should('not.exist');
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+./tex/4-testowanie.tex:130: Package inputenc Error: Invalid UTF-8 byte "82.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.130     cy.contains('Przyk≈Çadowy 
+                                    opis zmieniony').should('not.exist');
+The document does not appear to be in UTF-8 encoding.
+Try adding \UseRawInputEncoding as the first line of the file
+or specify an encoding such as \usepackage [latin1]{inputenc}
+in the document preamble.
+Alternatively, save the file in UTF-8 using your editor or another tool
+
+
+Overfull \hbox (3.41516pt too wide) in paragraph at lines 130--131
+[][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+LaTeX Warning: File `cypress-imape.png' not found on input line 139.
+
+
+./tex/4-testowanie.tex:139: Package pdftex.def Error: File `cypress-imape.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.139 ...hics[width=\textwidth]{cypress-imape.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 139.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [31
+
+
+LaTeX Warning: File `wisual-regression.png' not found on input line 147.
+
+
+./tex/4-testowanie.tex:147: Package pdftex.def Error: File `wisual-regression.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.147 ...[width=\textwidth]{wisual-regression.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[32] [33]) (./tex/2-de-finibus.tex [34]
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 3.
+LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 6.99199pt on input line 3.
+LaTeX Font Info:    Font shape `U/futm/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 3.
+ [35]
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+[]|\T1/futs/m/n/12 (+20) Wariant
+ []
+
+[36] [37] [38] [39]) (./tex/3-code-listings.tex [40] (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+) [41]) [42]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43] [44] [45
 
 
 ] (./main.lof)
@@ -1162,39 +1362,50 @@ Package microtype Info: Loading generic protrusion settings for font family
 \tf@app=\write8
 \openout8 = `main.app'.
 
- [32]
+ [46]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [33] [34]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
- [35]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 134.
+ [47] [48]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
+ [49]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 134.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 134.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 4580C0FB97098F831EDE87B0488921D5;1819.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 135.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: 91F074B8CD29A1741C893EF650C65510;2879
+(rerunfilecheck)             After:  336E46BDC0887282F0E52B1A439F1EEB;3037.
 
 LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                main
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23179 strings out of 480608
- 389148 string characters out of 5903629
- 1521037 words of memory out of 5000000
- 38162 multiletter control sequences out of 15000+600000
- 656260 words of font info for 314 fonts, out of 8000000 for 9000
+ 23517 strings out of 480608
+ 393798 string characters out of 5903629
+ 1524764 words of memory out of 5000000
+ 38287 multiletter control sequences out of 15000+600000
+ 658848 words of font info for 336 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 50i,13n,102p,1026b,2048s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,13n,102p,1413b,2048s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-mex.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-mlit.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (35 pages, 533872 bytes).
+Output written on main.pdf (49 pages, 581783 bytes).
 PDF statistics:
- 595 PDF objects out of 1000 (max. 8388607)
- 532 compressed objects within 6 object streams
- 211 named destinations out of 1000 (max. 500000)
- 43757 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 906 PDF objects out of 1000 (max. 8388607)
+ 826 compressed objects within 9 object streams
+ 379 named destinations out of 1000 (max. 500000)
+ 43861 words of extra memory for PDF output out of 51595 (max. 10000000)
 

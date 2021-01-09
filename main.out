@@ -12,16 +12,30 @@
 \BOOKMARK [3][-]{subsubsection.3.1.1}{Architektura}{subsection.3.1}% 12
 \BOOKMARK [3][-]{subsubsection.3.1.2}{G\233\363wne uzyte technologie}{subsection.3.1}% 13
 \BOOKMARK [2][-]{subsection.3.2}{Warstwa komunikacji - GraphQL}{section.3}% 14
-\BOOKMARK [1][-]{section.4}{De Finibus Bonorum et Malorum}{}% 15
-\BOOKMARK [2][-]{subsection.4.1}{Critique of Pure Reason}{section.4}% 16
-\BOOKMARK [2][-]{subsection.4.2}{Categorical Imperative}{section.4}% 17
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Deontological Ethics}{subsection.4.2}% 18
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Consequentialism \205 the Ideal of practical reason}{subsection.4.2}% 19
-\BOOKMARK [2][-]{subsection.4.3}{G\366del's ontological proof}{section.4}% 20
-\BOOKMARK [1][-]{section.5}{Code listings}{}% 21
-\BOOKMARK [1][-]{section.6}{Summatio}{}% 22
-\BOOKMARK [1][-]{section*.4}{Bibliografia}{}% 23
-\BOOKMARK [1][-]{section*.5}{Wykaz symboli i skr\363t\363w}{}% 24
-\BOOKMARK [1][-]{section*.5}{Spis rysunk\363w}{}% 25
-\BOOKMARK [1][-]{section*.5}{Spis tabel}{}% 26
-\BOOKMARK [1][-]{section*.6}{Spis za\233acznik\363w}{}% 27
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Opis GraphQL}{subsection.3.2}% 15
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Uzycie GraphQL w aplikacji serwerowej}{subsection.3.2}% 16
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Uzycie GraphQL w aplikacji klienckiej}{subsection.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.3}{Warstwa kliencka}{section.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Renderowanie po stronie serwera a jednostronicowa alikacja}{subsection.3.3}% 19
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Wyb\363r biblioteki do tworzenia interfejs\363w uzytkownika}{subsection.3.3}% 20
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Uzyte technologie}{subsection.3.3}% 21
+\BOOKMARK [1][-]{section.4}{Testowanie}{}% 22
+\BOOKMARK [2][-]{subsection.4.1}{Testowanie jednostkowe aplikacji klienckiej}{section.4}% 23
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Testowanie komponent\363w}{subsection.4.1}% 24
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Jest}{subsection.4.1}% 25
+\BOOKMARK [2][-]{subsection.4.2}{Testowanie integracyjne aplikacji klienckiej}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.3}{Testy wizualnej regresji aplikacji klienckiej}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.4}{Testy wizualnej regresji aplikacji serwerowej}{section.4}% 28
+\BOOKMARK [1][-]{section.5}{De Finibus Bonorum et Malorum}{}% 29
+\BOOKMARK [2][-]{subsection.5.1}{Critique of Pure Reason}{section.5}% 30
+\BOOKMARK [2][-]{subsection.5.2}{Categorical Imperative}{section.5}% 31
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Deontological Ethics}{subsection.5.2}% 32
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Consequentialism \205 the Ideal of practical reason}{subsection.5.2}% 33
+\BOOKMARK [2][-]{subsection.5.3}{G\366del's ontological proof}{section.5}% 34
+\BOOKMARK [1][-]{section.6}{Code listings}{}% 35
+\BOOKMARK [1][-]{section.7}{Summatio}{}% 36
+\BOOKMARK [1][-]{section*.6}{Bibliografia}{}% 37
+\BOOKMARK [1][-]{section*.7}{Wykaz symboli i skr\363t\363w}{}% 38
+\BOOKMARK [1][-]{section*.7}{Spis rysunk\363w}{}% 39
+\BOOKMARK [1][-]{section*.7}{Spis tabel}{}% 40
+\BOOKMARK [1][-]{section*.8}{Spis za\233acznik\363w}{}% 41

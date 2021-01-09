@@ -2,3 +2,7 @@
 \babel@toc {polish}{}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {1.1}{\ignorespaces screenshot z formularza dodawania wydatku\relax }}{9}{figure.caption.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Rysunek przedstawia panel Cypress.io. Możemy w nim zauważyć po lewej stronie komendy, które są po kolei wykonywane, a po prawej stronie wynik wykonania tych komend w prawdziwej instancji przeglądarki.\relax }}{33}{figure.caption.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Przykład testu wizualnej regresji, w którym możemy zobaczyć dokładnie, które pixele różniły się pomiędzy poszczególnymi uruchomieniami testu\relax }}{34}{figure.caption.4}%
