@@ -27,7 +27,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.2\relax .\enspace }Główne użyte technologie}{17}{subsubsection.3.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2\relax .\enspace }Warstwa komunikacji - GraphQL}{18}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.2\relax .\enspace }Warstwa komunikacji - GraphQL}{19}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.2.1\relax .\enspace }Opis GraphQL}{19}{subsubsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
@@ -51,34 +51,24 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {4.1.2\relax .\enspace }Jest}{29}{subsubsection.4.1.2}%
 \defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.3\relax .\enspace }React-testing-library}{31}{subsubsection.4.1.3}%
+\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2\relax .\enspace }Testowanie integracyjne aplikacji klienckiej}{32}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3\relax .\enspace }Testy wizualnej regresji aplikacji klienckiej}{32}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3\relax .\enspace }Testy wizualnej regresji aplikacji klienckiej}{34}{subsection.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4\relax .\enspace }Testy wizualnej regresji aplikacji serwerowej}{34}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.4\relax .\enspace }Testy integracyjne aplikacji serwerowej}{34}{subsection.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5\relax .\enspace }De Finibus Bonorum et Malorum}{35}{section.5}%
+\contentsline {section}{\numberline {5\relax .\enspace }Prezentacja aplikacji}{35}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1\relax .\enspace }Critique of Pure Reason}{36}{subsection.5.1}%
+\contentsline {section}{\numberline {6\relax .\enspace }Summatio}{36}{section.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2\relax .\enspace }Categorical Imperative}{38}{subsection.5.2}%
+\contentsline {section}{Bibliografia}{39}{section*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.1\relax .\enspace }Deontological Ethics}{38}{subsubsection.5.2.1}%
+\contentsline {section}{Wykaz symboli i skrótów}{40}{section*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.2\relax .\enspace }Consequentialism -- the Ideal of practical reason}{39}{subsubsection.5.2.2}%
+\contentsline {section}{Spis rysunków}{40}{section*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3\relax .\enspace }G\"odel's ontological proof}{40}{subsection.5.3}%
+\contentsline {section}{Spis tabel}{40}{section*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6\relax .\enspace }Code listings}{41}{section.6}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7\relax .\enspace }Summatio}{43}{section.7}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Bibliografia}{45}{section*.6}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Wykaz symboli i skrótów}{46}{section*.7}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis rysunków}{46}{section*.7}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis tabel}{46}{section*.7}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis załączników}{46}{section*.8}%
+\contentsline {section}{Spis załączników}{40}{section*.6}%

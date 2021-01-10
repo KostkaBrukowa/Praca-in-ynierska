@@ -1,29 +1,29 @@
 \newpage
 \section{Użyte technologie}
-Aplikacja jest podzielona na dwie główne części: część serwerową i część kliencką. Obie części są niezbędne do działania mojego systemu.
+Aplikacja jest podzielona na dwie główne części: część serwerową i część kliencką. Obie części są niezbędne do tego, aby użytkownik mógł w pełni korzystać ze wszystkich elementów mojego systemu.
+
 Część serwerowa jest odpowiedzialna za przetwarzanie danych, operacje na bazie danych, zarządzanie zapytaniami pochodzącymi z aplikacji klienckiej oraz zapewnieniem bezpieczeństwa użytkownika. Aplikacja została napisana w języku Kotlin z użyciem bardzo popularnej biblioteki Spring. Dodatkowo została także użyta biblioteka graphql-kotlin, która udostępnia przejrzysty interfejs umożliwiający w prosty sposób tworzenie serwisu, z którym można komunikować się zgodnie z specyfikacją GraphQL.
 
 
 Część kliencka jest odpowiedzialna za wyświetlanie aktualnych danych użytkownikowi, udostępnia przejrzysty interfejs, dzięki któremu użytkownik może zarządzać swoim kontem oraz powiązanymi z nim obiektami. 
 
-// todo rysunek obrazujący połączenie i rozmieszczenie elementów systemu.
+% // todo rysunek obrazujący połączenie i rozmieszczenie elementów systemu.
 
 \subsection{Warstwa serwera}
 Aktualnie istnieje wiele różnych podejść do pisania aplikacji serwerowych, które mają ułatwiać pisanie, rozwijanie i utrzymywanie większych systemów. Jednym z takich podejść jest Architektura Heksagonalna, której użyłem do stworzenia mojej aplikacji.
 \subsubsection{Architektura}
 Podczas tworzenia mojej aplikacji serwerowej kierowałem się podejściem zwanym Architekturą Heksagonalną (lub Architektura Portów i Adapterów).
-Architektura Heksagonalna została udokumentowana przez Alistaira Cockburna w 2005. Aktualnie jest bardzo popularnym podejściem do tworzenia mikroserwisów, ponieważ umożliwia ona w łatwy sposób rozbudowywanie aktualnego rozwiązania jak i wprowadzanie zmian wynikających ze zmian w architekturze systemu.
+Architektura Heksagonalna została udokumentowana przez Alistaira Cockburna w 2005. Aktualnie jest bardzo popularnym podejściem do tworzenia mikroserwisów, ponieważ umożliwia ona w łatwy sposób rozbudowywanie aktualnego kodu aplikacji jak i wprowadzanie zmian wynikających ze zmian w architekturze i wymagań systemu.
 Główne cechy Heksagonalnej Architektury to:
 \begin{itemize}
-  \item oddzielenie strony klienckiej, logiki biznesowej oraz strony serwerowej
+  \item oddzielenie części obsługi klientów serwisu, logiki biznesowej oraz strony serwerowej
   \item podział komponentów serwera na tzw. porty i adaptery
 \end{itemize}
-Główne idee kierujące tą architekturą to:
 \begin{description}
-  \item[Logika biznesowa] \hfill \\ Główną i najważniejszą częścią naszego systemu jest logika biznesowa. Reguły biznesowe i zasady nimi rządzące nie powinny być w żaden sposób mocno bazować na innych komponentach systemu. Powinny zawierać tylko i wyłącznie elementy związane z logiką naszego systemu, a elementy infrastruktury (jak np. bazy danych, zewnętrzne serwisy) powinny być zależne od komponentu logiki biznesowej. Odizolowanie tej części ma kilka zalet:
+  \item[Logika biznesowa] \hfill \\ Główną i najważniejszą częścią systemu jest logika biznesowa. Reguły biznesowe i zasady nimi rządzące nie powinny być w żaden sposób mocno bazować na innych komponentach systemu. Powinny zawierać tylko i wyłącznie elementy związane z logiką systemu, a elementy infrastruktury (jak np. bazy danych, zewnętrzne serwisy) powinny być zależne od komponentu logiki biznesowej. Odizolowanie tej części ma kilka zalet:
 \begin{itemize}
   \item Logika biznesowa jest bardzo łatwo testowalna jednostkowo. Jako że testy nie bazują na zewnętrznych narzędziach lub serwisach, tylko na ich interfejsach, możliwe jest w łatwy sposób pisanie testów symulujących działanie zewnętrznych narzędzi. Rzeczy takie jak komunikacja z bazą danych lub operacje na żądaniach klienckich nie są wymagane do pisania takich testów, więc pisze się je szybko i są one bardzo czytelne.
-  \item Kod logiki jest czytelny i prosty, ponieważ nie powinien on zawierać elementów infrastruktury. Z tego powodu nawet osoby, które znają zasady biznesowe naszego sytemu, ale nie są osobami technicznymi, mogą być w stanie zrozumieć fragmenty kodu domenowego.
+  \item Kod źródłowy odpowiedzialny za logikę domenową jest czytelny i prosty, ponieważ nie zawiera elementów infrastruktury. Z tego powodu nawet osoby, które znają zasady biznesowe sytemu, ale nie są osobami technicznymi, mogą być w stanie zrozumieć fragmenty kodu domenowego.
 \begin{addmargin}[6mm]{0mm}
 \begin{lstlisting}[
     numbers=left,
@@ -44,12 +44,12 @@ fun deleteParty(id: Long, currentUserId: Long): Party? {
 }
 \end{lstlisting}
 \end{addmargin}
-  Jak można zauważyć w powyższym kodzie nie ma odwołań do bazy danych ani do żądania, tylko są jedynie zasady dotyczące działania systemu, czyli tylko założyciel grupy ma możliwość usunięcia danej grupy.
-  \item Bardzo łatwo można wymieniać części systemu nie związane z logiką biznesową np. bazy danych, zewnętrzne serwisy. Szczególnie w dobie mikroserwisów, wymiana zewnętrzych serwisów jest rzeczą wcale rzadką, więc gdy chcemy zmienić np. API do zewnętrznej części systemu to jeżeli będziemy się trzymać kontraktu na którym bazuje nasza logika biznesowa, to nie będą potrzebne zmiany w głównej części naszej aplikacji.
+  Jak można zauważyć, w powyższym kodzie nie ma odwołań do bazy danych ani innych części infrastruktury systemu. W kodzie zawarte są jedynie zasady dotyczące działania systemu.%, czyli tylko założyciel grupy ma możliwość usunięcia danej grupy.
+  \item Bardzo łatwo można wymieniać części systemu nie związane z logiką biznesową np. bazy danych lub zewnętrzne serwisy. W dobie mikroserwisów, zmiana wymagań dotyczących zewnętrznych serwisów jest rzeczą wcale rzadką, więc gdy zmienia się np. interfejs do zewnętrznego serwisu, to jeżeli będziemy się trzymać kontraktu na którym bazuje nasza logika biznesowa, to nie będą potrzebne zmiany w głównej części aplikacji, a jedynie zmiany w adapterach aplikacji.
 \end{itemize}
 
 
-\item[Adaptery] \hfill \\ Adaptery są elementami które "wychodzą na świat", czyli są one odpowiedzialne za komunikację z zewnętrznymi serwisami. Adapterem jest np. część systemu odpowiadająca za zdefiniowanie kwerend i mutacji GraphQL'owych, komponenty komunikujące się z zewnętrznymi serwisami lub części komunikujące się z bazą danych. Adaptery są zależne od części domenowej aplikacji tj. są zależne od modeli domenowych naszej aplikacji. Komponenty logiki biznesowej używają adapterów z użyciem własnych modeli domenowych, a żeby adaptery mogły korzystać z tych modeli, muszą one je przekonwertować na swoją reprezentację. Przykładowo powiedzmy, że mamy model biznesowy \emph{Grupa}, którą możemy zaprezentować w klasie Kotlinowej tak:
+\item[Adaptery] \hfill \\ Adaptery są elementami które "wychodzą na świat", czyli są one odpowiedzialne za komunikację z zewnętrznymi serwisami. Adapterem jest np. część systemu odpowiadająca za zdefiniowanie kwerend i mutacji GraphQL'owych, komponenty komunikujące się z zewnętrznymi serwisami lub części komunikujące się z bazą danych. Adaptery są zależne od części domenowej aplikacji tj. są zależne od modeli domenowych aplikacji. Komponenty logiki biznesowej używają adapterów z użyciem własnych modeli domenowych, a żeby adaptery mogły korzystać z tych modeli, muszą one je przekonwertować na swoją reprezentację. Przykładowo powiedzmy, że mamy model biznesowy \emph{Grupa}, którą możemy zaprezentować w klasie Kotlinowej tak:
 
 
 \begin{addmargin}[6mm]{0mm}
@@ -97,10 +97,10 @@ interface AdapterBazyDanych {
 \end{addmargin}
 Jak widzimy komponent domenowy nie posługuje się nigdy klasą adaptera, tylko adapter który implementuje ten interfejs musi przeprowadzić konwersję argumentu \emph{grupa} przy wywoływaniu funkcji oraz przy zwracaniu wartości z tej funkcji.
 
-\item[Porty] \hfill \\ Porty są zwykłym kontraktem pomiędzy komponentem logiki biznesowej, a adapterami. Porty posiadają logiki tylko służą do oddzielenia odpowiedzialności komponentów naszego systemu. Przykładem portu może być wcześniej podany przykład interfejsu \emph{AdapterBazyDanych} w listingu~\ref{lst:AdapterBazyDanychPort}. 
+\item[Porty] \hfill \\ Porty są zwykłym kontraktem pomiędzy komponentem logiki biznesowej, a adapterami. Porty posiadają logiki tylko służą do oddzielenia odpowiedzialności komponentów systemu. Przykładem portu może być wcześniej podany przykład interfejsu \emph{AdapterBazyDanych} w listingu~\ref{lst:AdapterBazyDanychPort}. 
 
 \end{description}
-Moja aplikacja zawiera obiektów reprezentujących cały system. Są to:
+Moja aplikacja zawiera 6 obiektów bazodanowych reprezentujących cały system. Są to:
 \begin{itemize}
   \item wydatek
   \item powiadomienie
@@ -109,14 +109,14 @@ Moja aplikacja zawiera obiektów reprezentujących cały system. Są to:
   \item płatność
   \item użytkownik
 \end{itemize}
-, a moja aplikacja jest podzielona na trzy części:
+A moja aplikacja jest podzielona na trzy części:
 \begin{itemize}
-  \item adapter klienta - adapter zajmujący się definiowaniem i obsługą zapytań klienta
+  \item adaptery klienta - adaptery zajmujące się definiowaniem i obsługą zapytań klienta
   \item część domenowa - główna część mojej aplikacji zajmująca się definiowaniem reguł biznesowych
-  \item adapter bazodanowy - zajmujący się obsługą bazy danych
+  \item adaptery bazodanowe - zajmujące się obsługą bazy danych
 \end{itemize}
 Dla każdego obiektu jest stworzony osobny komponent w każdej z części. Jeżeli weźmiemy pod uwagę np. obiekt grupa to:
-// todo tu mogą być fragmenty kodu kontrollera serwisu i repozytorium
+%// todo tu mogą być fragmenty kodu kontrollera serwisu i repozytorium
 \begin{enumerate}
   \item Adapter klienta będzie nazywał się \emph{GrupaResolver} i będzie definiował wszystkie dostępne kwerendy i mutacje dla grupy.
     % \begin{addmargin}[6mm]{0mm}
@@ -138,7 +138,7 @@ Dla każdego obiektu jest stworzony osobny komponent w każdej z części. Jeże
     % }
     % \end{lstlisting}
     % \end{addmargin}
-  \item Logika domenowa dla grupy która będzie się nazywała \emph{GrupaSerwis} gdzie będzie znajdowała się logika związana z obsługą grupy.
+  \item Logika domenowa dla grupy, która będzie się nazywała \emph{GrupaService} gdzie będzie znajdowała się logika związana z obsługą grupy.
   \item Adapter bazodanowy który będzie nazywał się \emph{GrupaPersistentRepository} gdzie będzie znajdowała się komunikacja z bazą danych.
     
 \end{enumerate}
@@ -150,17 +150,17 @@ Do stworzenia aplikacji serwerowej użyłem następujących technologii:
   \item[Kotlin] \hfill \\ Głównym językiem programowania jakiego użyłem do napisania aplikacji serwerowej jest Kotlin. Kotlin jest zorientowanym obiektowo, statycznie typowanym językiem programowania. Kotlin jest oparty na JVM, więc technologie i biblioteki, które zostały stworzone w języku Java, mogą być także używane w języku Kotlin. 
   \item[Spring] \hfill \\ Spring jest wolnoźródłowym frameworkiem do budowania aplikacji serwerowych w językach opartych na JVM. Posiada on dużą ilość potrzebnych przy tworzeniu aplikacji serwerowych funkcjonalności. 
 
-    Podstawową funkcją udostępnianą przez Spring Framework jest kontener do wstrzykiwania zależności. Spring umożliwia nam tworzenie pojedynczych komponentów, które później mogą być \emph{wstrzyknięte} jako zależności do innych komponentów. Jeżeli komponent \emph{A} zależy od komponentu \emph{B}, czyli \emph{A} używa \emph{B}, aby móc zrealizować swoją własną funkcję, \emph{A} nie musi sam tworzyć instancji \emph{B} tylko może np. dać znać Springowi, że jest zależny od komponentu \emph{B} poprzez umieszczenie \emph{B} np. jako parametr w konstruktorze. W takiej sytuacji gdy obiekt \emph{A} będzie tworzony, kontener będzie automatycznie wywoływał konstruktor \emph{A} z odpowiednimi parametrami.
+    Podstawową funkcją udostępnianą przez Spring Framework jest kontener do wstrzykiwania zależności. Spring umożliwia nam tworzenie pojedynczych komponentów, które później mogą być \emph{wstrzyknięte} jako zależności do innych komponentów. Jeżeli komponent \emph{A} zależy od komponentu \emph{B}, czyli \emph{A} używa \emph{B}, aby móc zrealizować swoją własną funkcję, \emph{A} nie musi sam tworzyć instancji \emph{B} tylko może np. dać znać Springowi, że jest zależny od komponentu \emph{B} poprzez umieszczenie \emph{B} np. jako parametr w konstruktorze. W takiej sytuacji gdy obiekt \emph{A} będzie tworzony, kontener będzie automatycznie wywoływał konstruktor \emph{A} z odpowiednimi parametrami. Jest to bardzo pomocne przy pisaniu testów jednostkowych aplikacji. Przy użyciu techniki wstrzykiwania zależności, w testach jednostkowych bardzo łatwo jest symulować działanie innych części systemu, ponieważ jako parametr konstruktora możemy podać sztuczny serwis, który ma ustalony sposób działania przy wywoływaniu poszczególnych funkcji.
 
     Dodatkowo Spring posiada bardzo dużo innych narzędzi, dzięki którym można budować duże serwisy, takie jak:
     \begin{enumerate}
       \item \textbf{Spring Boot} - narzędzie pozwalające w bardzo szybki sposób skonfigurować serwer aplikacji wraz z wszystkimi potrzebnymi elementami potrzebnymi do działania takiego serwisu np. autoryzacji lub komunikację z bazą danych. Dzięki niemu możemy otrzymać podstawową konfigurację do modułów wymienionych poniżej, czyli np. Spring Security lub Spring Data JPA
-      \item \textbf{Spring Security} - moduł, która odpowiada za bezpieczeństwo naszej aplikacji. Domyślnie po zainstalowaniu tego modułu mamy dostęp do narzędzi, które pozwalają nam np. autoryzować użytkownika, konfigurować CORS, blokować niektóre endpointy itp.
-      \item \textbf{Spring Data JPA} - JPA jest to standard ORM dla języka Java. Dzięki JPA mamy mechanizmy, które pozwalają nam zarządzać bazą danych z poziomu kodu programu, bez użycia SQL. Przy takim podejściu klasy w języku Kotlin mogą być mapowane na elementy tabel w bazie danych przy zapisie lub ich edycji. Dodatkowo przy odczycie tych danych elementy tabel w bazie danych mogą być mapowane z powrotem na klasy Kotlinowe. Dzięki temu w łatwy sposób możemy zapewnić spójność pomiędzy modelami bazodanowymi a modelami w Kotlinie. Jako że JPA jest tylko standardem, aby móc robić takie rzeczy w Springu potrzebujemy narzędzia, które będzie ten standard implementować. Jednym z takich narzędzi, które wybrałem jest biblioteka Hibernate, która jest domyślnie wspierana przez framework Spring i może być łatwo skonfigurowana z użyciem Spring Boot.
+      \item \textbf{Spring Security} - moduł, która odpowiada za bezpieczeństwo aplikacji. Domyślnie po zainstalowaniu tego modułu mamy dostęp do narzędzi, które pozwalają nam np. autoryzować użytkownika, konfigurować CORS, blokować niektóre adresy naszej aplikacji itp.
+      \item \textbf{Spring Data JPA i Hibernate} - JPA jest to standard ORM dla języka Java. Dzięki JPA mamy mechanizmy, które pozwalają nam zarządzać bazą danych z poziomu kodu programu, bez użycia SQL. Przy takim podejściu klasy w języku Kotlin mogą być mapowane na elementy tabel w bazie danych przy zapisie lub ich edycji. Dodatkowo przy odczycie tych danych elementy tabel w bazie danych mogą być mapowane z powrotem na klasy Kotlinowe. Dzięki temu w łatwy sposób możemy zapewnić spójność pomiędzy modelami bazodanowymi a modelami w Kotlinie. Jako że JPA jest tylko standardem, aby móc robić takie rzeczy w Springu potrzebujemy narzędzia, które będzie ten standard implementować. Jednym z takich narzędzi, które wybrałem jest biblioteka Hibernate, która jest domyślnie wspierana przez framework Spring i może być łatwo skonfigurowana z użyciem Spring Boot.
     \end{enumerate}
 
   \item[PostgreSQL] \hfill \\ PostgreSQL jest jedną z kilku najpopularniejszych wolnoźródłowych baz danych. Jest to relacyjna baza danych, która jest wspierana przez framework Spring. Baza danych jest obsługiwana z języka Kotlin i przechowywane są w niej wszystkie dane użytkownika.
-  \item[GraphQL-Kotlin] \hfill \\ Biblioteka GraphQL-Kotlin jest zbudowana na innej bibliotece `graphql-java`, która ułatwia tworzenie aplikacji serwerowych udostępniających interfejs poprzez standard graphql. Udostępnia ona domyślnie funkcjonalność odbierania i parsowania zapytań graphqlowych, posiada funkcje pozwalające obsługiwać błędy w zapytaniach oraz tworzenia odpowiedzi do klienta zgodnie ze owym standardem.
+  \item[GraphQL-Kotlin] \hfill \\ Biblioteka \emph{GraphQL-Kotlin} jest zbudowana na innej bibliotece \emph{graphql-java}, która ułatwia tworzenie aplikacji serwerowych udostępniających interfejs poprzez standard graphql. Udostępnia ona domyślnie funkcjonalność odbierania i parsowania zapytań graphqlowych, posiada funkcje pozwalające obsługiwać błędy w zapytaniach oraz tworzenia odpowiedzi do klienta zgodnie ze owym standardem.
 \end{description}
 
 
@@ -168,7 +168,7 @@ Do stworzenia aplikacji serwerowej użyłem następujących technologii:
 W moim projekcie, zamiast użycia bardzo popularnego standardu do komunikacji między klientem a serwerem jakim jest REST, postanowiłem użyć standardu GraphQL.
 
 \subsubsection{Opis GraphQL}
-GraphQL jest specyfikacją utworzoną przez Facebooka, który opisuje sposób, w jaki dwie jednostki mogą się ze sobą komunikować. Jest to językiem zapytań, który może zostać użyty przez klienta, aby otrzymać dane, które wskaże w zapytaniu. W przeciwieństwie do REST, gdzie odpowiedzi serwera dla każdego endpointu są ustalone z góry. GraphQL nie jest protokołem sieciowym, a tylko kontraktem między jednostkami.
+GraphQL jest specyfikacją utworzoną przez Facebooka, który opisuje sposób, w jaki dwie jednostki mogą się ze sobą komunikować. Jest to język zapytań, który może zostać użyty przez klienta, aby otrzymać dane, które wskaże w zapytaniu, w przeciwieństwie do REST, gdzie odpowiedzi serwera dla każdego endpointu są ustalone z góry. GraphQL nie jest protokołem sieciowym, a tylko kontraktem między jednostkami.
 
 Serwer udostępniając interfejs GraphQL, definiuje tzw. schemat GraphQL, czyli statycznie i mocno typowany opis wszystkich możliwych operacji oraz typów dostępnych klientowi używającego danego interfejsu. 
 
@@ -176,7 +176,7 @@ Serwer udostępniając interfejs GraphQL, definiuje tzw. schemat GraphQL, czyli 
 \begin{lstlisting}[
     numbers=none,
     firstnumber=1,
-    label={lst:graphqlSchema}
+    label={lst:graphqlSchema},
     caption={Przykład schematu GraphQL},
     aboveskip=10pt
 ]
@@ -205,7 +205,7 @@ type Subscription {
 }
 \end{lstlisting}
 \end{addmargin}
-Jak widać każdy atrybut ma swój typ i każdy argument każdej operacji też jest opisany własnym typem. W zależności od implementacji, te typy mogą być sprawdzane podczas działania aplikacji serwerowej, czyli gdy klient wywoła operację, w której argument jest błędnego typu, serwer może zwrócić klientowi błąd o niezgodności typów. Jest to bardzo pomocne w pisaniu aplikacji, ponieważ możemy używać narzędzi, które sprawdzają za nas poprawność naszych danych, zmniejszając przy tym możliwość pomyłki.
+Jak widać każdy atrybut ma swój typ i każdy argument każdej operacji też jest opisany własnym typem. W zależności od implementacji, te typy mogą być sprawdzane podczas działania aplikacji serwerowej, czyli gdy klient wywoła operację, w której argument jest błędnego typu, serwer może zwrócić klientowi błąd o niezgodności typów. Jest to bardzo pomocne w pisaniu aplikacji, ponieważ możemy używać narzędzi (np. kompilatorów), które sprawdzają za nas poprawność naszych danych na podstawie schematu GraphQL, zmniejszając przy tym możliwość pomyłki.
 
 GraphQL wyróżnia trzy rodzaje operacji, których klient może użyć, aby uzyskać odpowiedź od serwera.
 \begin{enumerate}
@@ -213,7 +213,7 @@ GraphQL wyróżnia trzy rodzaje operacji, których klient może użyć, aby uzys
   \item mutacje
   \item subskrypcje
 \end{enumerate}
-Wszystkie te operacje muszą być zdefiniowane w schemacie GraphQL serwera. W listingu ~\ref{lst:graphqlSchema} te operacje są zdefiniowane w typach odpowiednio \emph{Query}, \emph{Mutation}, \emph{Subscription}. Klient może wykonywać tylko te operacje które są zdefiniowane w schemacie.
+Wszystkie możliwe operacje muszą być zdefiniowane w schemacie GraphQL serwera. W listingu ~\ref{lst:graphqlSchema} te operacje są zdefiniowane w typach odpowiednio \emph{Query}, \emph{Mutation}, \emph{Subscription}. Klient może tworzyć zapytania oparte tylko o operacje zdefiniowane w schemacie.
 
 \begin{description}
   \item[Kwerendy] \hfill \\ Kwerendy są konstrukcją pozwalającą odpytywać serwer o dane, nie modyfikując ich. Dzięki nim możemy tworzyć zapytania, które zwracają nam informacje o obiektach znajdujących się w bazie danych.
@@ -239,9 +239,9 @@ Wszystkie te operacje muszą być zdefiniowane w schemacie GraphQL serwera. W li
 
   Powyższa kwerenda przyjmuje jeden parametr jakim jest identyfikator grupy. Dzięki temu identyfikatorowi możemy użyć danej kwerendy wielokrotnie w zależności od podanego parametru. Możemy też zauważyć, że powyższa kwerenda nie pobiera wszystkich atrybutów grupy. W typie \emph{Grupa} jest także atrybut \emph{opis}, ale jeżeli klient aktualnie nie potrzebuje tej informacji, może nie zamieszczać jej w kwerendzie. Dzięki takiemu zabiegowi, przy pobieraniu obiektów, klient jest w stanie optymalizować ruch sieciowy, pobierając tylko te dane, których potrzebuje. 
 
-  Kwerendy mogą też posiadać zagnieżdżone typy. Grupa zawiera listę uczestników, więc w naszej kwerendzie możemy też wyszczególnić jakich atrybutów potrzebujemy w każdym obiekcie użytkownika.
+  Kwerendy mogą też posiadać zagnieżdżone typy. Grupa zawiera listę uczestników, więc w kwerendzie możemy też wyszczególnić jakich atrybutów potrzebujemy w każdym obiekcie użytkownika.
   \newline
-  \item[Mutacje] \hfill \\ Mutacje są strukturalnie podobne do kwerend, natomiast ich celem jest tworzenie lub zmiana stanu obiektów w naszej aplikacji.
+  \item[Mutacje] \hfill \\ Mutacje są strukturalnie podobne do kwerend, natomiast ich celem jest tworzenie lub zmiana stanu obiektów w aplikacji.
   \begin{addmargin}[6mm]{0mm}
   \begin{lstlisting}[
       numbers=left,
@@ -280,7 +280,7 @@ Wszystkie te operacje muszą być zdefiniowane w schemacie GraphQL serwera. W li
 \end{description}
 Powody dla których wybrałem to podejście to:
 \begin{itemize}
-  \item Jedynym źródłem prawdy dla kontraktu naszej aplikacji serwerowej jest schemat GraphQL. Można ten schemat traktować jako dokumentację, której poprawność mogą zapewnić zewnętrzne automatyczne narzędzia, które ten schemat generują na podstawie kodu źródłowego aplikacji.
+  \item Jedynym źródłem prawdy dla kontraktu aplikacji serwerowej jest schemat GraphQL. Można ten schemat traktować jako dokumentację, której poprawność mogą zapewnić zewnętrzne automatyczne narzędzia, które ten schemat generują na podstawie kodu źródłowego aplikacji.
   \item Schemat jest mocno typowany, więc zmniejsza się ilość pomyłek popełnianych przez programistów, ponieważ znowu jesteśmy w stanie użyć narzędzi do automatycznej generacji typów opartych na schemacie.
   \item To podejście niweluje zjawisko nadmiernego pobierania danych, ponieważ w zapytaniu wskazujemy dokładnie jakich danych potrzebujemy.
   \item Istnieje dużo implementacji standardu GraphQL w różnych językach, a w szególności do Kotlina i frameworka Spring, którego użyłem do implementacji mojej aplikacji serwerowej.
@@ -313,17 +313,23 @@ Analogicznie definiujemy mutacje i subskrypcje.
 
 Bardzo ważną funkcjonalnością tej biblioteki jest to, że automatycznie generuje ona schemat GraphQL na podstawie klas definiujących operacje oraz typów, które te operacje używają. Podstawowe (prymitywne) typy takie jak String lub Int są bezpośrednio zamieniane na odpowiednie typy zdefiniowane w GrpaphQL. Jeżeli jednak byśmy chcieli zdefiniować własny typ, który jest walidowany przy zapytaniach mamy taką możliwość z biblioteką \emph{kotlin-graphql}. 
 Dzięki takiemu narzędziu możemy być pewni, że nasz schemat będzie zawsze aktualny z naszym kodem aplikacyjnym.
-// todo może opisać problem n+1
+% // todo może opisać problem n+1
+
+Jednym z problemów pojawiających się przy implementacji GraphQL po stronie serwera jest problem zwany n+1.
 
 \subsubsection{Użycie GraphQL w aplikacji klienckiej}
 Obsługę zapytań po stronie klienta aplikacji zaimplementowałem z użyciem biblioteki Apollo Client. Ta biblioteka udostępnia prosty interfejs do komunikowania się z serwisami z poziomu kodu Javascript. Używając Apollo Client możemy kwerendy, mutacje i subskrypcje umieszczać w kodzie źródłowym, a następnie wywoływać odpowiednie metody pochodzące z biblioteki. 
 
-Bardzo ciekawym narzędziem którego też użyłem podczas implementacji części klienckiej jest \emph{GraphQL Code Generator}. Jest to narzędzie które na podstawie udostępnionego schematu GraphQL serwera jest w stanie generować odpowiednie typy w języku Typescript. Dzięki takiemu narzędziu dzięki w kodzie klienckim mam zawsze aktualny kontrakt z aplikacją serwerową, przez co mogę być pewien danych. W języku Javascript bardzo często zdarza się błąd wynikający z odnoszenia się do atrybutu, który nie istnieje na danym obiekcie. Bardzo często się to zdarza z tego powodu, że kontrakt, którego używaliśmy już nie jest aktualny. Automatyczna generacja kodu z połączeniem z statycznym typowaniem języka Typescript jest w stanie w dużym stopniu zapobiegać takim błędom.
+Bardzo ciekawym narzędziem którego też użyłem podczas implementacji części klienckiej jest \emph{GraphQL Code Generator}. Jest to narzędzie które na podstawie udostępnionego schematu GraphQL serwera jest w stanie generować odpowiednie typy w języku Typescript. Dzięki takiemu narzędziu w kodzie klienckim mam zawsze aktualny kontrakt z aplikacją serwerową. W przypadku podejść opartych na REST, aktualizacja odbywała się manualnie, więc była podatna na błędy.
+
+W języku Javascript bardzo często zdarza się błąd wynikający z odnoszenia się do atrybutu, który nie istnieje na danym obiekcie. Zdarza z tego powodu, że kontrakt, którego używaliśmy już nie jest aktualny. Automatyczna generacja kodu z połączeniem z statycznym typowaniem języka Typescript jest w stanie w dużym stopniu zapobiegać takim błędom.
 
 \subsection{Warstwa kliencka}
-// todo jakiś dobry wstęp
+Aby użytkownik mógł używać mojej aplikacji potrzebuje interfejsu dzięki któremu będzie mógł zarządzać swoimi wydatkami. Moja aplikacja jest aplikacją internetową czyli aplikacją, której można używać poprzez przeglądarkę internetową. Aplikacja została stworzona z użyciem języka Typescript.
+
+Główną zaletą aplikacji internetowych jest ich przenośność. Jeżeli napiszemy aplikację, która jest przystosowana do urządzeń mobilnych i komputerów, może być ona używana na praktycznie każdym urządzeniu, które posiada przeglądarkę internetową i dostęp do internetu. Gdybym próbował napisać podobną aplikację np. w formie aplikacji na androida, ograniczyłbym ilość użytkowników mogących korzystać z mojej aplikacji.
 \subsubsection{Renderowanie po stronie serwera a jednostronicowa alikacja}
-Aby użytkownik mógł używać naszej aplikacji w przeglądarce, po wejściu na moją stronę internetową serwer musi wysłać do klienta pliki definiujące strukturę, wygląd oraz logikę naszej aplikacji. Pliki te to pliki HTML opisujące strukturę, arkusze styli opisujące wygląd aplikacji oraz skrypty Javascript, które definiują zachowanie naszej aplikacji.
+Aby użytkownik mógł używać aplikacji w przeglądarce, po wejściu na moją stronę internetową serwer musi wysłać do klienta pliki definiujące strukturę, wygląd oraz logikę aplikacji. Pliki te to pliki HTML opisujące strukturę, arkusze styli opisujące wygląd aplikacji oraz skrypty Javascript, które definiują zachowanie aplikacji.
 W obecnych czasach dwa najpopularniejsze sposoby na tworzenie i udostępnianie takich plików to:
 \begin{enumerate}
   \item Renderowanie po stronie serwera (ang. Server Side rendering)
@@ -366,9 +372,9 @@ W obecnych czasach dwa najpopularniejsze sposoby na tworzenie i udostępnianie t
   \end{lstlisting}
   W taki sposób jesteśmy w stanie tworzyć strukturę po stronie serwera indywidualnie dla każdego użytkownika.
 
-  \item[Jednostronicowa aplikacja] \hfill \\ W przypadku jednostronicowej aplikacji przeważającą część struktury strony definiujemy z użyciem skryptów Javascript. Serwer w przypadku otrzymania zapytania dotyczącego strony internetowej z przeglądarki, zwraca użytkownikowi bardzo okrojoną strukturę HTML, oraz dołącza do tej struktury kod Javascript, który przy uruchamianiu strony internetowej dynamicznie tworzy elementy w dokumencie strony przy użyciu interfejsu przeglądarki. Przy takim podejściu mamy większą kontrolę nad naszą aplikacją (np. możemy dynaimicznie sterować paskiem adresu) przez co to podejście jest aktualnie stosowane przy budowaniu interaktywnych i bardziej skomplikowanych interfejsów użytkownika.
+  \item[Jednostronicowa aplikacja] \hfill \\ W przypadku jednostronicowej aplikacji przeważającą część struktury strony definiujemy z użyciem skryptów Javascript. Serwer w przypadku otrzymania zapytania dotyczącego strony internetowej z przeglądarki, zwraca użytkownikowi bardzo okrojoną strukturę HTML, oraz dołącza do tej struktury kod Javascript, który przy uruchamianiu strony internetowej dynamicznie tworzy elementy w dokumencie strony przy użyciu interfejsu przeglądarki. Przy takim podejściu mamy większą kontrolę nad naszą aplikacją przez co to podejście jest aktualnie stosowane przy budowaniu interaktywnych i bardziej skomplikowanych interfejsów użytkownika.
 
-  Taką strukturę w kodzie Javascript zazwyczaj definiuje się używając specjalnych bibliotek Javascript, które ułatwiają taki sposób definicji naszej strony.
+  Taką strukturę w kodzie Javascript zazwyczaj definiuje się używając specjalnych bibliotek Javascript, które ułatwiają taki sposób definicji strony.
 
   \begin{lstlisting}[language=HTML, caption=Przykład aplikacji z użyciem biblioteki Javascriptowej, label={lst:reactCode}]
   function Aplikacja(uzytkownik) {
@@ -384,7 +390,10 @@ W obecnych czasach dwa najpopularniejsze sposoby na tworzenie i udostępnianie t
     )
   }
 
-  ReactDOM.render(<Todo />, document.getElementById('root'));
+  ReactDOM.render(
+    <Aplikacja uzytkownik={uzytkownik} />,
+    document.getElementById('root')
+  );
   \end{lstlisting}
   \item[Wybór konkretnego podejścia] \hfill \\ W mojej aplikacji postanowiłem użyć podejścia Jednostronicowej aplikacji z kilku powodów:
   \begin{itemize}
@@ -395,11 +404,11 @@ W obecnych czasach dwa najpopularniejsze sposoby na tworzenie i udostępnianie t
   \end{itemize}
 \end{description}
 
-// todo zadbaj aby struktura opisu serwera była taka sama jak klienta, czyli to 3.3.2 było na takim samym poziome
+% // todo zadbaj aby struktura opisu serwera była taka sama jak klienta, czyli to 3.3.2 było na takim samym poziome
 \subsubsection{Wybór biblioteki do tworzenia interfejsów użytkownika}
 Bardzo często aplikacje internetowe są budowane z użyciem bibliotek javascriptowych. Jedną z takich bibliotek jest React, której użyłem do stworzenia mojej aplikacji.
 
-React udostępnia programiście interfejs do deklaratywnego tworzenia widoków użytkownika. Struktura aplikacji jest napisana za pomocą komponentów, czyli zazwyczaj funkcji w języku Javascript, które zwracają obiekty reprezentujące wirtualny DOM przeglądarki. Dodatkowo React udostępnia nam też tzw. reaktywność, czyli automatyczną aktualizację widoków, przy każdej zmianie stanu naszej aplikacji.
+React udostępnia programiście interfejs do deklaratywnego tworzenia widoków użytkownika. Struktura aplikacji jest napisana za pomocą komponentów, czyli głównie funkcji w języku Javascript, które zwracają obiekty reprezentujące część wirtualnego DOM'u przeglądarki. Dodatkowo React udostępnia nam też tzw. reaktywność, czyli automatyczną aktualizację widoków, przy każdej zmianie stanu aplikacji.
 
 \begin{description}
  \item[Reaktywność w React] \hfill \\ Biblioteka React udostępnia nam deklaratywny mechanizm aktualizacji widoków aplikacji, po zmianie stanu. Używając udostępnionej przez bibliotekę React funkcji zarządzania stanem, możemy w łatwy sposób utrzymywać spójność widoków ze stanem.
@@ -422,13 +431,13 @@ function Aplikacja() {
 }
 \end{lstlisting}
 
-Powyższy przykład przedstawia przykład aplikacji, która wyświetla licznik. W tagu \emph{h2} jest wyświetlana aktualna wartość licznika, a dwa przyciski pozwalają ją zwiększyć lub zmniejszyć o 1. W tym przykładzie możemy zauważyć, że nie aktualizujemy widoku (wartości licznika) ręcznie, tylko aktualizujemy stan naszej aplikacji. Jeżeli ten stan zmienimy (używając funkcji \emph{ustawWartosc}) React automatycznie aktualizuje nasz widok w taki sposób, aby wyświetlał wartość zgodną z tym co jest przetrzymywane w stanie. Do tego celu React wykorzystuje technikę zwaną wirtualnym DOM'em.
+Powyższy przykład przedstawia przykład aplikacji, która wyświetla licznik. W tagu \emph{h2} jest wyświetlana aktualna wartość licznika, a dwa przyciski pozwalają ją zwiększyć lub zmniejszyć o 1. W tym przykładzie możemy zauważyć, że nie aktualizujemy widoku (wartości licznika) ręcznie, tylko aktualizujemy stan aplikacji. Jeżeli ten stan zmienimy (używając funkcji \emph{ustawWartosc}) React automatycznie aktualizuje nasz widok w taki sposób, aby wyświetlał wartość zgodną z tym co jest przetrzymywane w stanie. Do tego celu React wykorzystuje technikę zwaną wirtualnym DOM'em.
 
   \item[Wirtualny DOM] \hfill \\ Wirtualny DOM jest techniką pozwalającą w prosty i szybki sposób przeprowadzać operacje na elementach struktury aplikacji internetowej. Elementy natywne przeglądarki są zazwyczaj skomplikowanymi i rozbudowanymi obiektami. Operacje na nich, takie jak dodawanie, edycja czy usuwanie, mogą trwać dosyć długo, ponieważ przy każdej takiej operacji przeglądarka musi obliczyć klasy CSS, obliczyć poprawne położenie elementów a na końcu umieścić w poprawnych miejscach konkretne elementy. Wirtualny DOM pozwala nam przyspieszyć takie operacje.
 
   Wirtualny DOM jest tym na co wskazuje nazwa: wirtualną reprezentacją drzewa DOM przeglądarki. Dzięki niej jesteśmy w stanie przedstawić naszą aplikację w postaci zwykłego obiektu Javascript. Obiekt ten zwiera informacje na temat wszystkich elementów, które aktualnie znajdują się w strukturze DOM. 
 
-  Gdy używamy biblioteki React inicjalnie tworzy ona taką wirtualną reprezentację DOM na podstawie komponentów, które napisaliśmy i zawartego w nich stanu, a następnie tworzy je w w przeglądarce używając do tego natywnego interfejsu przeglądarki. Następnie przy każdej zmianie stanu naszej aplikacji, React odtwarza ten sam proces, ale już z innymi danymi pochodzącymi ze zmienionego stanu. Taka czynność (czyli odtworzenie całej struktury DOM) wykonana na dokumencie przeglądarki byłaby bardzo kosztowna, natomiast wykonanie takiej operacji na zwykłych obiektach jest bardzo szybkie. 
+  Gdy używamy biblioteki React inicjalnie tworzy ona taką wirtualną reprezentację DOM na podstawie komponentów, które napisaliśmy i zawartego w nich stanu, a następnie tworzy je w w przeglądarce używając do tego natywnego interfejsu przeglądarki. Następnie przy każdej zmianie stanu aplikacji, React odtwarza ten sam proces, ale już z innymi danymi pochodzącymi ze zmienionego stanu. Taka czynność (czyli odtworzenie całej struktury DOM) wykonana na dokumencie przeglądarki byłaby bardzo kosztowna, natomiast wykonanie takiej operacji na zwykłych obiektach jest bardzo szybkie. 
 
   Gdy React posiada już dwie wersje (przed zmianą stanu i po jego zmianie) jest on w stanie obliczyć różnice pomiędzy dwoma reprezentacjami używając heurystycznego algorytmu \cite{ref_heuristic_diffing_algorythm}.
 
@@ -438,10 +447,10 @@ Powyższy przykład przedstawia przykład aplikacji, która wyświetla licznik. 
 \subsubsection{Użyte technologie}
 Podczas pisania części klienckiej użyłem następujących technologii:
 \begin{description}
-  \item[Typescript] \hfill \\ Typescript jest językiem programowania który jest nadzbiorem języka Javasrcipt. Javasrcipt jest językiem programowania, który jest wykorzystywany przez przeglądarki do kontrolowania stron internetowych przez programistów. Jedną z cech Javascript jest to, że jest on dynamicznie typowany. Podczas pisania aplikacji w Javascript zmienne nie mają zdefiniowanego typu, przez co podczas pisania aplikacji mogą pojawiać się błędy związane z niepoprawnym używaniem zmiennych. Typescript jest nadzbiorem Javascript i bardzo ważną rzeczą którą dodaje do Javascript jest właśnie statyczne typowanie. Typescript zawiera kompilator, który sprawdza poprawność kodu już na etapie pisania kodu, w przeciwieństwie do Javascript gdzie potencjalne błędy syntaktyczne zostaną ukazane programiście dopiero przy uruchamianiu programu. W przypadku dużych aplikacji internetowych liczących wiele tysięcy linii kodu, pomoc kompilatora jest wyjątkowo pomocna. Dodatkowym atutem jest wsparcie narzędzi programistycznych. Gdy IDE ma informacje na temat typów klas i obiektów w naszej aplikacji, jest w stanie łatwiej podpowiadać nam np. odpowiednie atrybuty obiektu podczas pisania kodu, co znacznie przyspiesza pisanie aplikacji.
-  \item[Eslint] \hfill \\ Eslint jest narzędziem ułatiwającym pisanie kodu w Typescript i Javascript. Eslint analizuje składnię kodu programisty i wyświetla komunikaty, które mogą powodować błędy w naszej aplikacji np. zadeklarowanie dwa razy tej samej zmiennej lub brak zdefiniowanego typu w deklaracji funkcji. Eslint jest też w stanie analizować elementy kodu nie związane z logiką naszej aplikacji jak wcięcia w kodzie lub białe znaki, przez co pomaga utrzymać jeden styl kodu w całej aplikacji. Eslint posiada też funkcjonalność naprawiania błędów, co może znacznie przyspieszyć tworzenie aplikacji.
-  \item[Create React App] \hfill \\ Jest to biblioteka, która jedną komendą pozwala utworzyć podstawową strukturę projektu React z użyciem jednej komendy. Podczas pisania takiej aplikacji utworzenie takiego wstępnego projektu może być czasochłonne z powodu dużej ilości konfiguracji, którą trzeba utworzyć aby móc używać Reacta. Create React App udostępnia taką konfigurację która zawiera np. skonfigurowany proces budowania aplikacji, automatyczne odświeżanie aplikacji po każdej zmianie w kodzie, skonfigurowane narzędzia tj. eslint, Typescript.
-  \item[AntD] \hfill \\ AntD jest biblioteką stworzoną dla biblioteki React, która udostępnia zbiór komponentów, które spełniają zasady systemu Ant Design. Ant Design jest zbiorem zasad, którymi programista powinien się kierować podczas implementacji interfejsu użytkownika tj. odpowiednia kolorystyka, rozmieszczenie i wygląd elementów itp. AntD natomiast udostępnia komponenty zaimplementowane przy użyciu biblioteki React, które te zasady spełniają.
+  \item[Typescript] \hfill \\ Typescript jest językiem programowania który jest nadzbiorem języka Javasrcipt. Javasrcipt jest językiem programowania, który jest wykorzystywany przez przeglądarki do kontrolowania stron internetowych przez programistów. Jedną z cech Javascript jest to, że jest on dynamicznie typowany. Podczas pisania aplikacji w Javascript zmienne nie mają zdefiniowanego typu, przez co podczas pisania aplikacji mogą pojawiać się błędy związane z niepoprawnym używaniem zmiennych. Typescript jest nadzbiorem Javascript i bardzo ważną rzeczą którą dodaje do Javascript jest właśnie statyczne typowanie. Typescript zawiera kompilator, który sprawdza poprawność kodu już na etapie pisania kodu, w przeciwieństwie do Javascript gdzie potencjalne błędy syntaktyczne zostaną ukazane programiście dopiero przy uruchamianiu programu. W przypadku dużych aplikacji internetowych liczących wiele tysięcy linii kodu, pomoc kompilatora jest wyjątkowo pomocna. Dodatkowym atutem jest wsparcie narzędzi programistycznych. Gdy IDE ma informacje na temat typów klas i obiektów w aplikacji, jest w stanie łatwiej podpowiadać nam np. odpowiednie atrybuty obiektu podczas pisania kodu, co znacznie przyspiesza pisanie aplikacji.
+  \item[Eslint] \hfill \\ Eslint jest narzędziem ułatiwającym pisanie kodu w Typescript i Javascript. Eslint analizuje składnię kodu programisty i wyświetla komunikaty, które mogą powodować błędy w aplikacji np. zadeklarowanie dwa razy tej samej zmiennej lub brak zdefiniowanego typu w deklaracji funkcji. Eslint jest też w stanie analizować elementy kodu nie związane z logiką aplikacji jak wcięcia w kodzie lub białe znaki, przez co pomaga utrzymać jeden styl kodu w całej aplikacji. Eslint posiada też funkcjonalność naprawiania błędów, co może znacznie przyspieszyć tworzenie aplikacji.
+  \item[Create React App] \hfill \\ Jest to biblioteka, która jedną komendą pozwala utworzyć podstawową strukturę projektu React z użyciem jednej komendy. Podczas pisania takiej aplikacji utworzenie takiego wstępnego projektu może być czasochłonne z powodu dużej ilości konfiguracji, którą trzeba utworzyć aby móc używać Reacta w przeglądarce. Create React App udostępnia taką konfigurację która zawiera np. skonfigurowany proces budowania aplikacji, automatyczne odświeżanie aplikacji po każdej zmianie w kodzie, skonfigurowane narzędzia tj. eslint, Typescript.
+  \item[AntD] \hfill \\ AntD jest biblioteką stworzoną dla biblioteki React, która udostępnia zbiór komponentów, które spełniają zasady systemu Ant Design. Ant Design jest zbiorem zasad, którymi programista może się kierować podczas implementacji interfejsu użytkownika, aby interfejs wydawał się nowoczesny i przystępny tj. odpowiednia kolorystyka, rozmieszczenie i wygląd elementów itp. AntD natomiast udostępnia komponenty zaimplementowane przy użyciu biblioteki React, które te zasady spełniają.
   \item[Apollo Client] \hfill \\ Wcześniej wspomniany Apollo Client, który udostępnia przystępny interfejs do komunikacji poprzez GraphQL.
   \item[GraphQL Code Generator] \hfill \\ Wcześniej wspomniana biblioteka, która na podstawie schematu GraphQL udostępnianego przez serwer, generuje odpowiednie typy w języku Typescript dla mojej aplikacji.
 

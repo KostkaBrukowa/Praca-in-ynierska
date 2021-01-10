@@ -1,6 +1,6 @@
 \newpage
 \section{Testowanie}
-Testy automatyczne są bardzo ważną częścią każdej aplikacji. Pozwalają one w łatwiejszy sposób wprowadzać zmiany do naszej aplikacji mając większą pewność, że nasze zmiany nie wprowadziły niepożądanych błędów do naszej aplikacji. Dodatkowo podczas procesu pisania kodu naszej aplikacji, dzięki takim testom jesteśmy w stanie w łatwy sposób sprawdzić poprawność naszych rozwiązań w wielu różnych sytuacjach. 
+Testy automatyczne są bardzo ważną częścią każdej aplikacji. Pozwalają one w łatwiejszy sposób wprowadzać zmiany do naszej aplikacji mając większą pewność, że nasze zmiany nie wprowadziły niepożądanych błędów do naszego kodu. Dodatkowo podczas procesu pisania kodu naszej aplikacji, dzięki takim testom jesteśmy w stanie w łatwy sposób sprawdzić poprawność naszych rozwiązań w wielu różnych sytuacjach. 
 
 W mojej aplikacji użyłem trzech różnych sposobów na przetestowanie mojej aplikacji:
 \begin{enumerate}
@@ -10,12 +10,12 @@ W mojej aplikacji użyłem trzech różnych sposobów na przetestowanie mojej ap
 \end{enumerate}
 
 \subsection{Testowanie jednostkowe aplikacji klienckiej}
-Testowanie jednostkowe pozwala nam w prosty sposób przetestować poszczególne komponenty naszej aplikacji. Komponenty w bibliotece React to zwykłe funkcje, więc można by pomyśleć, że możemy je testować jak funkcje, jednak jest kilka rzeczy, o których musimy pamiętać. 
+Testowanie jednostkowe pozwala nam w prosty sposób przetestować poszczególne komponenty naszej aplikacji w izolacji. Komponenty w bibliotece React to zwykłe funkcje, więc można by pomyśleć, że możemy je testować jak funkcje, jednak jest kilka rzeczy, o których musimy pamiętać. 
 
 \subsubsection{Testowanie komponentów}
-Komponenty mogą posiadać stan. Jak widać w listingu \ref{lst:reactCounterCode} używając funkcji \emph{React.useState} dołączamy do funkcji stan, który może się różnić w zależności od sytuacji. Z tego powodu kolejne wywołania tej samej funkcji mogą zwracać inny wynik. 
+Jednym z powodów dla którego trudno jest testować komponenty jak zwykłe funkcje jest to, że komponenty mogą posiadać stan. Jak widać w listingu \ref{lst:reactCounterCode} używając funkcji \emph{React.useState} dołączamy do funkcji stan, który może się różnić przy różnych wywołaniach danego komponentu. Z tego powodu kolejne wywołania tej samej funkcji mogą zwracać inny wynik. 
 
-Kolejnym powodem, dla którego trudno by było przetestować komponent bazując tylko i wyłącznie na jego zwróconym wyniku jest to, że wartością zwracaną przez komponent jest zwykły obiekt, który reprezentuje część wirtualnego DOM'u. Natomiast my jako programiści interpretujemy tę część wirtualnego domu jako prawdziwe elementy przeglądarki, dlatego sprawdzenia, które sprawdzały by poprawność wirtualnego DOM'u mogłyby być nieczytelne i trudne w utrzymaniu.
+Kolejnym powodem, dla którego trudno by było przetestować komponent bazując tylko i wyłącznie na jego zwróconym wyniku jest to, że wartością zwracaną przez komponent jest zwykły obiekt, który reprezentuje część wirtualnego DOM'u. Natomiast my jako programiści interpretujemy tę część wirtualnego domu jako prawdziwe elementy przeglądarki, dlatego asercje, które sprawdzały by poprawność wirtualnego DOM'u mogłyby być nieczytelne i trudne w utrzymaniu.
 
 Dodatkowo nasze komponenty mogą używać interfejsu przeglądarki, więc aby w całości przetestować komponent musimy być w stanie też sprawdzić jak komponenty wchodzą w interakcje z przeglądarką.
 
@@ -69,13 +69,20 @@ Jest posiada dużo funkcji, które ułatwiają testowanie kodu Javasrcipt.
 
   Migawki rozwiązują ten problem. \emph{toMatchSnapshot} podczas pierwszego uruchomienia zapamiętuje wartość zwróconą przez funkcję, a przy następnych uruchomieniach testu sprawdza, czy wynik zgadza się z wynikiem z poprzedniego uruchomienia. Jeżeli te dwie wartości nie będą się zgadzać, Jest zwróci programiście, że test nie przeszedł. W takiej sytuacji programista może zaakceptować nowy wygląd migawki, lub poprawić błąd jeżeli zmiana była niezamierzona. Takie testy są właśnie stworzone po to, aby nie wprowadzać niepożądanych zmian do naszego kodu aplikacji.
 
-\end{description}
+\subsubsection{React-testing-library} React-testing-library natomiast rozwiązuje problem czytelności i łatwości testowania naszych komponentów. Dzięki tej bibliotece jesteśmy w stanie testować zachowanie naszych komponentów używając do tego bardzo prostego interfejsu, który pozwala nam na wykonywanie takich operacji jak:
+\begin{itemize}
+  \item łatwe tworzenie komponentów w wirtualnym środowisku
+  \item wykonywanie akcji użytkownika np. klikanie, najeżdżanie myszką itp.
+  \item łatwe wyszukiwanie elementów i sprawdzanie ich stanu lub atrybutów
+\end{itemize}
 
+
+\end{description}
   \begin{addmargin}[6mm]{0mm}
   \begin{lstlisting}[
       numbers=left,
       firstnumber=1,
-      caption={Przykład testu migawkowego},
+      caption={Przykład testu jednostkowego przy użyciu React-testing-library},
       aboveskip=10pt
   ]
     test('gdy nazwa wydatku jest za dluga powinien pojawic sie blad', () => {
@@ -122,16 +129,16 @@ Do testów integracyjnych użyłem biblioteki o nazwie \emph{Cypress.io} \cite{r
     logIn(1);
 
     // create new expense
-    cy.contains('Przykładowy opis zmieniony').click();
-    cy.contains('Usuń').click();
+    cy.contains('Przykladowy opis zmieniony').click();
+    cy.contains('Usun').click();
     cy.contains('OK').click();
 
-    cy.contains('Przykładowy wydatek zmieniony').should('not.exist');
-    cy.contains('Przykładowy opis zmieniony').should('not.exist');
+    cy.contains('Przykladowy wydatek zmieniony').should('not.exist');
+    cy.contains('Przykladowy opis zmieniony').should('not.exist');
   });
   \end{lstlisting}
   \end{addmargin}
-  W powyższym przykładzie mamy przedstawiony przykładowy test integracyjny naszej aplikacji. Przy użyciu intefejsu Cypress możemy sterować przeglądarką i zapisywać testy które symulują prawdziwego użytkownika w prawdziwej instancji przeglądarki.
+  W powyższym przykładzie mamy przedstawiony przykładowy test integracyjny naszej aplikacji. Przy użyciu intefejsu Cypress możemy sterować przeglądarką i tworzyć testy które symulują prawdziwego użytkownika w prawdziwej instancji przeglądarki.
 
 Cypress udostępnia nam też podgląd testów \emph{na żywo}. Dzięki temu, gdy test nie przejdzie, jesteśmy w łatwy sposób stwierdzić gdzie jest błąd i jak go naprawić.
 
@@ -149,8 +156,5 @@ Testy wizualnej regresji zapewniają nam wizualną poprawność naszego interfej
 \end{figure}
 
 
-\subsection{Testy wizualnej regresji aplikacji serwerowej}
-Aplikację serwerową testowałem głównie integracyjnie. Do pisania testów wybrałem język Groovy i bibliotekę Spock.
-
-
-
+\subsection{Testy integracyjne aplikacji serwerowej}
+Aplikację serwerową testowałem głównie integracyjnie. Do pisania testów wybrałem język Groovy i bibliotekę Spock w środowisku JUnit. Testy integracyjne serwera nie róznią się w dużej mierze od testów integracyjnych aplikacji klienckiej. Jedyną różnicą jest to, że nie posiadamy wizualnej części. Testy integracyjne testują wszystkie elementy aplikacji serwerowej: zapytania klienckie, logikę biznesową oraz integrację z bazą danych.

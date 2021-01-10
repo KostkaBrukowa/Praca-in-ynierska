@@ -23,19 +23,14 @@
 \BOOKMARK [2][-]{subsection.4.1}{Testowanie jednostkowe aplikacji klienckiej}{section.4}% 23
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Testowanie komponent\363w}{subsection.4.1}% 24
 \BOOKMARK [3][-]{subsubsection.4.1.2}{Jest}{subsection.4.1}% 25
-\BOOKMARK [2][-]{subsection.4.2}{Testowanie integracyjne aplikacji klienckiej}{section.4}% 26
-\BOOKMARK [2][-]{subsection.4.3}{Testy wizualnej regresji aplikacji klienckiej}{section.4}% 27
-\BOOKMARK [2][-]{subsection.4.4}{Testy wizualnej regresji aplikacji serwerowej}{section.4}% 28
-\BOOKMARK [1][-]{section.5}{De Finibus Bonorum et Malorum}{}% 29
-\BOOKMARK [2][-]{subsection.5.1}{Critique of Pure Reason}{section.5}% 30
-\BOOKMARK [2][-]{subsection.5.2}{Categorical Imperative}{section.5}% 31
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Deontological Ethics}{subsection.5.2}% 32
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Consequentialism \205 the Ideal of practical reason}{subsection.5.2}% 33
-\BOOKMARK [2][-]{subsection.5.3}{G\366del's ontological proof}{section.5}% 34
-\BOOKMARK [1][-]{section.6}{Code listings}{}% 35
-\BOOKMARK [1][-]{section.7}{Summatio}{}% 36
-\BOOKMARK [1][-]{section*.6}{Bibliografia}{}% 37
-\BOOKMARK [1][-]{section*.7}{Wykaz symboli i skr\363t\363w}{}% 38
-\BOOKMARK [1][-]{section*.7}{Spis rysunk\363w}{}% 39
-\BOOKMARK [1][-]{section*.7}{Spis tabel}{}% 40
-\BOOKMARK [1][-]{section*.8}{Spis za\233acznik\363w}{}% 41
+\BOOKMARK [3][-]{subsubsection.4.1.3}{React-testing-library}{subsection.4.1}% 26
+\BOOKMARK [2][-]{subsection.4.2}{Testowanie integracyjne aplikacji klienckiej}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.3}{Testy wizualnej regresji aplikacji klienckiej}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.4}{Testy integracyjne aplikacji serwerowej}{section.4}% 29
+\BOOKMARK [1][-]{section.5}{Prezentacja aplikacji}{}% 30
+\BOOKMARK [1][-]{section.6}{Summatio}{}% 31
+\BOOKMARK [1][-]{section*.4}{Bibliografia}{}% 32
+\BOOKMARK [1][-]{section*.5}{Wykaz symboli i skr\363t\363w}{}% 33
+\BOOKMARK [1][-]{section*.5}{Spis rysunk\363w}{}% 34
+\BOOKMARK [1][-]{section*.5}{Spis tabel}{}% 35
+\BOOKMARK [1][-]{section*.6}{Spis za\233acznik\363w}{}% 36

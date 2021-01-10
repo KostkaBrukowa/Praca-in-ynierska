@@ -5,7 +5,7 @@
 %     \centering \includegraphics[width=0.5\linewidth]{logopw.png}
 %     \caption{Tradycyjne godło Politechniki Warszawskiej}
 % \end{figure}
-Zdarza się w naszym życiu, że razem z innymi osobami kupujemy rzeczy, za które płaci tylko jedna osoba. W takiej sytuacji dosyć uciążliwe może być proszenie innych osób o zwrot kwoty, obliczanie owej kwoty, którą należy zwrócić płatnikowi, oraz śledzenie wszystkich płatności i wydatków, w których uczestniczyliśmy. W takiej sytuacji dobrym pomysłem byłoby użycie aplikacji lub programu komputerowego, który pomagałby nam w śledzeniu takich elementów naszego życia. Celem mojej pracy jest opisanie procesu projektowania, tworzenia i testowania aplikacji internetowej spełniającej taką funkcjonalność.
+Zdarza się w naszym życiu, że razem z innymi osobami kupujemy rzeczy, za które płaci tylko jedna osoba. W takiej sytuacji dosyć uciążliwe może być proszenie innych osób o zwrot kwoty, obliczanie owej kwoty, którą należy zwrócić płatnikowi, oraz śledzenie wszystkich płatności i wydatków, w których uczestniczyliśmy. W takiej sytuacji dobrym pomysłem byłoby użycie aplikacji lub programu komputerowego, który pomagałby nam w śledzeniu takich elementów naszego życia. Celem mojej pracy jest opisanie procesu projektowania, tworzenia i testowania takiej aplikacji.
 
 \subsection{Opis przypadku biznesowego}
 \subsubsection{Opis hipotetycznej sytuacji}
@@ -16,6 +16,12 @@ Aby bardziej zilustrować przypadek biznesowy, możemy wyobrazić sobie sytuacj�
 
 Na samym początku Rafał musi utworzyć obiekt wydatku na mojej stronie internetowej używając do tego dedykowanego formularza, wypełniając takie informacje jak nazwa wydatku, jego opis, datę kiedy ten wydatek został stworzony oraz osoby, które razem z nim z brali udział w wydatku (w naszym wypadku tylko Kacpra).
 
+\begin{figure}[!h]
+	\label{fig:nowe-logo-pw}
+	\centering \includegraphics[width=0.5\linewidth]{logopw2.png}
+	\caption{screenshot z formularza dodawania wydatku}
+\end{figure}
+
 Gdy wydatek zostanie utworzony, Kacper będzie mógł potwierdzić lub odrzucić udział w owej transakcji. Będzie mógł to zrobić na dedykowanym ekranie płatności, na którym będą odpowiednie przyciski oraz informacje dotyczące płatności, takie jak opis, data utworzenia wydatku itp. Jeżeli Kacper potwierdzi to, że brał udział w tym wypadku, będzie mógł nacisnąć przycisk \emph{potwierdzam płatność} a jeżeli się z tym nie zgadza naciśnie przycisk \emph{odrzucam płatność}. 
 
 Gdy wszyscy uczestnicy wydatku (w naszym przypadku tylko Kacper) potwierdzi lub odrzuci udział, założyciel wydatku będzie mógł potwierdzić uczestników, czyli kliknąć w przycisk na ekranie wydatku o treści "potwierdzam użytkowników". To potwierdzenie nie mogło zostać zaimplementowane automatycznie, ponieważ założyciel wydatku może nie zgodzić się z uczestnikami i w takim wypadku może z nimi porozmawiać lub wyjaśnić niespójności.
@@ -25,6 +31,6 @@ Następnym krokiem naszego scenariusza jest już sama akcja zapłaty za wydatek.
 Ostatnim elementem naszego scenariusza jest zakończenie wydatku przez założyciela wtedy, kiedy wszyscy uczestnicy uregulują swoje płatności. Będzie on mógł to zrobić na ekranie wydatku po kliknięciu w przycisk zakończ wydatek.
 
 \subsection{Układ pracy}
-Moja praca jest podzielona na 4 rozdziały, gdzie w pierwszym opiszę wymagania jakie moja aplikacja powinna spełniać. W drugim rozdziale zostanią opisane użyte przeze mnie technologie i podejścia, których użyłem podczas pisania mojej aplikacji. W kolejnym rozdziale opiszę różne sposoby automatycznego testowania mojej aplikacji. W ostatnim rozdziale przedstawię wygląd i poszczególne ekrany mojej aplikacji.
+Moja praca jest podzielona na 4 rozdziały, gdzie w pierwszym opiszę technologie których użyłem podczas pisania mojej aplikacji, wcoś tam coś tam
 
 
