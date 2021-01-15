@@ -4,3 +4,75 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Rysunek przedstawia panel Cypress.io. Możemy w nim zauważyć po lewej stronie komendy, które są po kolei wykonywane, a po prawej stronie wynik wykonania tych komend w prawdziwej instancji przeglądarki.\relax }}{33}{figure.caption.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Przykład testu wizualnej regresji, w którym możemy zobaczyć dokładnie, które pixele różniły się pomiędzy poszczególnymi uruchomieniami testu\relax }}{34}{figure.caption.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Ekran logowania i rejestracji\relax }}{36}{figure.caption.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Krok logowania}}}{36}{subfigure.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Krok rejestracji}}}{36}{subfigure.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Ekran listy wydatków\relax }}{37}{figure.caption.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Ekran płatności\relax }}{38}{figure.caption.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Wydatek oczekujący}}}{38}{subfigure.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Wydatek w trakcie}}}{38}{subfigure.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\centering Wydatek zakończona}}}{38}{subfigure.3.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\centering Widok płatności i uczestników wydatku}}}{38}{subfigure.3.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Ekran płatności\relax }}{40}{figure.caption.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Płatność niepotwierdzona}}}{40}{subfigure.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Potwierdzanie płatności}}}{40}{subfigure.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\centering Płatność potwierdzona}}}{40}{subfigure.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Ekran płatności\relax }}{42}{figure.caption.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Płatność niepotwierdzona}}}{42}{subfigure.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Potwierdzanie płatności}}}{42}{subfigure.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\centering Płatność potwierdzona}}}{42}{subfigure.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\centering Płatność gotowa do zapłaty}}}{42}{subfigure.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Listy wydarzeń i grup\relax }}{43}{figure.caption.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Lista wydarzeń}}}{43}{subfigure.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Lista grup}}}{43}{subfigure.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Ekrany wydarzeń i grup\relax }}{44}{figure.caption.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Ekran wydarzenia}}}{44}{subfigure.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Ekran grupy}}}{44}{subfigure.7.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Formularz w trybie typu \emph {Wydarzenie}\relax }}{45}{figure.caption.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Formularz w trybie typu \emph {Grupa}\relax }}{46}{figure.caption.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Ekran listy powiadomień\relax }}{47}{figure.caption.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Lista aktywności}}}{47}{subfigure.10.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Lista aktywności z nowym powiadomieniem}}}{47}{subfigure.10.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Ekran użytkownika\relax }}{48}{figure.caption.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Informacje użytkownika}}}{48}{subfigure.11.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Edycja numeru konta}}}{48}{subfigure.11.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Ekran znajomych\relax }}{49}{figure.caption.15}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Lista znajomych}}}{49}{subfigure.12.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Dialog dodawania nowych znajmych}}}{49}{subfigure.12.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Lista znajomych}}}{50}{subfigure.13.1}%

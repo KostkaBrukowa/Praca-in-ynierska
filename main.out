@@ -28,9 +28,24 @@
 \BOOKMARK [2][-]{subsection.4.3}{Testy wizualnej regresji aplikacji klienckiej}{section.4}% 28
 \BOOKMARK [2][-]{subsection.4.4}{Testy integracyjne aplikacji serwerowej}{section.4}% 29
 \BOOKMARK [1][-]{section.5}{Prezentacja aplikacji}{}% 30
-\BOOKMARK [1][-]{section.6}{Summatio}{}% 31
-\BOOKMARK [1][-]{section*.4}{Bibliografia}{}% 32
-\BOOKMARK [1][-]{section*.5}{Wykaz symboli i skr\363t\363w}{}% 33
-\BOOKMARK [1][-]{section*.5}{Spis rysunk\363w}{}% 34
-\BOOKMARK [1][-]{section*.5}{Spis tabel}{}% 35
-\BOOKMARK [1][-]{section*.6}{Spis za\233acznik\363w}{}% 36
+\BOOKMARK [2][-]{subsection.5.1}{Ekran logowania}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.2}{Wydatki}{section.5}% 32
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Ekran listy wydatk\363w}{subsection.5.2}% 33
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Ekran wydatku}{subsection.5.2}% 34
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Formularz wydatku}{subsection.5.2}% 35
+\BOOKMARK [2][-]{subsection.5.3}{Ekran p\233atnosci}{section.5}% 36
+\BOOKMARK [2][-]{subsection.5.4}{Ekran wydarzen, grup i grup znajomych}{section.5}% 37
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Listy wydarzen, grup i grup znajomych}{subsection.5.4}% 38
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Ekrany wydarzen, grup i grup znajomych}{subsection.5.4}% 39
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Formularz dodawania elementu}{subsection.5.4}% 40
+\BOOKMARK [2][-]{subsection.5.5}{Aktywnosc}{section.5}% 41
+\BOOKMARK [2][-]{subsection.5.6}{Ekrany uzytkownika}{section.5}% 42
+\BOOKMARK [3][-]{subsubsection.5.6.1}{Ekran informacji o uzytkowniku}{subsection.5.6}% 43
+\BOOKMARK [3][-]{subsubsection.5.6.2}{Ekran znajomych}{subsection.5.6}% 44
+\BOOKMARK [3][-]{subsubsection.5.6.3}{Ekran innego uzytkownika}{subsection.5.6}% 45
+\BOOKMARK [1][-]{section.6}{Summatio}{}% 46
+\BOOKMARK [1][-]{section*.17}{Bibliografia}{}% 47
+\BOOKMARK [1][-]{section*.18}{Wykaz symboli i skr\363t\363w}{}% 48
+\BOOKMARK [1][-]{section*.18}{Spis rysunk\363w}{}% 49
+\BOOKMARK [1][-]{section*.18}{Spis tabel}{}% 50
+\BOOKMARK [1][-]{section*.19}{Spis za\233acznik\363w}{}% 51

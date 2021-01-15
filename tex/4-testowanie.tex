@@ -150,6 +150,7 @@ Cypress udostępnia nam też podgląd testów \emph{na żywo}. Dzięki temu, gdy
 \subsection{Testy wizualnej regresji aplikacji klienckiej}
 Testy wizualnej regresji zapewniają nam wizualną poprawność naszego interfejsu użytkownika. Dzięki nim mogłem programatycznie symulować sytuacje biznesowe, a następnie przy pomocy biblioteki Cypress.io robić zrzuty ekranu. Testy wizualnej regresji działają podobnie jak testy migawkowe, tylko zamiast zapamiętywania wartości zwóronej przez funkcję Cypress zapamiętuje zrzut ekranu przeglądarki. Gdy pierwszy zrzut ekranu aplikacji został zrobiony podczas pierwszego uruchomienia testu, każde następne uruchomienie tego samego testu będzie robiło kolejny zrzut, a następnie porównywało z poprzednim. W taki sposób możemy sprawdzać, czy po naszych zmianach w kodzie nie nastąpiła niepożądana zmiana w wyglądzie naszej aplikacji. Jeżeli takie dwa zrzuty się różnią, test wyświetli nam komunikat błędu a następnie wyświetli nam różniące się zrzuty ekranu i wyróżni wszystkie różniące się pixele obu zdjęć.
 
+% todo change screen to have new name and logo
 \begin{figure}
     \includegraphics[width=\textwidth]{wisual-regression.png}
     \caption{Przykład testu wizualnej regresji, w którym możemy zobaczyć dokładnie, które pixele różniły się pomiędzy poszczególnymi uruchomieniami testu} \label{fig-cypress-vr}

@@ -61,14 +61,44 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5\relax .\enspace }Prezentacja aplikacji}{35}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6\relax .\enspace }Summatio}{36}{section.6}%
+\contentsline {subsection}{\numberline {5.1\relax .\enspace }Ekran logowania}{35}{subsection.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Bibliografia}{39}{section*.4}%
+\contentsline {subsection}{\numberline {5.2\relax .\enspace }Wydatki}{36}{subsection.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Wykaz symboli i skrótów}{40}{section*.5}%
+\contentsline {subsubsection}{\numberline {5.2.1\relax .\enspace }Ekran listy wydatków}{36}{subsubsection.5.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis rysunków}{40}{section*.5}%
+\contentsline {subsubsection}{\numberline {5.2.2\relax .\enspace }Ekran wydatku}{37}{subsubsection.5.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis tabel}{40}{section*.5}%
+\contentsline {subsubsection}{\numberline {5.2.3\relax .\enspace }Formularz wydatku}{39}{subsubsection.5.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis załączników}{40}{section*.6}%
+\contentsline {subsection}{\numberline {5.3\relax .\enspace }Ekran płatności}{41}{subsection.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.4\relax .\enspace }Ekran wydarzeń, grup i grup znajomych}{43}{subsection.5.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.4.1\relax .\enspace }Listy wydarzeń, grup i grup znajomych}{43}{subsubsection.5.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.4.2\relax .\enspace }Ekrany wydarzeń, grup i grup znajomych}{44}{subsubsection.5.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.4.3\relax .\enspace }Formularz dodawania elementu}{45}{subsubsection.5.4.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.5\relax .\enspace }Aktywność}{46}{subsection.5.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.6\relax .\enspace }Ekrany użytkownika}{47}{subsection.5.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.6.1\relax .\enspace }Ekran informacji o użytkowniku}{47}{subsubsection.5.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.6.2\relax .\enspace }Ekran znajomych}{48}{subsubsection.5.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.6.3\relax .\enspace }Ekran innego użytkownika}{49}{subsubsection.5.6.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6\relax .\enspace }Summatio}{50}{section.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Bibliografia}{53}{section*.17}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Wykaz symboli i skrótów}{54}{section*.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Spis rysunków}{54}{section*.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Spis tabel}{54}{section*.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Spis załączników}{54}{section*.19}%
