@@ -14,26 +14,28 @@
     nohyphenation=false % You may turn off hyphenation, if don't like.
 ]{eiti/eiti-thesis}
 
-\langpol % Dla języka angielskiego mamy \langeng
+
+\langpol % Dla języka angielskiego mamy \langeng 
 \graphicspath{{img/}}             % Katalog z obrazkami.
-\addbibresource{bibliografia.bib} % Plik .bib z bibliografią
+\addbibresource{bib2.bib} % Plik .bib z bibliografią
 \usepackage{subfig}
+\renewcommand{\lstlistingname}{Wydruk}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Lista \lstlistingname ów}% List of Listings -> List of Algorithms
 
 \begin{document}
 
 %--------------------------------------
 % Strona tytułowa
 %--------------------------------------
-\MasterThesis % Dla pracy inżynierskiej mamy \EngineerThesis
+\EngineerThesis % Dla pracy inżynierskiej mamy \EngineerThesis
 \instytut{Informatyki}
 \kierunek{Informatyka}
-\specjalnosc{Inzynieria systemow informatycznych}
+\specjalnosc{Inżynieria systemów informatycznych}
 \title{
     Aplikacja internetowa do rozliczania\\ wspólnych wydatków
 }
 \engtitle{ % Tytuł po angielsku do angielskiego streszczenia
-    Unnecessarily long and complicated thesis' title \\
-    difficult to read, understand and pronounce
+    A web application for settling common expenses
 }
 \author{Jarosław Glegoła}
 \album{293092}
@@ -45,15 +47,16 @@
 % Streszczenie po polsku
 %--------------------------------------
 \cleardoublepage % Zaczynamy od nieparzystej strony
-\streszczenie \lipsum[1-3]
-\slowakluczowe XXX, XXX, XXX
+\streszczenie Celem tej pracy jest opisanie procesu projektowania i tworzenia aplikacji internetowej. Aplikacja udostępnia możliwość łatwiejszego rozliczania się z wydatków. W pracy opisana jest architektura serwera oraz aplikacji klienckiej, użyte technologie i paradygmaty, sposoby testowania oraz wizualna prezentacja aplikacji.
+
+\slowakluczowe Aplikacja internetowa, GraphQL, Spring Framework, Architektura heksagonalna, React
 
 %--------------------------------------
 % Streszczenie po angielsku
 %--------------------------------------
 \newpage
-\abstract \kant[1-3]
-\keywords XXX, XXX, XXX
+\abstract The main goal of this thesis was to describe the process of designing and creating web application. Application allows users to settle down expenses. In the thesis was described architecture of the server and the client side, technologies and paradigms used, how the application was testeg and visual presentation of the web application.
+\keywords Web application, GraphQL, Spring Framework, Hexagonal architecture, React
 
 %--------------------------------------
 % Oświadczenie o autorstwie
@@ -81,9 +84,10 @@
 \input{tex/5-prezentacja-aplikacji.tex}         % Wygodnie jest trzymać każdy rozdział w osobnym pliku.
                             % na nowe wersje, a cały tekst pracy pozostaje nienaruszony.
 
-\newpage % Rozdziały zaczynamy od nowej strony
+
+\clearpage % Rozdziały zaczynamy od nowej strony
 \section{Summatio}          % Można też pisać rozdziały w jednym pliku.
-\lipsum[5-10]
+Celem mojej pracy było napisanie aplikacji internetowej wspomagającej rozliczanie się z wydatków pomiędzy użytkownikami. Do utworzenia interfejsu użytkownika wykorzystałem podejście jednostronicowej aplikacji i biblioteki React. Aplikacja została stworzona zgodnie ze specyfikacją Ant Design. Strona kliencka komunikowała się z serwerem z użyciem Graphql, natomiast sam serwer został stworzony przy pomocy Spring oraz Spring Boot wykorzystując Architekturę Heksagonalną. Na końcu przetestowałem moją aplikację na trzy różne sposoby: jednostkowo, integracyjnie oraz z użyciem wizualnej regresji.
 
 %--------------------------------------------
 % Literatura
@@ -94,6 +98,7 @@
 %--------------------------------------------
 % Spisy (opcjonalne)
 %--------------------------------------------
+
 \newpage
 \pagestyle{plain}
 
@@ -108,25 +113,9 @@
 % zapewniając podstawowe formatowanie.
 % //AB
 \vspace{0.8cm}
-\acronymlist
-\acronym{EiTI}{Wydział Elektroniki i Technik Informacyjnych}
-\acronym{PW}{Politechnika Warszawska}
-\acronym{WEIRD}{ang. \emph{Western, Educated, Industrialized, Rich and Democratic}}
 
 \listoffigurestoc     % Spis rysunków.
 \vspace{1cm}          % vertical space
-\listoftablestoc      % Spis tabel.
-\vspace{1cm}          % vertical space
-\listofappendicestoc  % Spis załączników
-
-% Załączniki
-\newpage
-\appendix{Nazwa załącznika 1}
-\lipsum[1-8]
-
-\newpage
-\appendix{Nazwa załącznika 2}
-\lipsum[1-4]
 
 % Używając powyższych spisów jako szablonu,
 % możesz tu dodać swój własny wykaz bądź listę,

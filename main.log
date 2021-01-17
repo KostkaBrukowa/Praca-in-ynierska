@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  15 JAN 2021 19:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  17 JAN 2021 12:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/main.tex
+(/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/main.tex
 LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-03-06> (./eiti/eiti-thesis.cls
+L3 programming layer <2020-03-06> (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/eiti/eiti-thesis.cls
 Document Class: eiti/eiti-thesis 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/mwcls/mwart.cls
 Document Class: mwart 2017/05/13 v0.75 A LaTeX document class (MW)
@@ -640,8 +640,7 @@ Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
 Package: setspace 2011/12/19 v6.7a set line spacing
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/koma-script/scrextend.sty
 Package: scrextend 2020/01/24 v3.29 KOMA-Script package (extend other classes with features of KOMA-Script classes)
-
-(/usr/local/texlive/2020/texmf-dist/tex/latex/koma-script/scrkbase.sty
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/koma-script/scrkbase.sty
 Package: scrkbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
  (/usr/local/texlive/2020/texmf-dist/tex/latex/koma-script/scrbase.sty
 Package: scrbase 2020/01/24 v3.29 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
@@ -786,8 +785,7 @@ Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 \c@bookmark@seq@number=\count419
  (/usr/local/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
-
-(/usr/local/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+ (/usr/local/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
@@ -858,77 +856,43 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count436
 \@quotereset=\count437
-(./main.aux
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-
-LaTeX Warning: Label `fig:example' multiply defined.
-
-)
+(/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 22.
-LaTeX Font Info:    Trying to load font information for FML+futm on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 25.
+LaTeX Font Info:    Trying to load font information for FML+futm on input line 25.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 22.
-LaTeX Font Info:    Trying to load font information for FMS+futm on input line 22.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 25.
+LaTeX Font Info:    Trying to load font information for FMS+futm on input line 25.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 22.
-LaTeX Font Info:    Trying to load font information for FMX+futm on input line 22.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 25.
+LaTeX Font Info:    Trying to load font information for FMX+futm on input line 25.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 Package biblatex Info: Trying to load language 'polish'...
 Package biblatex Info: ... file 'polish.lbx' found.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/polish.lbx
@@ -941,9 +905,17 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 22.
-Package biblatex Info: Reference segment=0 on input line 22.
+ (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                ref_react_doc
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
+Package biblatex Info: Reference section=0 on input line 25.
+Package biblatex Info: Reference segment=0 on input line 25.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
@@ -953,8 +925,8 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 22.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 22.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 25.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 25.
  (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count438
@@ -975,14 +947,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@lstlisting=\count444
-LaTeX Info: Redefining \microtypecontext on input line 22.
+LaTeX Info: Redefining \microtypecontext on input line 25.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 22.
+LaTeX Info: Redefining \showhyphens on input line 25.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -998,7 +970,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 22.
+Package hyperref Info: Link coloring ON on input line 25.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1008,10 +980,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count445
 )
-LaTeX Info: Redefining \ref on input line 22.
-LaTeX Info: Redefining \pageref on input line 22.
-LaTeX Info: Redefining \nameref on input line 22.
- (./main.out) (./main.out)
+LaTeX Info: Redefining \ref on input line 25.
+LaTeX Info: Redefining \pageref on input line 25.
+LaTeX Info: Redefining \nameref on input line 25.
+ (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/main.out) (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
@@ -1051,35 +1023,35 @@ LaTeX Info: Redefining \nameref on input line 22.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<eiti/header.png, id=207, 483.7272pt x 76.8471pt>
+<eiti/header.png, id=199, 483.7272pt x 76.8471pt>
 File: eiti/header.png Graphic file (type png)
 <use eiti/header.png>
-Package pdftex.def Info: eiti/header.png  used on input line 42.
+Package pdftex.def Info: eiti/header.png  used on input line 44.
 (pdftex.def)             Requested size: 438.17247pt x 69.61084pt.
-<eiti/title-mgr.png, id=208, 483.7272pt x 105.39375pt>
-File: eiti/title-mgr.png Graphic file (type png)
-<use eiti/title-mgr.png>
-Package pdftex.def Info: eiti/title-mgr.png  used on input line 42.
+<eiti/title-inz.png, id=200, 483.7272pt x 105.39375pt>
+File: eiti/title-inz.png Graphic file (type png)
+<use eiti/title-inz.png>
+Package pdftex.def Info: eiti/title-inz.png  used on input line 44.
 (pdftex.def)             Requested size: 438.17247pt x 95.4694pt.
 [1
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./eiti/header.png> <./eiti/title-mgr.png>] [2
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/eiti/header.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/eiti/title-inz.png>] [2
 
 
 ] [3] [4]
 
-pdfTeX warning: pdflatex (file ./eiti/oswiadczenie_autora_pracy.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<eiti/oswiadczenie_autora_pracy.pdf, id=228, 597.55246pt x 845.07718pt>
+pdfTeX warning: pdflatex (file /Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/eiti/oswiadczenie_autora_pracy.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<eiti/oswiadczenie_autora_pracy.pdf, id=221, 597.55246pt x 845.07718pt>
 File: eiti/oswiadczenie_autora_pracy.pdf Graphic file (type pdf)
 <use eiti/oswiadczenie_autora_pracy.pdf>
-Package pdftex.def Info: eiti/oswiadczenie_autora_pracy.pdf  used on input line 63.
+Package pdftex.def Info: eiti/oswiadczenie_autora_pracy.pdf  used on input line 66.
 (pdftex.def)             Requested size: 521.4263pt x 737.46782pt.
-[5 <./eiti/oswiadczenie_autora_pracy.pdf>] [6
+[5 </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/eiti/oswiadczenie_autora_pracy.pdf>] [6
 
 
 
 
-] (./main.toc
+] (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/main.toc
 LaTeX Font Info:    Trying to load font information for FML+futmi on input line 4.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmlfutmi.fd
 File: fmlfutmi.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futmi.
@@ -1112,42 +1084,42 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [8] (./tex/1-wstep.tex
+ [8] (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/tex/1-wstep.tex
 Underfull \vbox (badness 2409) has occurred while \output is active []
 
  [9
 
 
-]) (./tex/2-specyfikacja-wymagan.tex [10]
+]) (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/tex/2-specyfikacja-wymagan.tex [10]
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 13.
+(Font)              scaled to size 13.24796pt on input line 14.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 13.
+(Font)              scaled to size 9.19998pt on input line 14.
 LaTeX Font Info:    Font shape `FMX/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 13.
+(Font)              scaled to size 7.35999pt on input line 14.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 13.24796pt on input line 13.
+(Font)              scaled to size 13.24796pt on input line 14.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 9.19998pt on input line 13.
+(Font)              scaled to size 9.19998pt on input line 14.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 13.
- [11]
-Underfull \vbox (badness 3108) has occurred while \output is active []
+(Font)              scaled to size 7.35999pt on input line 14.
+ [11] [12]) (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/tex/3-uzyte-technologie.tex [13] [14] [15] [16]
+Underfull \vbox (badness 2903) has occurred while \output is active []
 
- [12]) (./tex/3-uzyte-technologie.tex [13] [14] [15] [16] [17]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+ [17]
+Underfull \vbox (badness 4518) has occurred while \output is active []
 
- [18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
+ [18] [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 233--235
 
  []
 
-[20] [21] [22] (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
+[21] [22] [23] (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-) [23] [24] [25]
-LaTeX Font Info:    Trying to load font information for TS1+futs on input line 423.
+) [24] [25]
+LaTeX Font Info:    Trying to load font information for TS1+futs on input line 414.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
@@ -1156,17 +1128,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Citation 'ref_heuristic_diffing_algorythm' on page 27 undefined on input line 442.
-
-[27]) (./tex/4-testowanie.tex [28]
-
-LaTeX Warning: Citation 'ref_rtl_doc' on page 29 undefined on input line 22.
-
-
-LaTeX Warning: Citation 'ref_jest_doc' on page 29 undefined on input line 22.
-
-[29] [30]
+ [27] [28]) (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/tex/4-testowanie.tex [29] [30] [31]
 Overfull \hbox (66.77576pt too wide) in paragraph at lines 88--89
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1176,235 +1140,221 @@ Overfull \hbox (41.43152pt too wide) in paragraph at lines 90--92
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[31]
-
-LaTeX Warning: Citation 'ref_cypress_doc' on page 32 undefined on input line 117.
-
-
+[32]
 Overfull \hbox (16.08728pt too wide) in paragraph at lines 136--137
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
-<img/cypress-imape.png, id=645, 1283.79625pt x 973.6375pt>
+<img/cypress-imape.png, id=663, 1283.79625pt x 973.6375pt>
 File: img/cypress-imape.png Graphic file (type png)
 <use img/cypress-imape.png>
 Package pdftex.def Info: img/cypress-imape.png  used on input line 146.
 (pdftex.def)             Requested size: 438.17247pt x 332.31003pt.
-[32] [33 <./img/cypress-imape.png>]
-<img/wisual-regression.png, id=671, 994.71625pt x 581.17125pt>
+[33] [34 </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/cypress-imape.png>]
+<img/wisual-regression.png, id=690, 994.71625pt x 581.17125pt>
 File: img/wisual-regression.png Graphic file (type png)
 <use img/wisual-regression.png>
 Package pdftex.def Info: img/wisual-regression.png  used on input line 155.
 (pdftex.def)             Requested size: 438.17247pt x 256.00877pt.
-) (./tex/5-prezentacja-aplikacji.tex [34 <./img/wisual-regression.png>]
-<img/presentation/login-login.png, id=678, 395.4775pt x 789.95125pt>
+) (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/tex/5-prezentacja-aplikacji.tex [35 </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/wisual-regression.png>] [36]
+<img/presentation/login-login.png, id=701, 395.4775pt x 789.95125pt>
 File: img/presentation/login-login.png Graphic file (type png)
 <use img/presentation/login-login.png>
-Package pdftex.def Info: img/presentation/login-login.png  used on input line 28.
+Package pdftex.def Info: img/presentation/login-login.png  used on input line 15.
 (pdftex.def)             Requested size: 197.17627pt x 393.85365pt.
-<img/presentation/login-register.png, id=679, 395.4775pt x 789.95125pt>
+<img/presentation/login-register.png, id=702, 395.4775pt x 789.95125pt>
 File: img/presentation/login-register.png Graphic file (type png)
 <use img/presentation/login-register.png>
-Package pdftex.def Info: img/presentation/login-register.png  used on input line 30.
+Package pdftex.def Info: img/presentation/login-register.png  used on input line 17.
 (pdftex.def)             Requested size: 197.17627pt x 393.85365pt.
+ [37
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[35]
-<img/presentation/responsive-sm.png, id=684, 395.4775pt x 794.97pt>
+ </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/login-login.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/login-register.png>]
+<img/presentation/responsive-sm.png, id=713, 395.4775pt x 794.97pt>
 File: img/presentation/responsive-sm.png Graphic file (type png)
 <use img/presentation/responsive-sm.png>
-Package pdftex.def Info: img/presentation/responsive-sm.png  used on input line 44.
+Package pdftex.def Info: img/presentation/responsive-sm.png  used on input line 30.
 (pdftex.def)             Requested size: 197.17627pt x 396.35591pt.
+ [38
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[36 <./img/presentation/login-login.png> <./img/presentation/login-register.png>]
-<img/presentation/expense-waiting.png, id=694, 271.0125pt x 541.02126pt>
+ </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/responsive-sm.png>]
+<img/presentation/expense-waiting.png, id=721, 271.0125pt x 541.02126pt>
 File: img/presentation/expense-waiting.png Graphic file (type png)
 <use img/presentation/expense-waiting.png>
-Package pdftex.def Info: img/presentation/expense-waiting.png  used on input line 55.
+Package pdftex.def Info: img/presentation/expense-waiting.png  used on input line 40.
 (pdftex.def)             Requested size: 135.83238pt x 271.17038pt.
-<img/presentation/expense-in-progress.png, id=695, 271.0125pt x 543.02875pt>
+<img/presentation/expense-in-progress.png, id=722, 271.0125pt x 543.02875pt>
 File: img/presentation/expense-in-progress.png Graphic file (type png)
 <use img/presentation/expense-in-progress.png>
-Package pdftex.def Info: img/presentation/expense-in-progress.png  used on input line 57.
+Package pdftex.def Info: img/presentation/expense-in-progress.png  used on input line 42.
 (pdftex.def)             Requested size: 135.83238pt x 272.17657pt.
-<img/presentation/expense-ended.png, id=696, 271.0125pt x 545.03625pt>
+<img/presentation/expense-ended.png, id=723, 271.0125pt x 545.03625pt>
 File: img/presentation/expense-ended.png Graphic file (type png)
 <use img/presentation/expense-ended.png>
-Package pdftex.def Info: img/presentation/expense-ended.png  used on input line 59.
+Package pdftex.def Info: img/presentation/expense-ended.png  used on input line 44.
 (pdftex.def)             Requested size: 135.83238pt x 273.18279pt.
-<img/presentation/expense-bottom-view.png, id=697, 271.0125pt x 539.01375pt>
+<img/presentation/expense-bottom-view.png, id=724, 271.0125pt x 539.01375pt>
 File: img/presentation/expense-bottom-view.png Graphic file (type png)
 <use img/presentation/expense-bottom-view.png>
-Package pdftex.def Info: img/presentation/expense-bottom-view.png  used on input line 61.
+Package pdftex.def Info: img/presentation/expense-bottom-view.png  used on input line 46.
 (pdftex.def)             Requested size: 135.83238pt x 270.16417pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[37 <./img/presentation/responsive-sm.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[39
 
- [38 <./img/presentation/expense-waiting.png> <./img/presentation/expense-in-progress.png> <./img/presentation/expense-ended.png> <./img/presentation/expense-bottom-view.png>]
-<img/presentation/expense-form-event.png, id=719, 272.01625pt x 543.02875pt>
+] [40 </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/expense-waiting.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/expense-in-progress.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/expense-ended.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/expense-bottom-view.png>]
+<img/presentation/expense-form-event.png, id=742, 272.01625pt x 543.02875pt>
 File: img/presentation/expense-form-event.png Graphic file (type png)
 <use img/presentation/expense-form-event.png>
-Package pdftex.def Info: img/presentation/expense-form-event.png  used on input line 73.
+Package pdftex.def Info: img/presentation/expense-form-event.png  used on input line 57.
 (pdftex.def)             Requested size: 135.83238pt x 271.17397pt.
-<img/presentation/expense-form-group.png, id=720, 271.0125pt x 544.0325pt>
+<img/presentation/expense-form-group.png, id=743, 271.0125pt x 544.0325pt>
 File: img/presentation/expense-form-group.png Graphic file (type png)
 <use img/presentation/expense-form-group.png>
-Package pdftex.def Info: img/presentation/expense-form-group.png  used on input line 75.
+Package pdftex.def Info: img/presentation/expense-form-group.png  used on input line 59.
 (pdftex.def)             Requested size: 135.83238pt x 272.67967pt.
-<img/presentation/expense-form-friends.png, id=721, 271.0125pt x 545.03625pt>
+<img/presentation/expense-form-friends.png, id=744, 271.0125pt x 545.03625pt>
 File: img/presentation/expense-form-friends.png Graphic file (type png)
 <use img/presentation/expense-form-friends.png>
-Package pdftex.def Info: img/presentation/expense-form-friends.png  used on input line 77.
+Package pdftex.def Info: img/presentation/expense-form-friends.png  used on input line 61.
 (pdftex.def)             Requested size: 135.83238pt x 273.18279pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[39]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[41
 
- [40 <./img/presentation/expense-form-event.png> <./img/presentation/expense-form-group.png> <./img/presentation/expense-form-friends.png>]
-<img/presentation/payment-to-confirm.png, id=737, 271.0125pt x 537.00626pt>
+] [42 </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/expense-form-event.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/expense-form-group.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/expense-form-friends.png>]
+<img/presentation/payment-to-confirm.png, id=760, 271.0125pt x 537.00626pt>
 File: img/presentation/payment-to-confirm.png Graphic file (type png)
 <use img/presentation/payment-to-confirm.png>
-Package pdftex.def Info: img/presentation/payment-to-confirm.png  used on input line 88.
+Package pdftex.def Info: img/presentation/payment-to-confirm.png  used on input line 71.
 (pdftex.def)             Requested size: 135.83238pt x 269.15799pt.
-<img/presentation/payment-confirmation.png, id=738, 271.0125pt x 541.02126pt>
+<img/presentation/payment-confirmation.png, id=761, 271.0125pt x 541.02126pt>
 File: img/presentation/payment-confirmation.png Graphic file (type png)
 <use img/presentation/payment-confirmation.png>
-Package pdftex.def Info: img/presentation/payment-confirmation.png  used on input line 90.
+Package pdftex.def Info: img/presentation/payment-confirmation.png  used on input line 73.
 (pdftex.def)             Requested size: 135.83238pt x 271.17038pt.
-<img/presentation/payment-confirmed.png, id=739, 271.0125pt x 543.02875pt>
+<img/presentation/payment-confirmed.png, id=762, 271.0125pt x 543.02875pt>
 File: img/presentation/payment-confirmed.png Graphic file (type png)
 <use img/presentation/payment-confirmed.png>
-Package pdftex.def Info: img/presentation/payment-confirmed.png  used on input line 92.
+Package pdftex.def Info: img/presentation/payment-confirmed.png  used on input line 75.
 (pdftex.def)             Requested size: 135.83238pt x 272.17657pt.
-<img/presentation/payment-to-pay.png, id=740, 271.0125pt x 541.02126pt>
+<img/presentation/payment-to-pay.png, id=763, 271.0125pt x 541.02126pt>
 File: img/presentation/payment-to-pay.png Graphic file (type png)
 <use img/presentation/payment-to-pay.png>
-Package pdftex.def Info: img/presentation/payment-to-pay.png  used on input line 94.
+Package pdftex.def Info: img/presentation/payment-to-pay.png  used on input line 77.
 (pdftex.def)             Requested size: 135.83238pt x 271.17038pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[41]
-<img/presentation/event-event-list.png, id=745, 395.4775pt x 792.9625pt>
+[43
+
+] [44 </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/payment-to-confirm.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/payment-confirmation.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/payment-confirmed.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/payment-to-pay.png>]
+<img/presentation/event-event-list.png, id=783, 395.4775pt x 792.9625pt>
 File: img/presentation/event-event-list.png Graphic file (type png)
 <use img/presentation/event-event-list.png>
-Package pdftex.def Info: img/presentation/event-event-list.png  used on input line 106.
+Package pdftex.def Info: img/presentation/event-event-list.png  used on input line 88.
 (pdftex.def)             Requested size: 197.17627pt x 395.35501pt.
-<img/presentation/event-group-list.png, id=746, 395.4775pt x 792.9625pt>
+<img/presentation/event-group-list.png, id=784, 395.4775pt x 792.9625pt>
 File: img/presentation/event-group-list.png Graphic file (type png)
 <use img/presentation/event-group-list.png>
-Package pdftex.def Info: img/presentation/event-group-list.png  used on input line 108.
+Package pdftex.def Info: img/presentation/event-group-list.png  used on input line 90.
 (pdftex.def)             Requested size: 197.17627pt x 395.35501pt.
+ [45
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42 <./img/presentation/payment-to-confirm.png> <./img/presentation/payment-confirmation.png> <./img/presentation/payment-confirmed.png> <./img/presentation/payment-to-pay.png>] [43 <./img/presentation/event-event-list.png> <./img/presentation/event-group-list.png>]
-<img/presentation/event-event-view.png, id=770, 395.4775pt x 791.95876pt>
+ </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/event-event-list.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/event-group-list.png>]
+<img/presentation/event-event-view.png, id=794, 395.4775pt x 791.95876pt>
 File: img/presentation/event-event-view.png Graphic file (type png)
 <use img/presentation/event-event-view.png>
-Package pdftex.def Info: img/presentation/event-event-view.png  used on input line 121.
+Package pdftex.def Info: img/presentation/event-event-view.png  used on input line 102.
 (pdftex.def)             Requested size: 197.17627pt x 394.85457pt.
-<img/presentation/event-group-view.png, id=771, 395.4775pt x 793.96625pt>
+<img/presentation/event-group-view.png, id=795, 395.4775pt x 793.96625pt>
 File: img/presentation/event-group-view.png Graphic file (type png)
 <use img/presentation/event-group-view.png>
-Package pdftex.def Info: img/presentation/event-group-view.png  used on input line 123.
+Package pdftex.def Info: img/presentation/event-group-view.png  used on input line 104.
 (pdftex.def)             Requested size: 197.17627pt x 395.85545pt.
- [44 <./img/presentation/event-event-view.png> <./img/presentation/event-group-view.png>]
-<img/presentation/event-form-p1.png, id=782, 271.0125pt x 540.0175pt>
+ [46
+
+ </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/event-event-view.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/event-group-view.png>]
+<img/presentation/event-form-p1.png, id=805, 271.0125pt x 540.0175pt>
 File: img/presentation/event-form-p1.png Graphic file (type png)
 <use img/presentation/event-form-p1.png>
-Package pdftex.def Info: img/presentation/event-form-p1.png  used on input line 134.
+Package pdftex.def Info: img/presentation/event-form-p1.png  used on input line 114.
 (pdftex.def)             Requested size: 135.83238pt x 270.66728pt.
-<img/presentation/event-form-p2.png, id=783, 271.0125pt x 542.025pt>
+<img/presentation/event-form-p2.png, id=806, 271.0125pt x 542.025pt>
 File: img/presentation/event-form-p2.png Graphic file (type png)
 <use img/presentation/event-form-p2.png>
-Package pdftex.def Info: img/presentation/event-form-p2.png  used on input line 136.
+Package pdftex.def Info: img/presentation/event-form-p2.png  used on input line 116.
 (pdftex.def)             Requested size: 135.83238pt x 271.67348pt.
-<img/presentation/event-group-form.png, id=784, 271.0125pt x 541.02126pt>
+<img/presentation/event-group-form.png, id=807, 395.4775pt x 789.95125pt>
 File: img/presentation/event-group-form.png Graphic file (type png)
 <use img/presentation/event-group-form.png>
-Package pdftex.def Info: img/presentation/event-group-form.png  used on input line 143.
-(pdftex.def)             Requested size: 135.83238pt x 271.17038pt.
+Package pdftex.def Info: img/presentation/event-group-form.png  used on input line 122.
+(pdftex.def)             Requested size: 197.17627pt x 393.85365pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[45 <./img/presentation/event-form-p1.png> <./img/presentation/event-form-p2.png>]
-<img/presentation/notification-list.png, id=796, 395.4775pt x 788.9475pt>
+[47
+
+ </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/event-form-p1.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/event-form-p2.png>] [48 </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/event-group-form.png>]
+<img/presentation/notification-list.png, id=826, 395.4775pt x 788.9475pt>
 File: img/presentation/notification-list.png Graphic file (type png)
 <use img/presentation/notification-list.png>
-Package pdftex.def Info: img/presentation/notification-list.png  used on input line 153.
+Package pdftex.def Info: img/presentation/notification-list.png  used on input line 132.
 (pdftex.def)             Requested size: 197.17627pt x 393.35321pt.
-<img/presentation/notification-list-new.png, id=797, 395.4775pt x 791.95876pt>
+<img/presentation/notification-list-new.png, id=827, 395.4775pt x 791.95876pt>
 File: img/presentation/notification-list-new.png Graphic file (type png)
 <use img/presentation/notification-list-new.png>
-Package pdftex.def Info: img/presentation/notification-list-new.png  used on input line 155.
+Package pdftex.def Info: img/presentation/notification-list-new.png  used on input line 134.
 (pdftex.def)             Requested size: 197.17627pt x 394.85457pt.
+ [49
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[46 <./img/presentation/event-group-form.png>]
-<img/presentation/user-profile.png, id=807, 395.4775pt x 789.95125pt>
+ </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/notification-list.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/notification-list-new.png>]
+<img/presentation/user-profile.png, id=838, 395.4775pt x 789.95125pt>
 File: img/presentation/user-profile.png Graphic file (type png)
 <use img/presentation/user-profile.png>
-Package pdftex.def Info: img/presentation/user-profile.png  used on input line 167.
+Package pdftex.def Info: img/presentation/user-profile.png  used on input line 145.
 (pdftex.def)             Requested size: 197.17627pt x 393.85365pt.
-<img/presentation/user-change-number.png, id=808, 395.4775pt x 794.97pt>
+<img/presentation/user-change-number.png, id=839, 395.4775pt x 794.97pt>
 File: img/presentation/user-change-number.png Graphic file (type png)
 <use img/presentation/user-change-number.png>
-Package pdftex.def Info: img/presentation/user-change-number.png  used on input line 169.
+Package pdftex.def Info: img/presentation/user-change-number.png  used on input line 147.
 (pdftex.def)             Requested size: 197.17627pt x 396.35591pt.
+ [50
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[47 <./img/presentation/notification-list.png> <./img/presentation/notification-list-new.png>]
-<img/presentation/friend-list.png, id=816, 395.4775pt x 791.95876pt>
+ </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/user-profile.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/user-change-number.png>]
+<img/presentation/friend-list.png, id=849, 395.4775pt x 791.95876pt>
 File: img/presentation/friend-list.png Graphic file (type png)
 <use img/presentation/friend-list.png>
-Package pdftex.def Info: img/presentation/friend-list.png  used on input line 180.
+Package pdftex.def Info: img/presentation/friend-list.png  used on input line 157.
 (pdftex.def)             Requested size: 197.17627pt x 394.85457pt.
-<img/presentation/friend-add.png, id=817, 395.4775pt x 791.95876pt>
+<img/presentation/friend-add.png, id=850, 395.4775pt x 791.95876pt>
 File: img/presentation/friend-add.png Graphic file (type png)
 <use img/presentation/friend-add.png>
-Package pdftex.def Info: img/presentation/friend-add.png  used on input line 182.
+Package pdftex.def Info: img/presentation/friend-add.png  used on input line 159.
 (pdftex.def)             Requested size: 197.17627pt x 394.85457pt.
+ [51
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[48 <./img/presentation/user-profile.png> <./img/presentation/user-change-number.png>]
-<img/presentation/friend-view.png, id=827, 395.4775pt x 788.9475pt>
+ </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/friend-list.png> </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/friend-add.png>]
+<img/presentation/friend-view.png, id=860, 395.4775pt x 788.9475pt>
 File: img/presentation/friend-view.png Graphic file (type png)
 <use img/presentation/friend-view.png>
-Package pdftex.def Info: img/presentation/friend-view.png  used on input line 193.
+Package pdftex.def Info: img/presentation/friend-view.png  used on input line 169.
 (pdftex.def)             Requested size: 197.17627pt x 393.35321pt.
+) [52
 
+ </Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/img/presentation/friend-view.png>] [53
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) [49 <./img/presentation/friend-list.png> <./img/presentation/friend-add.png>]
-Underfull \vbox (badness 3884) has occurred while \output is active []
-
- [50 <./img/presentation/friend-view.png>] [51] [52
+] [54
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 92.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 96.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -1412,59 +1362,35 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [53] (./main.lof)
+ [55] (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/main.lof)
 \tf@lof=\write6
 \openout6 = `main.lof'.
 
- (./main.lot)
-\tf@lot=\write7
-\openout7 = `main.lot'.
-
- (./main.app)
-\tf@app=\write8
-\openout8 = `main.app'.
-
- [54]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [55] [56]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 135.
- [57]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 135.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 135.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 135.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 124.
+ [56]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 124.
+ (/Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 124.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 124.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5D98072F6494E4B233F1D570B4C07DDB;3815.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
+(rerunfilecheck)             Checksum: 258FD50E63EA0383CA83E4FEEF432E28;3743.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23594 strings out of 480608
- 399110 string characters out of 5903629
- 1512958 words of memory out of 5000000
- 38351 multiletter control sequences out of 15000+600000
- 647660 words of font info for 324 fonts, out of 8000000 for 9000
+ 23585 strings out of 480608
+ 401669 string characters out of 5903629
+ 1372153 words of memory out of 5000000
+ 38344 multiletter control sequences out of 15000+600000
+ 648240 words of font info for 326 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,12n,90p,1406b,1953s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,12n,90p,1567b,1977s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (57 pages, 2423093 bytes).
+Output written on /Users/jaroslaw.glegola/Documents/Uczelnia/pracaIn/praca/WUT-Thesis/main.pdf (56 pages, 2409227 bytes).
 PDF statistics:
- 1011 PDF objects out of 1200 (max. 8388607)
- 868 compressed objects within 9 object streams
- 374 named destinations out of 1000 (max. 500000)
- 43582 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 1022 PDF objects out of 1200 (max. 8388607)
+ 880 compressed objects within 9 object streams
+ 371 named destinations out of 1000 (max. 500000)
+ 43566 words of extra memory for PDF output out of 51595 (max. 10000000)
 

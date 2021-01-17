@@ -1,5 +1,5 @@
 \newpage
-\section{Użyte technologie i podejścia}
+\section{Użyte technologie}
 Aplikacja jest podzielona na dwie główne części: część serwerową i część kliencką. Obie części są niezbędne do tego, aby użytkownik mógł w pełni korzystać ze wszystkich elementów systemu.
 
 Część serwerowa jest odpowiedzialna za przetwarzanie danych, operacje na bazie danych, zarządzanie zapytaniami pochodzącymi z aplikacji klienckiej oraz zapewnieniem bezpieczeństwa użytkownika. Aplikacja została napisana w języku Kotlin z użyciem bardzo popularnej biblioteki Spring. Dodatkowo została także użyta biblioteka graphql-kotlin, która udostępnia przejrzysty interfejs umożliwiający w prosty sposób tworzenie serwisu, z którym można komunikować się zgodnie z specyfikacją GraphQL.
@@ -99,40 +99,48 @@ Jak widzimy komponent domenowy nie posługuje się nigdy klasą adaptera, tylko 
 \item[Porty] \hfill \\ Porty są zwykłym kontraktem pomiędzy komponentem logiki biznesowej, a adapterami. Porty nie posiadają logiki, tylko służą do oddzielenia odpowiedzialności komponentów systemu. Przykładem portu może być wcześniej podany przykład interfejsu \emph{AdapterBazyDanych} w wydruku ~\ref{lst:AdapterBazyDanychPort}.
 
 \end{description}
+%Aplikacja zawiera 6 obiektów bazodanowych reprezentujących cały system. Są to:
+%\begin{itemize}
+%  \item wydatek
+%  \item powiadomienie
+%  \item grupa
+%  \item zaproszenie
+%  \item płatność
+%  \item użytkownik
+%\end{itemize}
+%I jest podzielona na trzy części:
+%\begin{itemize}
+%  \item adaptery klienta - adaptery zajmujące się definiowaniem i obsługą zapytań klienta
+%  \item część domenowa - główna część mojej aplikacji zajmująca się definiowaniem reguł biznesowych
+%  \item adaptery bazodanowe - zajmujące się obsługą bazy danych
+%\end{itemize}
+%Dla każdego obiektu jest stworzony osobny komponent w każdej z części. Jeżeli weźmiemy pod uwagę np. obiekt grupa to:
+%%// todo tu mogą być fragmenty kodu kontrollera serwisu i repozytorium
+%\begin{enumerate}
+%  \item Adapter klienta będzie nazywał się \emph{GrupaResolver} i będzie definiował wszystkie dostępne kwerendy i mutacje dla grupy.
+%    % \begin{addmargin}[6mm]{0mm}
+%    % \begin{lstlisting}[
+%    %     numbers=left,
+%    %     firstnumber=1,
+%    %     caption={Interfejs domenowy adaptera bazy danych},
+%    %     aboveskip=10pt
+%    % ]
+%    % class GrupaQuery(private val grupaSerwis: GrupaSerwis): Query {
+%    %   fun pobierzWszystkieGrupy(uzytkownikId: String):
+%    %     List<GrupaDTO> =
+%    %           grupaSerwis.pobierzWszystkieGrupy(
+%    %             uzytkownikId
+%    %           ).map { it.doDTO() }
 
-\subsubsection{Podział na pakiety}
-Aplikacja serwerowa jest podzielona na trzy główne pakiety:
-\begin{itemize}
-  \item domain
-  \item resolvers
-  \item adapters
-\end{itemize}
-\begin{description}
+%    %   fun pobierzGrupe(grupaId: String): GrupaDTO? =
+%    %     grupaSerwis.pobierzGrupe(grupaId)?.doDTO()
+%    % }
+%    % \end{lstlisting}
+%    % \end{addmargin}
+%  \item Logika domenowa dla grupy, która będzie się nazywała \emph{GrupaService} gdzie będzie znajdowała się logika związana z obsługą grupy.
+%  \item Adapter bazodanowy który będzie nazywał się \emph{GrupaPersistentRepository} gdzie będzie znajdowała się komunikacja z bazą danych.
 
-  \item[Domain] \hfill \\ Pakiet domenowy udostępnia tzw. serwisy, czyli klasy które są odpowiedzialne za logikę biznesową i udostępniają swój interfejs resolwerom. W pakiecie są też zdefiniowane modele biznesowe, czyli klasy na których operują serwisy. Dodatkowo domena tworzy też porty bazodanowe, czyli interfejsy, udostępniające funkcje do komunikacji z bazą danych.
-  \item[Resolvers] \hfill \\ Resolwery są odpowiedzialne za komunikację z klientem serwera. Definiują one zbiór wszystkich możliwych typów kwerend oraz mutacji. Dodatkowo ten pakiet definiuje tzw. obiekty transferu danych (and. Data transfer object), które definiują typy obiektów, które serwer udostępnia klientowi. Resolwery są zazwyczaj prostymi klasami, które są odpowiedzialne za serializację i deserializację danych oraz wywoływaniem odpowiednich metod serwisów domenowych.
-  \item[Adaptery] \hfill \\ Adaptery są odpowiedzialne głównie za obsługę bazy danych. Klasy w zawarte w tym pakiecie implementują porty zdefiniowane w części domenowej. Udostępniają zbiór funkcji, które są używane przez serwisy, i które dają możliwość zarządzania odpowiednimi obiektami, czyli umożliwiają dodawanie, usuwanie lub edycję poszczególnych obiektów.
-
-\end{description}
-Aplikacja zawiera 6 obiektów bazodanowych reprezentujących cały system. Są to:
-\begin{itemize}
-  \item wydatek
-  \item powiadomienie
-  \item grupa
-  \item zaproszenie
-  \item płatność
-  \item użytkownik
-\end{itemize}
-
-Dla każdego obiektu jest stworzony w każdym pakiecie katalog odpowiedzialny za obsługę danego obiektu. Jeżeli weźmiemy wcześniej wspomniany obiekt \emph{Grupa} to będzie stworzony dla niego odpowiednio:
-\begin{itemize}
-  \item GrupaService - klasa który udostępnia metody obsługujące grupy w domenie
-  \item GrupaQuery - klasa która używa \emph{GrupaService} oraz definiuje kwerendy dostępne dla grupy
-  \item GrupaMutation - klasa która używa \emph{GrupaService} oraz definiuje mutacje dostępne dla grupy
-  \item GrupaRepository - port, który definiuje zbiór możliwych funkcji, których można użyć na bazie danych
-  \item PersistentGrupaRepository - interfejs który wykorzystuje interfejs Hibernate do definiowania możliwych funkcji, dzięki którym programista może komunikować się z bazą danych
-  \item PgSqlGrupaRepository - klasa adapteru, która implementuje \emph{GrupaRepository} i używa \emph{PersistentGrupaRepository} do komunikacji z bazą danych
-\end{itemize}
+%\end{enumerate}
 
 \subsubsection{Główne użyte technologie}
 Do stworzenia aplikacji serwerowej użyłem następujących technologii:

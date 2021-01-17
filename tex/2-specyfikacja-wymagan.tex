@@ -4,17 +4,18 @@
 \subsection{Słownik pojęć}
 \begin{description}
   \item[Użytkownik] \hfill \\ Osoba, która złożyła konto w mojej aplikacji, posiadająca unikalny e-mail oraz inne dane osobowe.
-  \item[Wydarzenie] \hfill \\ Obiekt reprezentujący wydarzenie, do którego moją dołączać użytkownicy aplikacji. Wydarzenie posiada nazwę, godzinę rozpoczęcia i zakończenia, listę uczestników, opis, współrzędne wybrane geograficzne miejsca, w którym wydarzenie będzie miało miejsce oraz listę wydatków.
-  \item[Grupa] \hfill \\ Obiekt reprezentujący grupę użytkowników, która by chciała rozliczać wspólne wydatki, bez ustalonych ram czasowych lub ustalonego miejsca. Posiada nazwę, opis, listę uczestników oraz listę wydatków.
-  \item[Wydatek] \hfill \\ Obiekt reprezentujący pojedynczy wydatek utworzony w prawdziwym życiu przez użytkownika, który zawiera nazwę, opis, kwotę uiszczoną za daną transakcję, datę płatności oraz osoby, które według osoby tworzącej wydatek wspólnie brały udział w wydatku.
-  \item[Uczestnik wydatku] \hfill \\ Użytkownik, który jest na liście uczestników w danym wydatku i posiada swoją własną płatność należącą do tegoż wydatku.
-  \item[Płatność] \hfill \\ Część wydatku, która posiada informacje dotyczące każdego z uczestników wydatku. Płatność może znajdować się w stanie:
+  \item[Wydarzenie] \hfill \\ Obiekt reprezentujący wydarzenie, do którego mogą dołączać użytkownicy aplikacji. Wydarzenie posiada nazwę, godzinę rozpoczęcia i zakończenia, listę uczestników, opis, współrzędne geograficzne miejsca wydarzenia, oraz listę wydatków.
+  \item[Grupa] \hfill \\ Obiekt reprezentujący grupę użytkowników, która chciałaby rozliczać wspólne wydatki, bez ustalonych ram czasowych lub ustalonego miejsca. Posiada nazwę, opis, listę uczestników oraz listę wydatków.
+  \item[Wydatek] \hfill \\ Obiekt reprezentujący pojedynczy wydatek utworzony w prawdziwym życiu przez użytkownika, który zawiera nazwę, opis, kwotę uiszczoną za daną transakcję, datę płatności oraz osoby, które według osoby tworzącej wydatek wspólnie brały w nim udział.
+  \item[Inicjator wydatku] \hfill \\ Osoba, która stworzyła wydatek w aplikacji.
+  \item[Uczestnik wydatku] \hfill \\ Użytkownik, który jest na liście uczestników w danym wydatku i posiada swoją własną płatność należącą do tego wydatku.
+  \item[Płatność] \hfill \\ Część wydatku, która posiada informacje dotyczące uczestnika wydatku. Płatność może znajdować się w stanie:
     \begin{itemize}
-    \item oczekującym - użytkownik został zaproszony do wydatku i może on potwierdzić lub odrzucić w niej udział 
+    \item oczekującym - użytkownik został zaproszony do wydatku i może on potwierdzić lub odrzucić w niej udział
     \item zaakceptowanym - użytkownik potwierdził udział w wydatku i zgodził się na zapłacenie części kwoty
     \item odrzuconym - użytkownik nie zgodził się na udział w wydatku
     \item opłaconym - użytkownik po zaakceptowaniu płatności opłacił swoją część
-    \item todo - reszta stanów
+    \item zakończony - po zakończeniu wydatku płatność jest w stanie zakończonym
   \end{itemize}
 \item[Zaproszenie] \hfill \\ W trakcie zakładania grupy lub wydarzenia użytkownik ma możliwość wskazania uczestników. Po utworzeniu obiektu każdemu wybranemu użytkownikowi wysyłane jest zaproszenie, które wybrany użytkownik może zaakceptować (potwierdzić udział w wydarzeniu lub grupie) lub je odrzucić.
 \item[Znajomy] \hfill \\ Użytkownik, który został zaproszony do listy znajomych. Tylko znajomi mogą być zapraszani do grup wydarzeń i wydatków.
@@ -29,7 +30,7 @@
   \item[WF4.] \hfill \\ Użytkownik może zakładać wydatki podając takie informacje jak:
     \begin{itemize}
       \item nazwa
-      \item rodzaj wydatku: 
+      \item rodzaj wydatku:
         \begin{itemize}
           \item wydatek w ramach wydarzenia
           \item wydatek w ramach grupy
@@ -51,10 +52,11 @@
       \item zmienia się stan płatności
     \end{itemize}
   \item[WF9.] \hfill \\ Użytkownik może zarządzać zaproszeniami, czyli przeglądać listę zaproszeń, akceptować lub odrzucać poszczególne zaproszenia
-  \item[WF10.] \hfill \\ Użytkownik posiada statystyki dotyczące swoich wydatków, czyli jaką kwotę powinien oddać innym użytkownikom oraz ile inni użytkownicy powinni oddać użytkownikowi oddać. Statystyki te są dostępne per osoba oraz podsumowujące wszystkie wydatki użytkownika ze wszystkimi innymi użytkownikami.
+  \item[WF10.] \hfill \\ Użytkownik posiada statystyki dotyczące swoich wszystkich wydatków, czyli jaką kwotę powinien oddać wszystkim innym użytkownikom oraz ile wszyscy inni użytkownicy powinni mu oddać.
+  \item[WF11.] \hfill \\ Użytkownik posiada podsumowanie bilansu wydatków dla każdego użytkownika osobno.
 \end{description}
 
-\subsection{Wymagania funkcjonalne}
+\subsection{Wymagania niefunkcjonalne}
 \begin{description}
   \item[WN1.] \hfill \\ Aplikacja działa na najnowszych przeglądarkach: Chrome, Firefox oraz Edge.
   \item[WN2.] \hfill \\ Aplikacja jest renderowana po stronie klienta z wykorzystaniem reaktywnej biblioteki Javascript.

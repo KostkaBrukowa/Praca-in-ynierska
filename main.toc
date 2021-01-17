@@ -17,15 +17,17 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2\relax .\enspace }Wymagania funkcjonalne}{12}{subsection.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3\relax .\enspace }Wymagania funkcjonalne}{13}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3\relax .\enspace }Wymagania niefunkcjonalne}{13}{subsection.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3\relax .\enspace }Użyte technologie}{14}{section.3}%
+\contentsline {section}{\numberline {3\relax .\enspace }Użyte technologie i podejścia}{14}{section.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1\relax .\enspace }Warstwa serwera}{14}{subsection.3.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.1.1\relax .\enspace }Architektura}{14}{subsubsection.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.1.2\relax .\enspace }Główne użyte technologie}{17}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.2\relax .\enspace }Podział na pakiety}{16}{subsubsection.3.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {3.1.3\relax .\enspace }Główne użyte technologie}{18}{subsubsection.3.1.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2\relax .\enspace }Warstwa komunikacji - GraphQL}{19}{subsection.3.2}%
 \defcounter {refsection}{0}\relax 
@@ -33,72 +35,66 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {3.2.2\relax .\enspace }Użycie GraphQL w aplikacji serwerowej}{22}{subsubsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.2.3\relax .\enspace }Użycie GraphQL w aplikacji klienckiej}{22}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.3\relax .\enspace }Użycie GraphQL w aplikacji klienckiej}{23}{subsubsection.3.2.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.3\relax .\enspace }Warstwa kliencka}{23}{subsection.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1\relax .\enspace }Renderowanie po stronie serwera a jednostronicowa alikacja}{23}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1\relax .\enspace }Renderowanie po stronie serwera a jednostronicowa aplikacja}{24}{subsubsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.2\relax .\enspace }Wybór biblioteki do tworzenia interfejsów użytkownika}{25}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2\relax .\enspace }Wybór biblioteki do tworzenia interfejsów użytkownika}{26}{subsubsection.3.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.3\relax .\enspace }Użyte technologie}{27}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.3\relax .\enspace }Użyte technologie}{28}{subsubsection.3.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4\relax .\enspace }Testowanie}{29}{section.4}%
+\contentsline {section}{\numberline {4\relax .\enspace }Testowanie}{30}{section.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1\relax .\enspace }Testowanie jednostkowe aplikacji klienckiej}{29}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.1\relax .\enspace }Testowanie jednostkowe aplikacji klienckiej}{30}{subsection.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.1\relax .\enspace }Testowanie komponentów}{29}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.1\relax .\enspace }Testowanie komponentów React}{30}{subsubsection.4.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.2\relax .\enspace }Jest}{29}{subsubsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2\relax .\enspace }Jest}{30}{subsubsection.4.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.3\relax .\enspace }React-testing-library}{31}{subsubsection.4.1.3}%
+\contentsline {subsubsection}{\numberline {4.1.3\relax .\enspace }React-testing-library}{32}{subsubsection.4.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2\relax .\enspace }Testowanie integracyjne aplikacji klienckiej}{32}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2\relax .\enspace }Testowanie integracyjne aplikacji klienckiej}{33}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3\relax .\enspace }Testy wizualnej regresji aplikacji klienckiej}{34}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3\relax .\enspace }Testy wizualnej regresji aplikacji klienckiej}{35}{subsection.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4\relax .\enspace }Testy integracyjne aplikacji serwerowej}{34}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.4\relax .\enspace }Testy integracyjne aplikacji serwerowej}{35}{subsection.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5\relax .\enspace }Prezentacja aplikacji}{35}{section.5}%
+\contentsline {section}{\numberline {5\relax .\enspace }Prezentacja aplikacji}{36}{section.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1\relax .\enspace }Ekran logowania}{35}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.1\relax .\enspace }Ekran logowania}{37}{subsection.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2\relax .\enspace }Wydatki}{36}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.2\relax .\enspace }Wydatki}{38}{subsection.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.1\relax .\enspace }Ekran listy wydatków}{36}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.1\relax .\enspace }Ekran listy wydatków}{38}{subsubsection.5.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.2\relax .\enspace }Ekran wydatku}{37}{subsubsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2\relax .\enspace }Ekran wydatku}{39}{subsubsection.5.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.3\relax .\enspace }Formularz wydatku}{39}{subsubsection.5.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.3\relax .\enspace }Formularz wydatku}{41}{subsubsection.5.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3\relax .\enspace }Ekran płatności}{41}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3\relax .\enspace }Ekran płatności}{43}{subsection.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.4\relax .\enspace }Ekran wydarzeń, grup i grup znajomych}{43}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.4\relax .\enspace }Ekran wydarzeń, grup i grup znajomych}{45}{subsection.5.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.4.1\relax .\enspace }Listy wydarzeń, grup i grup znajomych}{43}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.1\relax .\enspace }Listy wydarzeń, grup i grup znajomych}{45}{subsubsection.5.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.4.2\relax .\enspace }Ekrany wydarzeń, grup i grup znajomych}{44}{subsubsection.5.4.2}%
+\contentsline {subsubsection}{\numberline {5.4.2\relax .\enspace }Ekrany wydarzeń, grup i grup znajomych}{46}{subsubsection.5.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.4.3\relax .\enspace }Formularz dodawania elementu}{45}{subsubsection.5.4.3}%
+\contentsline {subsubsection}{\numberline {5.4.3\relax .\enspace }Formularz dodawania elementu}{47}{subsubsection.5.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.5\relax .\enspace }Aktywność}{46}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.5\relax .\enspace }Aktywność}{49}{subsection.5.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.6\relax .\enspace }Ekrany użytkownika}{47}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.6\relax .\enspace }Ekrany użytkownika}{50}{subsection.5.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.6.1\relax .\enspace }Ekran informacji o użytkowniku}{47}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.1\relax .\enspace }Ekran informacji o użytkowniku}{50}{subsubsection.5.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.6.2\relax .\enspace }Ekran znajomych}{48}{subsubsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2\relax .\enspace }Ekran znajomych}{51}{subsubsection.5.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.6.3\relax .\enspace }Ekran innego użytkownika}{49}{subsubsection.5.6.3}%
+\contentsline {subsubsection}{\numberline {5.6.3\relax .\enspace }Ekran innego użytkownika}{52}{subsubsection.5.6.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6\relax .\enspace }Summatio}{50}{section.6}%
+\contentsline {section}{\numberline {6\relax .\enspace }Summatio}{53}{section.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Bibliografia}{53}{section*.17}%
+\contentsline {section}{Bibliografia}{55}{section*.17}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Wykaz symboli i skrótów}{54}{section*.18}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis rysunków}{54}{section*.18}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis tabel}{54}{section*.18}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{Spis załączników}{54}{section*.19}%
+\contentsline {section}{Spis rysunków}{56}{section*.17}%

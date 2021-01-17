@@ -1,133 +1,132 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Bachelor's & Master's Thesis Template             %%
-%% Copyleft by Artur M. Brodzki & Piotr Woźniak      %%
-%% Faculty of Electronics and Information Technology %%
-%% Warsaw University of Technology, 2019-2020        %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\documentclass[
-    left=2.5cm,         % Sadly, generic margin parameter
-    right=2.5cm,        % doesnt't work, as it is
-    top=2.5cm,          % superseded by more specific
-    bottom=3cm,         % left...bottom parameters.
-    bindingoffset=6mm,  % Optional binding offset.
-    nohyphenation=false % You may turn off hyphenation, if don't like.
-]{eiti/eiti-thesis}
-
-\langpol % Dla języka angielskiego mamy \langeng
-\graphicspath{{img/}}             % Katalog z obrazkami.
-\addbibresource{bibliografia.bib} % Plik .bib z bibliografią
-
-\begin{document}
-
-%--------------------------------------
-% Strona tytułowa
-%--------------------------------------
-\MasterThesis % Dla pracy inżynierskiej mamy \EngineerThesis
-\instytut{Informatyki}
-\kierunek{Informatyka}
-\specjalnosc{Inzynieria systemow informatycznych}
-\title{
-    Niepotrzebnie długi i skomplikowany tytuł pracy \\
-    trudny do przeczytania, zrozumienia i wymówienia
+% Źródło innego typu, np. repozytorium na GitHubie.
+@manual{ref_heuristic_alg,
+    title        = "Rekoncyliacja w bibliotece React",
+    note  = "Dostęp zdalny (16.01.2021): \url{https://pl.reactjs.org/docs/reconciliation.html}"
 }
-\engtitle{ % Tytuł po angielsku do angielskiego streszczenia
-    Unnecessarily long and complicated thesis' title \\
-    difficult to read, understand and pronounce
+
+@manual{ref_apollo_doc,
+    title = "Apollo Client",
+    note  = "Dostęp zdalny (16.01.2021): \url{https://pl.reactjs.org/docs/reconciliation.html}"
 }
-\author{\{Imię i Nazwisko\}}
-\album{XXXXXX}
-\promotor{XXXXXX}
-\date{\the\year}
-\maketitle
 
-%--------------------------------------
-% Streszczenie po polsku
-%--------------------------------------
-\cleardoublepage % Zaczynamy od nieparzystej strony
-\streszczenie \lipsum[1-3]
-\slowakluczowe XXX, XXX, XXX
+@manual{ref_cra_doc,
+    title = "Create React App",
+    note  = "Dostęp zdalny (16.01.2021): \url{https://github.com/facebook/create-react-app}"
+}
+@manual{ref_eslint_doc,
+    title = "Eslint",
+    note  = "Dostęp zdalny (16.01.2021): \url{https://eslint.org/}"
+}
+@manual{ref_ts_doc,
+    title = "Typescript",
+    note  = "Dostęp zdalny (16.01.2021): \url{https://www.typescriptlang.org/}"
+}
+@manual{ref_graphql_doc,
+    title = "Graphql",
+    note  = "Dostęp zdalny (16.01.2021): \url{https://graphql.org/}"
+}
+@manual{ref_gqlKotlin_doc,
+    title = "Graphql-Kotlin",
+    note  = "Dostęp zdalny (16.01.2021): \url{https://expediagroup.github.io/graphql-kotlin/docs/getting-started.html}"
+}
+@manual{ref_postgre_doc,
+    title = "PostgreSQL",
+    note  = "Dostęp zdalny (16.01.2021): \url{https://www.postgresql.org/}"
+}
+@manual{ref_spring_doc,
+    title = "Spring",
+    note  = "Dostęp zdalny (16.01.2021): \url{https://spring.io/}"
+}
+@manual{ref_kotlin_doc,
+    title = "Kotlin",
+    note  = "Dostęp zdalny (16.01.2021): \url{https://kotlinlang.org/}"
+}
 
-%--------------------------------------
-% Streszczenie po angielsku
-%--------------------------------------
-\newpage
-\abstract \kant[1-3]
-\keywords XXX, XXX, XXX
+@unpublished{ref_hex_doc,
+    author = "Alistair Cockburn",
+    title  = "Hexagonal architecture",
+    note   = "Dostęp zdalny (16.01.2021): \url{https://alistair.cockburn.us/hexagonal-architecture/}",
+    year   = "2005"
+}
 
-%--------------------------------------
-% Oświadczenie o autorstwie
-%--------------------------------------
-\cleardoublepage  % Zaczynamy od nieparzystej strony
-\pagestyle{plain}
-\makeauthorship
+% EXAMPLES
+% Artykuł w recenzowanym czasopiśmie.
+@article{szczypiorski2015,
+    author    = "Szczypiorski, K. and Janicki, A. and Wendzel, S",
+    title     = "{T}he {G}ood, {T}he {B}ad {A}nd {T}he {U}gly: {E}valuation of {W}i-{F}i {S}teganography",
+    journal   = "Journal of Communications",
+    volume    = "10",
+    number    = "10",
+    pages     = "747--752",
+    publisher = "Journal of Communications (JCM)",
+    year      = "2015",
+}
 
-%--------------------------------------
-% Spis treści
-%--------------------------------------
-\cleardoublepage % Zaczynamy od nieparzystej strony
-\tableofcontents
+% Książka.
+@book{goossens93,
+    author    = "Michel Goossens and Frank Mittelbach and Alexander Samarin",
+    title     = "The LaTeX Companion",
+    publisher = "Addison-Wesley",
+    address   = "Reading, Massachusetts",
+    year      = "1993",
+}
 
-%--------------------------------------
-% Rozdziały
-%--------------------------------------
-\cleardoublepage % Zaczynamy od nieparzystej strony
-\pagestyle{headings}
+% Fragment książki (np. zakres stron).
+@inbook{wang97,
+    author      = "Hao ang",
+    title       = "A Logical Journey: From G{\"o}del to Philosophy.",
+    publisher   = "A Bradford Book",
+    pages       = "316",
+    year        = "1997"
+}
 
-\input{tex/1-wstep}         % Wygodnie jest trzymać każdy rozdział w osobnym pliku.
-\input{tex/2-de-finibus}    % Umożliwia to również łatwą migrację do nowej wersji szablonu:
-\input{tex/3-code-listings} % wystarczy podmienić swoje pliki main.tex i eiti-thesis.cls
-                            % na nowe wersje, a cały tekst pracy pozostaje nienaruszony.
+% Fragment książki (np. esej), posiadający własny tytuł.
+@incollection{goedel95,
+    author      = "Kurt G{\"o}del",
+    title       = "Texts relating to the ontological proof",
+    booktitle   = "Unpublished Essays and Lectures",
+    publisher   = "Oxford University Press",
+    pages       = "429--437",
+    year        = "1995",
+}
 
-\newpage % Rozdziały zaczynamy od nowej strony
-\section{Summatio}          % Można też pisać rozdziały w jednym pliku.
-\lipsum[5-10]
+% Publikacja konferencyjna.
+@inproceedings{benzmuller2014,
+    author       = "{Ch}. Benzmuller and B. W. Paleo",
+    title        = "Automating {G\"o}del’s {O}ntological {P}roof of {G}od’s {E}xistence with {H}igher-order {A}utomated {T}heorem {P}rovers",
+    booktitle    = "European	Conference on Artificial Intelligence",
+    publisher    = "IOS Press",
+    howpublished = "Dostęp zdalny (10.04.2019): \url{http://page.mi.fu-berlin.de/cbenzmueller/papers/C40.pdf}",
+    year         = "2014",
+}
 
-%--------------------------------------------
-% Literatura
-%--------------------------------------------
-\cleardoublepage % Zaczynamy od nieparzystej strony
-\printbibliography
+% Raport techniczny.
+@techreport{duqu2011,
+    author      = "Bencsáth, B. and Pék, G. and Buttyán, L. and Félegyházi M.",
+    title       = "{D}uqu: {A} {S}tuxnet-like malware found in the wild",
+    institution = "Laboratory of Cryptography and System Security, Hungary",
+    year        = "2011"
+}
 
-%--------------------------------------------
-% Spisy (opcjonalne)
-%--------------------------------------------
-\newpage
-\pagestyle{plain}
+% Specyfikacja techniczna.
+@manual{shs2015,
+    title        = "{FIPS} 180-4: {S}ecure {H}ash {S}tandard ({SHS})",
+    howpublished = "Dostęp zdalny (13.03.2019): \url{https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf}",
+    year         = "2015"
+}
 
-% Wykaz symboli i skrótów.
-% Pamiętaj, żeby posortować symbole alfabetycznie
-% we własnym zakresie. Ponieważ mało kto używa takiego wykazu,
-% uznałem, że robienie automatycznie sortowanej listy
-% na poziomie LaTeXa to za duży overkill.
-% Makro \acronymlist generuje właściwy tytuł sekcji,
-% w zależności od języka.
-% Makro \acronym dodaje skrót/symbol do listy,
-% zapewniając podstawowe formatowanie.
-% //AB
-\vspace{0.8cm}
-\acronymlist
-\acronym{EiTI}{Wydział Elektroniki i Technik Informacyjnych}
-\acronym{PW}{Politechnika Warszawska}
-\acronym{WEIRD}{ang. \emph{Western, Educated, Industrialized, Rich and Democratic}}
+% Praca magisterska.
+@mastersthesis{wozniak2018,
+    author = "Woźniak, Piotr",
+    title  = "{P}rogramowanie kwadratowe w usuwaniu efektu rozmycia ruchu w fotografii cyfrowej",
+    school  = "Wydział Elektroniki i Technik Informacyjnych, Politechnika Warszawska",
+    year   = "2018",
+}
 
-\listoffigurestoc     % Spis rysunków.
-\vspace{1cm}          % vertical space
-\listoftablestoc      % Spis tabel.
-\vspace{1cm}          % vertical space
-\listofappendicestoc  % Spis załączników
-
-% Załączniki
-\newpage
-\appendix{Nazwa załącznika 1}
-\lipsum[1-8]
-
-\newpage
-\appendix{Nazwa załącznika 2}
-\lipsum[1-4]
-
-% Używając powyższych spisów jako szablonu,
-% możesz tu dodać swój własny wykaz bądź listę,
-% np. spis algorytmów.
-
-\end{document} % Dobranoc.
+% Nieopublikowany artykuł, dostępny np. tylko w internecie.
+@unpublished{koons2005,
+    author = "Koons, Robert C.",
+    title  = "{S}obel on {G\"o}del’s {O}ntological {P}roof",
+    note   = "Dostęp zdalny (25.04.2019): \url{http://www.robkoons.net/media/69b0dd04a9d2fc6dffff80b4ffffd524.pdf}",
+    year   = "2005"
+}
