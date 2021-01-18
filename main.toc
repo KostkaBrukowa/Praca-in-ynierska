@@ -7,7 +7,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {1.1.1\relax .\enspace }Opis hipotetycznej sytuacji}{9}{subsubsection.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {1.1.2\relax .\enspace }Użycie mojej aplikacji}{9}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.2\relax .\enspace }Użycie aplikacji}{9}{subsubsection.1.1.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {1.2\relax .\enspace }Układ pracy}{10}{subsection.1.2}%
 \defcounter {refsection}{0}\relax 
@@ -57,7 +57,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.2\relax .\enspace }Testowanie integracyjne aplikacji klienckiej}{33}{subsection.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3\relax .\enspace }Testy wizualnej regresji aplikacji klienckiej}{35}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3\relax .\enspace }Testy wizualnej regresji aplikacji klienckiej}{34}{subsection.4.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4\relax .\enspace }Testy integracyjne aplikacji serwerowej}{35}{subsection.4.4}%
 \defcounter {refsection}{0}\relax 
@@ -93,7 +93,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {5.6.3\relax .\enspace }Ekran innego użytkownika}{52}{subsubsection.5.6.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6\relax .\enspace }Summatio}{53}{section.6}%
+\contentsline {section}{\numberline {6\relax .\enspace }Podsumowanie}{53}{section.6}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{Bibliografia}{55}{section*.17}%
 \defcounter {refsection}{0}\relax 

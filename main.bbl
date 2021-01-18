@@ -76,6 +76,13 @@
       \field{note}{Dostęp zdalny (16.01.2021): \url{https://graphql.org/}}
       \field{title}{Graphql}
     \endentry
+    \entry{ref_react_doc}{manual}{}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labeltitlesource}{title}
+      \field{note}{Dostęp zdalny (16.01.2021): \url{https://reactjs.org/}}
+      \field{title}{React}
+    \endentry
     \entry{ref_heuristic_alg}{manual}{}
       \field{sortinit}{8}
       \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
@@ -133,7 +140,6 @@
       \field{title}{Cypress}
     \endentry
   \enddatalist
-  \missing{ref_react_doc}
 \endrefsection
 \endinput
 

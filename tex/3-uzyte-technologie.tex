@@ -10,10 +10,10 @@ Część kliencka jest odpowiedzialna za wyświetlanie aktualnych danych użytko
 % // todo rysunek obrazujący połączenie i rozmieszczenie elementów systemu.
 
 \subsection{Warstwa serwera}
-Aktualnie istnieje wiele różnych podejść do pisania aplikacji serwerowych, które mają ułatwiać pisanie, rozwijanie i utrzymywanie większych systemów. Jednym z takich podejść jest architektura heksagonalna, której użyłem do stworzenia mojej aplikacji.
+Aktualnie istnieje wiele różnych podejść do pisania aplikacji serwerowych, które mają ułatwiać pisanie, rozwijanie i utrzymywanie większych systemów. Jednym z takich podejść jest architektura heksagonalna, która została użyta do stworzenia aplikacji.
 \subsubsection{Architektura}
-Podczas tworzenia mojej aplikacji serwerowej kierowałem się podejściem zwanym architekturą heksagonalną (lub architektura portów i adapterów).
-architektura Heksagonalna została udokumentowana przez Alistaira Cockburna w 2005 ~\cite{ref_hex_doc}. Aktualnie jest bardzo popularnym podejściem do tworzenia mikroserwisów, ponieważ umożliwia ona w łatwy sposób rozbudowywanie aktualnego kodu aplikacji jak i wprowadzanie zmian wynikających ze zmian w architekturze i wymagań systemu.
+Podczas tworzenia aplikacji serwerowej kierowałem się podejściem zwanym architekturą heksagonalną (lub architektura portów i adapterów).
+architektura heksagonalna została udokumentowana przez Alistaira Cockburna w 2005 ~\cite{ref_hex_doc}. Aktualnie jest bardzo popularnym podejściem do tworzenia mikroserwisów, ponieważ umożliwia ona w łatwy sposób rozbudowywanie aktualnego kodu aplikacji jak i wprowadzanie zmian wynikających ze zmian w architekturze i wymagań systemu.
 Główne cechy architektury heksagonalnej to:
 \begin{itemize}
   \item oddzielenie części obsługi klientów serwisu, logiki biznesowej oraz strony serwerowej
@@ -45,7 +45,7 @@ fun deleteParty(id: Long, currentUserId: Long): Party? {
 \end{lstlisting}
 \end{addmargin}
   Jak można zauważyć, w powyższym kodzie nie ma odwołań do bazy danych ani innych części infrastruktury systemu. W kodzie zawarte są jedynie zasady dotyczące działania systemu.%, czyli tylko inicjator grupy ma możliwość usunięcia danej grupy.
-  \item Bardzo łatwo można wymieniać części systemu nie związane z logiką biznesową np. bazy danych lub zewnętrzne serwisy. W dobie mikroserwisów, kontrakty z zewnętrznymi serwisami zmieniają się podczas działania aplikacji, więc gdy zmienia się np. interfejs do zewnętrznego serwisu, to jeżeli będziemy się trzymać kontraktu, na którym bazuje nasza logika biznesowa, to nie będą potrzebne zmiany w głównej części aplikacji, a jedynie zmiany w adapterach aplikacji.
+  \item Bardzo łatwo można wymieniać części systemu nie związane z logiką biznesową np. bazy danych lub zewnętrzne serwisy. W dobie mikroserwisów, kontrakty z zewnętrznymi serwisami zmieniają się podczas działania aplikacji, więc gdy zmienia się np. interfejs do zewnętrznego serwisu, to jeżeli będziemy się trzymać kontraktu, na którym bazuje logika biznesowa, to nie będą potrzebne zmiany w głównej części aplikacji, a jedynie zmiany w adapterach aplikacji.
 \end{itemize}
 
 
@@ -55,7 +55,7 @@ fun deleteParty(id: Long, currentUserId: Long): Party? {
 \begin{lstlisting}[
     numbers=left,
     firstnumber=1,
-    caption={Klasa \emph{Grupa} w domenowej reprezentacji modelu},
+    caption={Klasa \emph{Grupa} w reprezentacji modelu domeny i adapteru},
     aboveskip=10pt
 ]
 data class Grupa(
@@ -80,7 +80,7 @@ data class GrupaAdapter(
 %]
 %\end{lstlisting}
 %\end{addmargin}
-Klasa \emph{Grupa} jest częścią domeny aplikacji, a klasa \emph{GrupaAdapter} częścią adaptera. Te dwie klasy różnią się tym, że adapterowa klasa posiada dodatkowy atrybut związany z bazą danych \emph{rowId}. Klasa domenowy nie potrzebuje tego atrybutu, a domena nawet nie powinna wiedzieć, że taki atrybut istnieje. W takim wypadku, jeżeli te dwie klasy się różnią, przy komunikacji pomiędzy częścią domenową i adapterową musi nastąpić translacja klas. Wcześniej napisałem, że część domenowa nie powinna być zależna od innych części systemu, dlatego tę odpowiedzialność wykonują adaptery. Komponent domenowy, w naszym przykładzie może komunikować z adapterem przez taki interfejs:
+Klasa \emph{Grupa} jest częścią domeny aplikacji, a klasa \emph{GrupaAdapter} częścią adaptera. Te dwie klasy różnią się tym, że klasa adapteru posiada dodatkowy atrybut związany z bazą danych \emph{rowId}. Klasa domenowa nie potrzebuje tego atrybutu, a domena nawet nie powinna wiedzieć, że taki atrybut istnieje. W takim wypadku, jeżeli te dwie klasy się różnią, przy komunikacji pomiędzy częścią domenową i adapterową musi nastąpić translacja klas. Część domenowa nie powinna być zależna od innych części systemu, dlatego tę odpowiedzialność wykonują adaptery. Komponent domenowy, w przykładzie może komunikować z adapterem przez taki interfejs:
 \begin{addmargin}[6mm]{0mm}
 \begin{lstlisting}[
     label={lst:AdapterBazyDanychPort},
@@ -124,18 +124,18 @@ Aplikacja zawiera 6 obiektów bazodanowych reprezentujących cały system. Są t
   \item użytkownik
 \end{itemize}
 
-Dla każdego obiektu jest stworzony w każdym pakiecie katalog odpowiedzialny za obsługę danego obiektu. Jeżeli weźmiemy wcześniej wspomniany obiekt \emph{Grupa} to będzie stworzony dla niego odpowiednio:
+Dla każdego obiektu jest stworzony w każdym pakiecie katalog odpowiedzialny za obsługę danego obiektu. Przykładowo dla obiektu \emph{Grupa} zostanie stworzone:
 \begin{itemize}
-  \item GrupaService - klasa który udostępnia metody obsługujące grupy w domenie
-  \item GrupaQuery - klasa która używa \emph{GrupaService} oraz definiuje kwerendy dostępne dla grupy
-  \item GrupaMutation - klasa która używa \emph{GrupaService} oraz definiuje mutacje dostępne dla grupy
+  \item GrupaService - klasa, która udostępnia metody obsługujące grupy w domenie
+  \item GrupaQuery - klasa, która używa \emph{GrupaService} oraz definiuje kwerendy dostępne dla grupy
+  \item GrupaMutation - klasa, która używa \emph{GrupaService} oraz definiuje mutacje dostępne dla grupy
   \item GrupaRepository - port, który definiuje zbiór możliwych funkcji, których można użyć na bazie danych
-  \item PersistentGrupaRepository - interfejs który wykorzystuje interfejs Hibernate do definiowania możliwych funkcji, dzięki którym programista może komunikować się z bazą danych
+  \item PersistentGrupaRepository - interfejs, który wykorzystuje interfejs Hibernate do definiowania możliwych funkcji, dzięki którym programista może komunikować się z bazą danych
   \item PgSqlGrupaRepository - klasa adapteru, która implementuje \emph{GrupaRepository} i używa \emph{PersistentGrupaRepository} do komunikacji z bazą danych
 \end{itemize}
 
 \subsubsection{Główne użyte technologie}
-Do stworzenia aplikacji serwerowej użyłem następujących technologii:
+Do stworzenia aplikacji serwerowej zostały użyte następujące technologie:
 
 \begin{description}
   \item[Kotlin] \hfill \\ Głównym językiem programowania, jaki został użyty do napisania aplikacji serwerowej, jest Kotlin ~\cite{ref_kotlin_doc}. Kotlin jest zorientowanym obiektowo, statycznie typowanym językiem programowania. Kotlin jest oparty na JVM, więc technologie i biblioteki, które zostały stworzone w języku Java, mogą być także używane w języku Kotlin.
@@ -146,17 +146,17 @@ Do stworzenia aplikacji serwerowej użyłem następujących technologii:
     Dodatkowo Spring posiada bardzo dużo innych narzędzi, dzięki którym można budować duże serwisy, takie jak:
     \begin{enumerate}
       \item \textbf{Spring Boot} - narzędzie pozwalające w bardzo szybki sposób skonfigurować serwer aplikacji wraz z wszystkimi potrzebnymi elementami potrzebnymi do działania takiego serwisu np. autoryzacji lub komunikację z bazą danych. Dzięki niemu możemy otrzymać podstawową konfigurację do modułów wymienionych poniżej, czyli np. Spring Security lub Spring Data JPA
-      \item \textbf{Spring Security} - moduł, która odpowiada za bezpieczeństwo aplikacji. Domyślnie po zainstalowaniu tego modułu mamy dostęp do narzędzi, które pozwalają nam np. autoryzować użytkownika, konfigurować CORS, blokować niektóre adresy naszej aplikacji itp.
+      \item \textbf{Spring Security} - moduł, która odpowiada za bezpieczeństwo aplikacji. Domyślnie po zainstalowaniu tego modułu mamy dostęp do narzędzi, które pozwalają nam np. autoryzować użytkownika, konfigurować CORS, blokować niektóre adresy aplikacji itp.
       \item \textbf{Spring Data JPA i Hibernate} - JPA jest to standard ORM dla języka Java. Dzięki JPA mamy mechanizmy, które pozwalają nam zarządzać bazą danych z poziomu kodu programu, bez użycia SQL. Przy takim podejściu klasy w języku Kotlin mogą być mapowane na elementy tabel w bazie danych przy zapisie lub ich edycji. Dodatkowo przy odczycie tych danych elementy tabel w bazie danych mogą być mapowane z powrotem na klasy Kotlinowe. Dzięki temu w łatwy sposób możemy zapewnić spójność pomiędzy modelami bazodanowymi a modelami w Kotlinie. Jako że JPA jest tylko standardem, aby móc robić takie rzeczy w Springu potrzebujemy narzędzia, które będzie ten standard implementować. Jednym z takich narzędzi, które wybrałem jest biblioteka Hibernate, która jest domyślnie wspierana przez Spring i może być łatwo skonfigurowana z użyciem Spring Boot.
     \end{enumerate}
 
-  \item[PostgreSQL] \hfill \\ PostgreSQL ~\cite{ref_postgre_doc} jest jedną z kilku najpopularniejszych darmowych baz danych. Jest to relacyjna baza danych, która jest wspierana przez Spring. Baza danych jest obsługiwana z języka Kotlin i przechowywane są w niej wszystkie dane użytkownika.
-  \item[GraphQL-Kotlin] \hfill \\ Biblioteka GraphQL-Kotlin ~\cite{ref_gqlKotlin_doc} jest zbudowana na innej bibliotece \emph{graphql-java}, która ułatwia tworzenie aplikacji serwerowych udostępniających interfejs poprzez standard graphql. Udostępnia ona domyślnie funkcjonalność odbierania i parsowania zapytań graphqlowych, posiada funkcje pozwalające obsługiwać błędy w zapytaniach oraz tworzenia odpowiedzi do klienta zgodnie ze owym standardem.
+  \item[PostgreSQL] \hfill \\ PostgreSQL ~\cite{ref_postgre_doc} jest jedną z kilku najpopularniejszych darmowych baz danych. Jest to relacyjna baza danych, która jest wspierana przez Spring. Baza danych jest obsługiwana z języka Kotlin i przechowywane są w niej wszystkie dane aplikacji.
+  \item[GraphQL-Kotlin] \hfill \\ Biblioteka GraphQL-Kotlin ~\cite{ref_gqlKotlin_doc} jest zbudowana na innej bibliotece \emph{graphql-java}, która ułatwia tworzenie aplikacji serwerowych udostępniających interfejs poprzez standard graphql. Udostępnia ona domyślnie funkcjonalność odbierania i parsowania zapytań graphqlowych, posiada funkcje pozwalające obsługiwać błędy w zapytaniach oraz tworzenia odpowiedzi do klienta zgodnie ze tym standardem.
 \end{description}
 
 
 \subsection{Warstwa komunikacji - GraphQL}
-W moim projekcie, zamiast użycia bardzo popularnego standardu do komunikacji między klientem a serwerem jakim jest REST, postanowiłem użyć standardu GraphQL ~\cite{ref_graphql_doc}.
+W projekcie, zamiast użycia bardzo popularnego standardu do komunikacji między klientem a serwerem jakim jest REST, został użyty standard GraphQL ~\cite{ref_graphql_doc}.
 
 \subsubsection{Opis GraphQL}
 GraphQL jest specyfikacją utworzoną przez Facebooka, który opisuje sposób, w jaki dwie jednostki mogą się ze sobą komunikować. Jest to język zapytań, który może zostać użyty przez klienta, aby otrzymać dane, które wskaże w zapytaniu, w przeciwieństwie do REST, gdzie odpowiedzi serwera dla każdego endpointu są ustalone z góry. GraphQL nie jest protokołem sieciowym, a tylko kontraktem między jednostkami.
@@ -196,7 +196,7 @@ type Subscription {
 }
 \end{lstlisting}
 \end{addmargin}
-Jak widać każdy atrybut ma swój typ i każdy argument każdej operacji też jest opisany własnym typem. W zależności od implementacji, te typy mogą być sprawdzane podczas działania aplikacji serwerowej, czyli gdy klient wywoła operację, w której argument jest błędnego typu, serwer może zwrócić klientowi błąd o niezgodności typów. Jest to bardzo pomocne w pisaniu aplikacji, ponieważ możemy używać narzędzi (np. kompilatorów), które sprawdzają za nas poprawność naszych danych na podstawie schematu GraphQL, zmniejszając przy tym możliwość pomyłki.
+Jak widać każdy atrybut ma swój typ i każdy argument każdej operacji też jest opisany własnym typem. W niektórych implementacjach, te typy mogą być sprawdzane podczas działania aplikacji serwerowej, czyli gdy klient wywoła operację, w której argument jest błędnego typu, serwer może zwrócić klientowi błąd o niezgodności typów. Jest to bardzo pomocne w pisaniu aplikacji, ponieważ możemy używać narzędzi (np. kompilatorów), które sprawdzają za nas poprawność danych na podstawie schematu GraphQL, zmniejszając przy tym możliwość pomyłki.
 
 GraphQL wyróżnia trzy rodzaje operacji, których klient może użyć, aby uzyskać odpowiedź od serwera.
 \begin{enumerate}
@@ -204,7 +204,7 @@ GraphQL wyróżnia trzy rodzaje operacji, których klient może użyć, aby uzys
   \item mutacje
   \item subskrypcje
 \end{enumerate}
-Wszystkie możliwe operacje muszą być zdefiniowane w schemacie GraphQL serwera. W wydruku ~\ref{lst:graphqlSchema} te operacje są zdefiniowane w typach odpowiednio \emph{Query}, \emph{Mutation}, \emph{Subscription}. Klient może tworzyć zapytania oparte tylko o operacje zdefiniowane w schemacie.
+Wszystkie możliwe operacje muszą być zdefiniowane w schemacie GraphQL serwera. W Wydruku \ref{lst:graphqlSchema} te operacje są zdefiniowane w typach odpowiednio \emph{Query}, \emph{Mutation}, \emph{Subscription}. Klient może tworzyć zapytania oparte tylko o operacje zdefiniowane w schemacie.
 
 \begin{description}
   \item[Kwerendy] \hfill \\ Kwerendy są konstrukcją pozwalającą odpytywać serwer o dane, nie modyfikując ich. Dzięki nim możemy tworzyć zapytania, które zwracają nam informacje o obiektach znajdujących się w bazie danych.
@@ -252,7 +252,7 @@ Wszystkie możliwe operacje muszą być zdefiniowane w schemacie GraphQL serwera
   \end{addmargin}
   Powyższa mutacja ma za zadanie zapisanie nowej grupy w bazie danych o podanych parametrach.
 
-\item[Subskrypcje] \hfill \\ Subskrypcje są mechanizmem, który pozwala pobierać dane używając podejścia typu Push. W przypadku wywołania przez klienta subskrypcji, serwer nawiązuje stałe połączenie z klientem np. poprzez gniazda, a następnie gdy nastąpi jakaś zmiana w naszym systemie (np. utworzenie nowego powiadomienia), serwer ma za zadanie powiadomić klienta o tym wydarzeniu.
+\item[Subskrypcje] \hfill \\ Subskrypcje są mechanizmem, który pozwala pobierać dane używając podejścia typu Push. W przypadku wywołania przez klienta subskrypcji, serwer nawiązuje stałe połączenie z klientem np. poprzez gniazda, a następnie gdy nastąpi jakaś zmiana w systemie (np. utworzenie nowego powiadomienia), serwer ma za zadanie powiadomić klienta o tym wydarzeniu.
   \begin{addmargin}[6mm]{0mm}
   \begin{lstlisting}[
       numbers=left,
@@ -274,11 +274,11 @@ Powody, dla których wybrałem to podejście są następujące:
   \item Jedynym źródłem prawdy dla kontraktu aplikacji serwerowej jest schemat GraphQL. Można ten schemat traktować jako dokumentację, której poprawność mogą zapewnić zewnętrzne automatyczne narzędzia, które ten schemat generują na podstawie kodu źródłowego aplikacji.
   \item Schemat jest mocno typowany, więc zmniejsza się ilość pomyłek popełnianych przez programistów, ponieważ znowu jesteśmy w stanie użyć narzędzi do automatycznej generacji typów opartych na schemacie.
   \item To podejście niweluje zjawisko nadmiernego pobierania danych, ponieważ w zapytaniu wskazujemy dokładnie, jakich danych potrzebujemy.
-  \item Istnieje dużo implementacji standardu GraphQL w różnych językach, a w szególności do Kotlina i Spring, którego użyłem do implementacji mojej aplikacji serwerowej.
+  \item Istnieje dużo implementacji standardu GraphQL w różnych językach, a w szególności do Kotlina i Spring, który został użyty do implementacji aplikacji serwerowej.
 \end{itemize}
 
 \subsubsection{Użycie GraphQL w aplikacji serwerowej}
-Do zaimplementowania GraphQL w aplikacji serwerowej użyłem poprzednio wspomnianej biblioteki \emph{graphql-kotlin}. Dzięki niej mogłem w łatwy sposób napisać interfejs spełniający wymagania GraphQL.
+Do zaimplementowania GraphQL w aplikacji serwerowej została użyta biblioteka \emph{graphql-kotlin}. Dzięki niej mogłem w łatwy sposób napisać interfejs spełniający wymagania GraphQL.
 
 Operacje definiuje się poprzez tworzenie klas, które dziedziczą po odpowiednich klasach bazowych: \emph{Query}, \emph{Mutation}, \emph{Subscription}.
 
@@ -303,7 +303,7 @@ class ExpenseQuery : Query {
 Analogicznie definiujemy mutacje i subskrypcje.
 
 Bardzo ważną funkcjonalnością tej biblioteki jest to, że automatycznie generuje ona schemat GraphQL na podstawie klas definiujących operacje oraz typów, które te operacje używają. Podstawowe (prymitywne) typy takie jak String lub Int są bezpośrednio zamieniane na odpowiednie typy zdefiniowane w GrpaphQL. Jeżeli jednak serwer posiada niestandardowy typ, który jest częścią systemu i który ma być walidowany przy zapytaniach klienta, programista może takie typy definiować z użciem tej biblioteki. emph{kotlin-graphql}.
-Dzięki takiemu narzędziu możemy być pewni, że nasz schemat będzie zawsze aktualny z naszym kodem aplikacyjnym.
+Dzięki takiemu narzędziu możemy być pewni, że schemat będzie zawsze aktualny z kodem aplikacyjnym.
 % // todo może opisać problem n+1
 
 % Jednym z problemów pojawiających się przy implementacji GraphQL po stronie serwera jest problem zwany n+1.
@@ -316,9 +316,9 @@ Bardzo ciekawym narzędziem którego też użyłem podczas implementacji częśc
 W języku Javascript bardzo często zdarza się błąd wynikający z odnoszenia się do atrybutu, który nie istnieje dla danego obiektu. Zdarza z tego powodu, że kontrakt, którego używaliśmy, już nie jest aktualny. Automatyczna generacja kodu z połączeniem ze statycznym typowaniem języka Typescript jest w stanie w dużym stopniu zapobiegać takim błędom.
 
 \subsection{Warstwa kliencka}
-Aby użytkownik mógł używać aplikacji potrzebuje interfejsu dzięki któremu będzie mógł zarządzać swoimi wydatkami. Aplikacja jest aplikacją internetową, której można używać poprzez przeglądarkę internetową. Aplikacja została stworzona z użyciem języka Typescript.
+Aby użytkownik mógł używać aplikacji Aprint, potrzebuje on interfejsu dzięki któremu będzie mógł zarządzać swoimi wydatkami. Aplikacja jest aplikacją internetową, której można używać poprzez przeglądarkę internetową. Aplikacja została stworzona z użyciem języka Typescript.
 
-Główną zaletą aplikacji internetowych jest ich przenośność. Jeżeli napiszemy aplikację, która jest przystosowana do ekranów urządzeń mobilnych i komputerów, może być ona używana na praktycznie każdym urządzeniu, które posiada przeglądarkę internetową i dostęp do internetu. Gdybym próbował napisać podobną aplikację np. w formie aplikacji na androida, ograniczyłbym ilość użytkowników mogących korzystać z aplikacji.
+Główną zaletą aplikacji internetowych jest ich przenośność. Jeżeli programista napisze aplikację, która jest przystosowana do ekranów urządzeń mobilnych i komputerów, może być ona używana na praktycznie każdym urządzeniu, które posiada przeglądarkę internetową i dostęp do internetu. Gdyby aplikacja została napisana np. w formie aplikacji na androida, ograniczyłbym ilość użytkowników mogących korzystać z aplikacji.
 \subsubsection{Renderowanie po stronie serwera a jednostronicowa aplikacja}
 Aby użytkownik mógł używać aplikacji w przeglądarce, po wejściu na stronę internetową serwer musi wysłać do klienta pliki definiujące strukturę, wygląd oraz logikę aplikacji. Pliki te to pliki HTML opisujące strukturę, arkusze styli opisujące wygląd aplikacji oraz skrypty Javascript, które definiują zachowanie aplikacji.
 W obecnych czasach dwa najpopularniejsze sposoby na tworzenie i udostępnianie takich plików to:
@@ -347,7 +347,7 @@ W obecnych czasach dwa najpopularniejsze sposoby na tworzenie i udostępnianie t
 
   Gdy serwer użyje takiego szablonu, może wypełnić podany szablon danymi użytkownika i zwrócić użytkownikowi poprawny kod HTML.
 
-  \begin{lstlisting}[language=HTML, caption=Przykład szablonu w Freemaker]
+  \begin{lstlisting}[language=HTML, caption=Przykład wyniku zwróconego z szablonu]
   <html>
   <body>
     <h1>Witaj Rafal!</h1>
@@ -363,7 +363,7 @@ W obecnych czasach dwa najpopularniejsze sposoby na tworzenie i udostępnianie t
   \end{lstlisting}
   W taki sposób jesteśmy w stanie tworzyć strukturę po stronie serwera indywidualnie dla każdego użytkownika.
 
-  \item[Jednostronicowa aplikacja] \hfill \\ W przypadku jednostronicowej aplikacji przeważającą część struktury strony definiujemy z użyciem skryptów Javascript. Serwer w przypadku otrzymania zapytania dotyczącego strony internetowej z przeglądarki zwraca użytkownikowi bardzo okrojoną strukturę HTML, oraz dołącza do tej struktury kod Javascript, który przy uruchamianiu strony internetowej dynamicznie tworzy elementy w dokumencie strony przy użyciu interfejsu przeglądarki. Przy takim podejściu mamy większą kontrolę nad aplikacją, przez co to podejście jest aktualnie stosowane przy budowaniu interaktywnych i bardziej skomplikowanych interfejsów użytkownika.
+  \item[Jednostronicowa aplikacja] \hfill \\ W przypadku jednostronicowej aplikacji przeważającą część struktury strony definiujemy z użyciem skryptów Javascript. Serwer w przypadku otrzymania zapytania dotyczącego strony internetowej z przeglądarki zwraca użytkownikowi bardzo okrojoną strukturę HTML, oraz dołącza do tej struktury kod Javascript, który przy uruchamianiu strony internetowej dynamicznie tworzy elementy w dokumencie strony przy użyciu interfejsu przeglądarki. Przy takim podejściu programista ma większą kontrolę nad aplikacją, dlatego to podejście jest aktualnie stosowane przy budowaniu interaktywnych i bardziej skomplikowanych interfejsów użytkownika.
 
   Taką strukturę w kodzie Javascript zazwyczaj definiuje się używając specjalnych bibliotek Javascript, które ułatwiają taki sposób definicji strony.
 

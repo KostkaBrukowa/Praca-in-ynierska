@@ -3,7 +3,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Panel Cypress.io\relax }}{34}{figure.caption.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Przykład testu wizualnej regresji\relax }}{35}{figure.caption.3}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Przykład wyniku nieudanego testu wizualnej regresji\relax }}{35}{figure.caption.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Ekran logowania i rejestracji\relax }}{37}{figure.caption.4}%
 \defcounter {refsection}{0}\relax 
@@ -15,21 +15,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Ekrany wydatku\relax }}{40}{figure.caption.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Wydatek oczekujący}}}{40}{subfigure.3.1}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Wydatek w stanie oczekującym}}}{40}{subfigure.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Wydatek w trakcie}}}{40}{subfigure.3.2}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Wydatek rozpoczęty}}}{40}{subfigure.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\centering Wydatek zakończona}}}{40}{subfigure.3.3}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\centering Wydatek zakończony}}}{40}{subfigure.3.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {\centering Widok płatności i uczestników wydatku}}}{40}{subfigure.3.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Formularz wydatku\relax }}{42}{figure.caption.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Płatność niepotwierdzona}}}{42}{subfigure.4.1}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Formularz wydatku w dla wydarzenia}}}{42}{subfigure.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Potwierdzanie płatności}}}{42}{subfigure.4.2}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Formularz wydatku dla grupy}}}{42}{subfigure.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\centering Płatność potwierdzona}}}{42}{subfigure.4.3}%
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {\centering Formularz wydatku dla znajomych}}}{42}{subfigure.4.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Ekran płatności\relax }}{44}{figure.caption.8}%
 \defcounter {refsection}{0}\relax 

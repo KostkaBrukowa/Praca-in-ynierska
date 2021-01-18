@@ -1,13 +1,13 @@
 \newpage
 \section{Prezentacja aplikacji}
 W tym rozdziale zostaną przedstawione poszczególne ekrany występujące w aplikacji w różnych stanach. Do poszczególnych sekcji będą też podane wymagania, które dane ekrany spełniają. W każdym podrozdziale zaprezentuję jeden ekran aplikacji.
- 
+
 
 Aplikacja została stworzona w stylu ciemnym, zgodnie ze wymaganiami specyfikacją Ant Design. Przykłady zostaną zaprezentowane w wersji na telefony, komórkowe, lecz aplikacja działa poprawnie z ekranami tabletów oraz większych ekranów komputerów i laptopów.
 
 \clearpage
 \subsection{Ekran logowania}
-Ekran logowania jest połączony z ekranem rejestracji. Na ekranie widnieje przycisk \emph{Zarejestruj się}, który po kliknięciu sprawia, że pojawiają się dwie dodatkowe kontrolki do wprowadzania tekstu, gdzie użytkownik musi powtórzyć hasło i podać imię i nazwisko, które nie są wymagane przy formularzu logowania. W kroku rejestracji widnieje przycisk \emph{Zaloguj się}, który ukrywa te dwie kontrolki. Zmiana pomiędzy logowaniem a rejestracją nie powodują utraty danych zawartych w elementach. Po poprawnym wypełnieniu formularza użytkownik zostaje przekierowany na ekran listy wydatków. Ekran spełnia wymagania WF1 oraz WF2.
+Ekran logowania jest połączony z ekranem rejestracji. Na ekranie widnieje przycisk \emph{Zarejestruj się}, który po kliknięciu sprawia, że pojawiają się dwie dodatkowe kontrolki do wprowadzania tekstu, gdzie użytkownik musi powtórzyć hasło oraz podać imię i nazwisko, które nie są wymagane przy formularzu logowania. W kroku rejestracji widnieje przycisk \emph{Zaloguj się}, który ukrywa te dwie kontrolki. Zmiana pomiędzy logowaniem a rejestracją nie powodują utraty danych zawartych w elementach. Po poprawnym wypełnieniu formularza użytkownik zostaje przekierowany na ekran listy wydatków. Ekran spełnia wymagania WF1 oraz WF2.
 
 
 \begin{figure}[h!]%
@@ -23,7 +23,7 @@ Ekran logowania jest połączony z ekranem rejestracji. Na ekranie widnieje przy
 \subsubsection{Ekran listy wydatków}
 Na tym ekranie użytkownik ma dostęp do listy wszystkich wydatków w których uczestniczy. Na górze ekranu widzimy całkowity bilans kwoty którą powinien zapłacić oraz kwotę, którą powinien otrzymać od innych użytkowników oraz całkowity bilans tych dwóch kwot. Te dwa kafelki są interaktywne i kliknięcie na jeden z nich zmienia listę wydatków. Ta część odpowiada za wymaganie WF10.
 
-Jeżeli zaznaczona jest opcja \emph{Inni są tobie winni}, na liście wydatków pojawiają się wydatki, które założył dany użytkownik, a po zmianie na opcję \emph{Ty jesteś winny w sumie} pojawiają się na liście wydatki, w których użytkownik uczestniczy. Domyślnie ukazane są nieukończone wydatki, ale użytkownik ma możliwość zaznaczenia opcji \emph{Pokaż zakończone}, która pokazuje wszystkie wydatki włączając w to te zakończone.
+Jeżeli zaznaczona jest opcja \emph{Inni są tobie winni}, na liście wydatków pojawiają się wydatki, których inicjatorem był dany użytkownik, a po zmianie na opcję \emph{Ty jesteś winny w sumie} pojawiają się na liście wydatki, w których użytkownik uczestniczy. Domyślnie nieukończone wydatki są ukryte, ale użytkownik ma możliwość zaznaczenia opcji \emph{Pokaż zakończone}, która pokazuje wszystkie wydatki włączając w to te zakończone.
 
 \begin{figure}[h]%
     \centering
@@ -37,11 +37,11 @@ Na ekranie wydatku są ukazane dane jednego wydatku. Na ekranie jest też pokaza
 
 \begin{figure}[h!]%
     \centering
-    \subfloat[\centering Wydatek oczekujący]{{\includegraphics[width=0.31\textwidth]{presentation/expense-waiting.png} }}%
+    \subfloat[\centering Wydatek w stanie oczekującym]{{\includegraphics[width=0.31\textwidth]{presentation/expense-waiting.png} }}%
     \qquad
-    \subfloat[\centering Wydatek w trakcie]{{\includegraphics[width=0.31\textwidth]{presentation/expense-in-progress.png} }}%
+    \subfloat[\centering Wydatek rozpoczęty]{{\includegraphics[width=0.31\textwidth]{presentation/expense-in-progress.png} }}%
     \qquad
-    \subfloat[\centering Wydatek zakończona]{{\includegraphics[width=0.31\textwidth]{presentation/expense-ended.png} }}%
+    \subfloat[\centering Wydatek zakończony]{{\includegraphics[width=0.31\textwidth]{presentation/expense-ended.png} }}%
     \qquad
     \subfloat[\centering Widok płatności i uczestników wydatku]{{\includegraphics[width=0.31\textwidth]{presentation/expense-bottom-view.png} }}%
     \caption{Ekrany wydatku}%
@@ -54,11 +54,11 @@ Ekran tworzenia wydatku pozwala na tworzenie nowych wydatków oraz ich edycji. W
 
 \begin{figure}[h!]%
     \centering
-    \subfloat[\centering Płatność niepotwierdzona]{{\includegraphics[width=0.31\textwidth]{presentation/expense-form-event.png} }}%
+    \subfloat[\centering Formularz wydatku w dla wydarzenia]{{\includegraphics[width=0.31\textwidth]{presentation/expense-form-event.png} }}%
     \qquad
-    \subfloat[\centering Potwierdzanie płatności]{{\includegraphics[width=0.31\textwidth]{presentation/expense-form-group.png} }}%
+    \subfloat[\centering Formularz wydatku dla grupy]{{\includegraphics[width=0.31\textwidth]{presentation/expense-form-group.png} }}%
     \qquad
-    \subfloat[\centering Płatność potwierdzona]{{\includegraphics[width=0.31\textwidth]{presentation/expense-form-friends.png} }}%
+    \subfloat[\centering Formularz wydatku dla znajomych]{{\includegraphics[width=0.31\textwidth]{presentation/expense-form-friends.png} }}%
     \caption{Formularz wydatku}%
 \end{figure}
 
@@ -81,7 +81,7 @@ Gdy użytkownik zostanie zaproszony do wydatku tworzony zostaje dla niego obiekt
 \clearpage
 \subsection{Ekran wydarzeń, grup i grup znajomych}
 \subsubsection{Listy wydarzeń, grup i grup znajomych}
-Na głównym ekranie list znajdują się zakładki, dzięki którym użytkownik może wybrać ich typ. Na tym ekranie mogą pojawić się listy wydarzeń, grup, grup znajomych i zaproszeń. Po kliknięciu na każdy element listy możemy przejść na ekran pojedynczego elementu.
+Na głównym ekranie list znajdują się zakładki, dzięki którym użytkownik może wybrać typ elementu. Na tym ekranie mogą pojawić się listy wydarzeń, grup, grup znajomych i zaproszeń. Po kliknięciu na każdy element listy możemy przejść na ekran pojedynczego elementu.
 
 \begin{figure}[h!]%
     \centering
@@ -107,7 +107,7 @@ Inicjator z tego poziomu może dodawać nowych uczestników, usuwać użytkownik
 
 \clearpage
 \subsubsection{Formularz dodawania elementu}
-Formularz dodawania elementu umożliwia dodawanie nowego elementu oraz edycję już utworzonego elementu. Formularz może być wyświetlany w dwóch trybach: \emph{Wydarzenie} oraz \emph{Grupa}. W trybie \emph{wydarzenie} mamy możliwość dodania wydarzenia dodatkowo posiadającego datę rozpoczęcia, miejsca wydarzenia oraz możliwości wyboru miejsca na mapie. W trybie \emph{Grupa} mamy możliwość dodania tylko nazwy uczestników i opisu.
+Formularz dodawania elementu umożliwia dodawanie nowego elementu oraz edycję już utworzonego elementu. Formularz może być wyświetlany w dwóch trybach: \emph{Wydarzenie} oraz \emph{Grupa}. W trybie \emph{wydarzenie} mamy możliwość dodania wydarzenia posiadającego datę rozpoczęcia, miejsca wydarzenia oraz możliwości wyboru miejsca na mapie. W trybie \emph{Grupa} mamy możliwość dodania tylko nazwy uczestników i opisu.
 
 \begin{figure}[h!]%
     \centering

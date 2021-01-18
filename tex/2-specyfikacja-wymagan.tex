@@ -3,7 +3,7 @@
 \section{Specyfikacja wymagań}
 \subsection{Słownik pojęć}
 \begin{description}
-  \item[Użytkownik] \hfill \\ Osoba, która złożyła konto w mojej aplikacji, posiadająca unikalny e-mail oraz inne dane osobowe.
+  \item[Użytkownik] \hfill \\ Osoba, która złożyła konto w aplikacji, posiadająca unikalny e-mail oraz inne dane osobowe.
   \item[Wydarzenie] \hfill \\ Obiekt reprezentujący wydarzenie, do którego mogą dołączać użytkownicy aplikacji. Wydarzenie posiada nazwę, godzinę rozpoczęcia i zakończenia, listę uczestników, opis, współrzędne geograficzne miejsca wydarzenia, oraz listę wydatków.
   \item[Grupa] \hfill \\ Obiekt reprezentujący grupę użytkowników, która chciałaby rozliczać wspólne wydatki, bez ustalonych ram czasowych lub ustalonego miejsca. Posiada nazwę, opis, listę uczestników oraz listę wydatków.
   \item[Wydatek] \hfill \\ Obiekt reprezentujący pojedynczy wydatek utworzony w prawdziwym życiu przez użytkownika, który zawiera nazwę, opis, kwotę uiszczoną za daną transakcję, datę płatności oraz osoby, które według osoby tworzącej wydatek wspólnie brały w nim udział.
@@ -15,7 +15,7 @@
     \item zaakceptowanym - użytkownik potwierdził udział w wydatku i zgodził się na zapłacenie części kwoty
     \item odrzuconym - użytkownik nie zgodził się na udział w wydatku
     \item opłaconym - użytkownik po zaakceptowaniu płatności opłacił swoją część
-    \item zakończony - po zakończeniu wydatku płatność jest w stanie zakończonym
+    \item zakończonym - po zakończeniu wydatku, do której należy płatność, jest ona w stanie zakończonym
   \end{itemize}
 \item[Zaproszenie] \hfill \\ W trakcie zakładania grupy lub wydarzenia użytkownik ma możliwość wskazania uczestników. Po utworzeniu obiektu każdemu wybranemu użytkownikowi wysyłane jest zaproszenie, które wybrany użytkownik może zaakceptować (potwierdzić udział w wydarzeniu lub grupie) lub je odrzucić.
 \item[Znajomy] \hfill \\ Użytkownik, który został zaproszony do listy znajomych. Tylko znajomi mogą być zapraszani do grup wydarzeń i wydatków.
@@ -25,7 +25,7 @@
 \subsection{Wymagania funkcjonalne}
 \begin{description}
   \item[WF1.] \hfill \\ Użytkownik może założyć konto w aplikacji podając adres e-mail, hasło oraz imię i nazwisko.
-  \item[WF2.] \hfill \\ Użytkownik może zalogować się do mojej aplikacji z użyciem adresu e-mail i hasła podanego przy rejestracji.
+  \item[WF2.] \hfill \\ Użytkownik może zalogować się do aplikacji z użyciem adresu e-mail i hasła podanego przy rejestracji.
   \item[WF3.] \hfill \\ Użytkownik może dodawać innych użytkowników do znajomych.
   \item[WF4.] \hfill \\ Użytkownik może zakładać wydatki podając takie informacje jak:
     \begin{itemize}
