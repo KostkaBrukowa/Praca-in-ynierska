@@ -13,11 +13,11 @@ Aplikacja została przetestowana na trzy różne sposoby:
 Testowanie jednostkowe pozwala w prosty sposób przetestować poszczególne komponenty aplikacji w izolacji. Komponenty w bibliotece React to zwykłe funkcje, więc można by pomyśleć, że możemy je testować jak funkcje, jednak jest kilka rzeczy, o których musimy pamiętać.
 
 \subsubsection{Testowanie komponentów React}
-Jednym z powodów dla którego trudno jest testować komponenty jak zwykłe funkcje jest to, że komponenty mogą posiadać stan. Jak widać na wydruku \ref{lst:reactCounterCode} używając funkcji \emph{React.useState} dołączamy do funkcji stan, który może się różnić przy różnych wywołaniach danego komponentu. Z tego powodu kolejne wywołania tej samej funkcji mogą zwracać inny wynik.
+Jednym z powodów, dla którego trudno jest testować komponenty jak zwykłe funkcje, jest to, że komponenty mogą posiadać stan. Jak widać na wydruku \ref{lst:reactCounterCode}, używając funkcji \emph{React.useState} dołączamy do funkcji stan, który może się różnić przy różnych wywołaniach danego komponentu. Z tego powodu kolejne wywołania tej samej funkcji mogą zwracać inny wynik.
 
-Kolejnym powodem, dla którego trudno by było przetestować komponent bazując tylko i wyłącznie na jego zwróconym wyniku, jest to, że wartością zwracaną przez komponent jest zwykły obiekt, który reprezentuje część wirtualnego DOM'u. Natomiast my jako programiści interpretujemy tę część wirtualnego DOM'u jako prawdziwe elementy przeglądarki, dlatego asercje, które sprawdzały by poprawność wirtualnego DOM'u mogłyby być nieczytelne i trudne w utrzymaniu.
+Kolejnym powodem, dla którego trudno by było przetestować komponent, bazując tylko i wyłącznie na jego zwróconym wyniku, jest to, że wartością zwracaną przez komponent jest zwykły obiekt, który reprezentuje część wirtualnego DOM-u. Natomiast my jako programiści interpretujemy tę część wirtualnego DOM-u jako prawdziwe elementy przeglądarki, dlatego asercje, które sprawdzałyby poprawność wirtualnego DOM-u mogłyby być nieczytelne i trudne w utrzymaniu.
 
-Dodatkowo komponenty mogą używać interfejsu przeglądarki, więc aby w całości przetestować komponent musimy być w stanie też sprawdzić, jak komponenty wchodzą w interakcje z przeglądarką.
+Dodatkowo komponenty mogą używać interfejsu przeglądarki, więc aby w całości przetestować komponent, musimy być w stanie też sprawdzić, jak komponenty wchodzą w interakcje z przeglądarką.
 
 Aby móc poprawnie i efektywnie przetestować jednostkowo komponenty aplikacji zostały użyte dwie biblioteki: \emph{react-testing-library} \cite{ref_rtl_doc} oraz \emph{Jest} \cite{ref_jest_doc}.
 
@@ -74,9 +74,9 @@ Aby móc poprawnie i efektywnie przetestować jednostkowo komponenty aplikacji z
   \end{addmargin}
   Powyżej w teście widzimy, że funkcja \emph{funkcjaDoMigawki} zwraca tag \emph{div} z tekstem w środku. W teście moglibyśmy sprawdzić zawartość zwróconej wartości przez funkcję, lecz wymagałoby to ręcznego wpisania wartości w asercji. W przykładzie jest to tylko jedna linijka, ale w przypadku komponentów React, które mogą zwracać nawet kilkadziesiąt linijek, wpisywanie ręczne zwracanej wartości mogłoby się okazać dosyć trudnym zadaniem.
 
-  Migawki rozwiązują ten problem. \emph{toMatchSnapshot} podczas pierwszego uruchomienia zapamiętuje wartość zwróconą przez funkcję, a przy następnych uruchomieniach testu sprawdza, czy wynik zgadza się z wynikiem z poprzedniego uruchomienia. Jeżeli te dwie wartości nie będą się zgadzać, \emph{Jest} zwróci programiście, że test nie przeszedł. W takiej sytuacji programista może zaakceptować nowy wygląd migawki, lub poprawić błąd, jeżeli zmiana była niezamierzona. Takie testy są właśnie stworzone po to, aby nie wprowadzać niepożądanych zmian do kodu aplikacji.
+  Migawki rozwiązują ten problem. \emph{toMatchSnapshot} podczas pierwszego uruchomienia zapamiętuje wartość zwróconą przez funkcję, a przy następnych uruchomieniach testu sprawdza, czy wynik zgadza się z wynikiem z poprzedniego uruchomienia. Jeżeli te dwie wartości nie będą się zgadzać, \emph{Jest} zwróci programiście, że test nie przeszedł. W takiej sytuacji programista może zaakceptować nowy wygląd migawki lub poprawić błąd, jeżeli zmiana była niezamierzona. Takie testy są właśnie stworzone po to, aby nie wprowadzać niepożądanych zmian do kodu aplikacji.
 
-\subsubsection{React-testing-library} React-testing-library natomiast rozwiązuje problem czytelności i łatwości testowania komponentów. Dzięki tej bibliotece jesteśmy w stanie testować zachowanie komponentów używając do tego bardzo prostego interfejsu, który pozwala na wykonywanie takich operacji jak:
+\subsubsection{React-testing-library} React-testing-library natomiast rozwiązuje problem czytelności i łatwości testowania komponentów. Dzięki tej bibliotece jesteśmy w stanie testować zachowanie komponentów, używając do tego bardzo prostego interfejsu, który pozwala na wykonywanie takich operacji jak:
 \begin{itemize}
   \item łatwe tworzenie komponentów w wirtualnym środowisku
   \item wykonywanie akcji użytkownika np. klikanie, najeżdżanie myszką itp.
@@ -110,18 +110,18 @@ Aby móc poprawnie i efektywnie przetestować jednostkowo komponenty aplikacji z
   });
   \end{lstlisting}
   \end{addmargin}
-  Powyżej w teście możemy zauważyć, że symulujemy wpisywanie do pola \emph{Nazwa wydatku} 51 znaków, a następnie sprawdzamy, czy w komponencie wyświetlił się odpowiedni błąd. Dzięki takim testom komponentów, możemy w łatwy sposób przetestować zachowanie komponentów w wielu różnych scenariuszach.
+  Powyżej w teście możemy zauważyć, że symulujemy wpisywanie do pola \emph{Nazwa wydatku} 51 znaków, a następnie sprawdzamy, czy w komponencie wyświetlił się odpowiedni błąd. Dzięki takim testom komponentów możemy w łatwy sposób przetestować zachowanie komponentów w wielu różnych scenariuszach.
 
 Testowanie jednostkowe ma natomiast kilka ograniczeń:
 \begin{itemize}
   \item nie pozwala sprawdzać integracji aplikacji z serwisami zewnętrznymi np. komunikacji z serwerem
-  \item jako, że Jsdom tylko symuluje środowisko przeglądarki, w aplikacji mogą pojawiać się błędy, które pojawiają się w prawdziwej przeglądarce. Takich błędów testy jednostkowe nie są w stanie wykazać
+  \item jako że Jsdom tylko symuluje środowisko przeglądarki, w aplikacji mogą pojawiać się błędy, które pojawiają się w prawdziwej przeglądarce. Takich błędów testy jednostkowe nie są w stanie wykazać
 \end{itemize}
 
 \subsection{Testowanie integracyjne aplikacji klienckiej}
 Testowanie integracyjne pozwala rozwiązać te wyzwania, które wystąpiły przy testowaniu jednostkowym.
 
-Do testów integracyjnych użyłem biblioteki o nazwie \emph{Cypress.io} \cite{ref_cypress_doc}. Biblioteka ta pozwala pisać testy, które potem są wykonywane w prawdziwej instancji przeglądarki. Cypress udostępnia interfejs, dzięki któremu możemy wykonywać akcje użytkownika (np. wpisywanie tekstu, klikanie itp.). Pozwala także sprawdzać poprawne działanie zewnętrznych serwisów jak i komunikację z nimi.
+Do testów integracyjnych użyłem biblioteki o nazwie \emph{Cypress.io} \cite{ref_cypress_doc}. Biblioteka ta pozwala pisać testy, które potem są wykonywane w prawdziwej instancji przeglądarki. Cypress udostępnia interfejs, dzięki któremu możemy wykonywać akcje użytkownika (np. wpisywanie tekstu, klikanie itp.). Pozwala także sprawdzać poprawne działanie zewnętrznych serwisów, jak i komunikację z nimi.
 
   \begin{addmargin}[6mm]{0mm}
   \begin{lstlisting}[
@@ -155,7 +155,7 @@ Cypress udostępnia też podgląd testów \emph{na żywo}. Dzięki temu, gdy tes
 \end{figure}
 
 \subsection{Testy wizualnej regresji aplikacji klienckiej}
-Testy wizualnej regresji zapewniają wizualną poprawność interfejsu użytkownika. Dzięki nim mogłem programowo symulować sytuacje biznesowe, a następnie przy pomocy biblioteki Cypress.io robić zrzuty ekranu. Testy wizualnej regresji działają podobnie jak testy migawkowe, tylko zamiast zapamiętywania wartości zwróconej przez funkcję Cypress zapamiętuje zrzut ekranu przeglądarki. Gdy pierwszy zrzut ekranu aplikacji został zrobiony podczas pierwszego uruchomienia testu, każde następne uruchomienie tego samego testu będzie robiło kolejny zrzut, a następnie porównywało z poprzednim. W taki sposób możemy sprawdzać, czy po zmianach w kodzie nie nastąpiła niepożądana zmiana w wyglądzie aplikacji. Jeżeli takie dwa zrzuty się różnią, test wyświetli komunikat błędu a następnie wyświetli różniące się zrzuty ekranu i wyróżni wszystkie różniące się piksele obu zdjęć. Jeżeli natomiast zmiana wyglądu była zamierzona, programista może zaakceptować zmiany w teście i od tego momentu w następnych testach porównywać z nowym wyglądem.
+Testy wizualnej regresji zapewniają wizualną poprawność interfejsu użytkownika. Dzięki nim mogłem programowo symulować sytuacje biznesowe, a następnie przy pomocy biblioteki Cypress.io robić zrzuty ekranu. Testy wizualnej regresji działają podobnie jak testy migawkowe, tylko zamiast zapamiętywania wartości zwróconej przez funkcję Cypress zapamiętuje zrzut ekranu przeglądarki. Gdy pierwszy zrzut ekranu aplikacji został zrobiony podczas pierwszego uruchomienia testu, każde następne uruchomienie tego samego testu będzie robiło kolejny zrzut, a następnie porównywało z poprzednim. W taki sposób możemy sprawdzać, czy po zmianach w kodzie nie nastąpiła niepożądana zmiana w wyglądzie aplikacji. Jeżeli takie dwa zrzuty się różnią, test wyświetli komunikat o błędzie, a następnie wyświetli różniące się zrzuty ekranu i wyróżni wszystkie różniące się piksele obu zdjęć. Jeżeli natomiast zmiana wyglądu była zamierzona, programista może zaakceptować zmiany w teście i od tego momentu w następnych testach porównywać z nowym wyglądem.
 
 % todo change screen to have new name and logo
 \begin{figure}
