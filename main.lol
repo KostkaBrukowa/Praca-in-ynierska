@@ -11,7 +11,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {6}Przykład mutacji w języku zapytań GraphQL}{21}{lstlisting.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7}Przykład subskrybcji w języku zapytań GraphQL}{22}{lstlisting.7}%
+\contentsline {lstlisting}{\numberline {7}Przykład subskrypcji w języku zapytań GraphQL}{22}{lstlisting.7}%
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {8}Przykład definiowania kwerendy z użyciem \emph {graphql-kotlin}}{22}{lstlisting.8}%
 \defcounter {refsection}{0}\relax 
@@ -19,14 +19,14 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {10}Przykład wyniku zwróconego z szablonu}{24}{lstlisting.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {11}Przykład aplikacji z użyciem biblioteki Javascriptowej}{25}{lstlisting.11}%
+\contentsline {lstlisting}{\numberline {11}Przykład aplikacji z użyciem biblioteki javascriptowej}{25}{lstlisting.11}%
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {12}Użycie mechanizmu zarządzania stanem w React}{26}{lstlisting.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {13}Przykład testu napisanego w bibliotece \emph {jest}}{31}{lstlisting.13}%
+\contentsline {lstlisting}{\numberline {13}Przykład testu napisanego w bibliotece \emph {Jest}}{31}{lstlisting.13}%
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {14}Przykład testu migawkowego}{31}{lstlisting.14}%
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {15}Przykład testu jednostkowego przy użyciu React-testing-library}{32}{lstlisting.15}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {16}Przykład testu integracyjnego z użyciem bilbioteki Cypress}{33}{lstlisting.16}%
+\contentsline {lstlisting}{\numberline {16}Przykład testu integracyjnego z użyciem biblioteki Cypress}{33}{lstlisting.16}%

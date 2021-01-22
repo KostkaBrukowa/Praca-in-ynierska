@@ -3,7 +3,7 @@
 W tym rozdziale zostaną przedstawione poszczególne ekrany występujące w aplikacji w różnych stanach. Do poszczególnych sekcji będą też podane wymagania, które dane ekrany spełniają. W każdym podrozdziale zaprezentuję jeden ekran aplikacji.
 
 
-Aplikacja została stworzona w stylu ciemnym, zgodnie ze wymaganiami specyfikacją Ant Design. Przykłady zostaną zaprezentowane w wersji na telefony, komórkowe, lecz aplikacja działa poprawnie z ekranami tabletów oraz większych ekranów komputerów i laptopów.
+Aplikacja została stworzona w stylu ciemnym, zgodnie ze wymaganiami specyfikacją Ant Design. Przykłady zostaną zaprezentowane w wersji na telefony komórkowe, lecz aplikacja działa poprawnie z ekranami tabletów oraz większych ekranów komputerów i laptopów.
 
 \clearpage
 \subsection{Ekran logowania}
@@ -21,9 +21,9 @@ Ekran logowania jest połączony z ekranem rejestracji. Na ekranie widnieje przy
 \clearpage
 \subsection{Wydatki}
 \subsubsection{Ekran listy wydatków}
-Na tym ekranie użytkownik ma dostęp do listy wszystkich wydatków w których uczestniczy. Na górze ekranu widzimy całkowity bilans kwoty którą powinien zapłacić oraz kwotę, którą powinien otrzymać od innych użytkowników oraz całkowity bilans tych dwóch kwot. Te dwa kafelki są interaktywne i kliknięcie na jeden z nich zmienia listę wydatków. Ta część odpowiada za wymaganie WF10.
+Na tym ekranie użytkownik ma dostęp do listy wszystkich wydatków, w których uczestniczy. Na górze ekranu widzimy całkowity bilans kwoty, którą powinien zapłacić oraz kwotę, którą powinien otrzymać od innych użytkowników oraz całkowity bilans tych dwóch kwot. Te dwa kafelki są interaktywne i kliknięcie na jeden z nich zmienia listę wydatków. Ta część odpowiada za wymaganie WF10.
 
-Jeżeli zaznaczona jest opcja \emph{Inni są tobie winni}, na liście wydatków pojawiają się wydatki, których inicjatorem był dany użytkownik, a po zmianie na opcję \emph{Ty jesteś winny w sumie} pojawiają się na liście wydatki, w których użytkownik uczestniczy. Domyślnie nieukończone wydatki są ukryte, ale użytkownik ma możliwość zaznaczenia opcji \emph{Pokaż zakończone}, która pokazuje wszystkie wydatki włączając w to te zakończone.
+Jeżeli zaznaczona jest opcja \emph{Inni są tobie winni}, na liście wydatków pojawiają się wydatki, których inicjatorem był dany użytkownik, a po zmianie na opcję \emph{Ty jesteś winny w sumie} pojawiają się na liście wydatki, w których użytkownik uczestniczy. Domyślnie zakończone wydatki są ukryte, ale użytkownik ma możliwość zaznaczenia opcji \emph{Pokaż zakończone}, która pokazuje wszystkie wydatki włączając w to te zakończone.
 
 \begin{figure}[h]%
     \centering
@@ -33,7 +33,7 @@ Jeżeli zaznaczona jest opcja \emph{Inni są tobie winni}, na liście wydatków 
 
 \clearpage
 \subsubsection{Ekran wydatku}
-Na ekranie wydatku są ukazane dane jednego wydatku. Na ekranie jest też pokazany aktualny stan wydatku na komponencie zwanym \emph{krokami}. Dzięki temu komponentowi stan wydatku jest bardziej zrozumiały dla użytkownika. Dodatkowo są też ukazani uczestnicy oraz wszystkie płatności stworzone w ramach wydatku. Inicjator wydatku może z tego poziomu zarządzać wydatkiem, czyli akceptować płatności oraz może zakończyć wydatek. Z tego poziomu może też przejść do ekranu formularza edycji wydatku.
+Na ekranie wydatku są ukazane tylko jego dane. Na ekranie jest też pokazany aktualny stan wydatku na komponencie zwanym \emph{krokami}. Dzięki temu komponentowi stan wydatku jest bardziej zrozumiały dla użytkownika. Dodatkowo są też ukazani uczestnicy oraz wszystkie płatności stworzone w ramach wydatku. Inicjator wydatku może z tego poziomu zarządzać wydatkiem, czyli akceptować płatności oraz może zakończyć wydatek. Z tego poziomu może też przejść do ekranu formularza edycji wydatku.
 
 \begin{figure}[h!]%
     \centering
@@ -64,7 +64,7 @@ Ekran tworzenia wydatku pozwala na tworzenie nowych wydatków oraz ich edycji. W
 
 \clearpage
 \subsection{Ekran płatności}
-Gdy użytkownik zostanie zaproszony do wydatku tworzony zostaje dla niego obiekt płatności, który jest przedstawiony na ekranie płatności. Na tym ekranie są zawarte informacje wydatku do którego należy płatność oraz informacje o samej płatności. Z poziomu tego ekranu użytkownik może też zarządzać stanem swojej płatności, czyli akceptować płatność, potwierdzać wpłatę lub odrzucać płatność. Ekran spełnia wymaganie WF5.
+Gdy użytkownik zostanie zaproszony do wydatku tworzony zostaje dla niego obiekt płatności, który jest przedstawiony na ekranie płatności. Na tym ekranie są zawarte informacje wydatku, do którego należy płatność, oraz informacje o samej płatności. Z poziomu tego ekranu użytkownik może też zarządzać stanem swojej płatności, czyli akceptować płatność, potwierdzać wpłatę lub odrzucać płatność. Ekran spełnia wymaganie WF5.
 
 \begin{figure}[h!]%
     \centering
@@ -125,7 +125,7 @@ Formularz dodawania elementu umożliwia dodawanie nowego elementu oraz edycję j
 
 \clearpage
 \subsection{Aktywność}
-Panel aktywności wyświetla użytkownikowi wszystkie dostępne powiadomienia w formie listy. Po kliknięciu w elementy aplikacja przekierowywuje użytkownika do odpowiednich stron np. po kliknięciu w pierwszy element ukazany na rysunku ~\ref{fig:notificationList} zostaniemy przekierowywani do wydatku do którego użytkownik został dołączony. Dodatkowo, gdy są na ekranie nowe powiadomienia wyświetlają się przy nich czerwone kropki, aby zwrócić na nie uwagę użytkownika (przykład na rysunku ~\ref{fig:notificationListNew}). Każde powiadomienie może być usunięte przez użytkownika. Powiadomienia są posortowane w taki sposób, aby najnowsze pojawiały się na samej górze ekranu. Ekran spełnia wymaganie WF8.
+Panel aktywności wyświetla użytkownikowi wszystkie dostępne powiadomienia w formie listy. Po kliknięciu w elementy aplikacja przekieruje użytkownika do odpowiednich stron np. po kliknięciu w pierwszy element ukazany na rysunku ~\ref{fig:notificationList} zostaniemy przekierowywani do wydatku, do którego użytkownik został dołączony. Dodatkowo, gdy są na ekranie nowe powiadomienia, wyświetlają się przy nich czerwone kropki, aby zwrócić na nie uwagę użytkownika (przykład na rysunku ~\ref{fig:notificationListNew}). Każde powiadomienie może być usunięte przez użytkownika. Powiadomienia są posortowane w taki sposób, aby najnowsze pojawiały się na samej górze ekranu. Ekran spełnia wymaganie WF8.
 
 \begin{figure}[h!]%
     \centering
@@ -156,13 +156,13 @@ Na ekranie znajomych znajduje się lista wszystkich znajomych użytkownika oraz 
     \centering
     \subfloat[\centering Lista znajomych]{{\includegraphics[width=0.45\textwidth]{presentation/friend-list.png} }}%
     \qquad
-    \subfloat[\centering Dialog dodawania nowych znajmych]{{\includegraphics[width=0.45\textwidth]{presentation/friend-add.png}}}%
+    \subfloat[\centering Dialog dodawania nowych znajomych]{{\includegraphics[width=0.45\textwidth]{presentation/friend-add.png}}}%
     \caption{Ekran znajomych}%
 \end{figure}
 
 \clearpage
 \subsubsection{Ekran innego użytkownika}
-Użytkownik może też zobaczyć informacje o innym użytkowniku: jego email, imie oraz numer konta na który może przelać pieniądze za płatność. Na tym ekranie dostępne są też informacje o balansie pieniężnym pomiędzy użytkownikami. Ekran spełnia wymaganie WF11.
+Użytkownik może też zobaczyć informacje o innym użytkowniku: jego email, imie oraz numer konta, na który może przelać pieniądze za płatność. Na tym ekranie dostępne są też informacje o balansie pieniężnym pomiędzy użytkownikami. Ekran spełnia wymaganie WF11.
 
 \begin{figure}[h!]%
     \centering

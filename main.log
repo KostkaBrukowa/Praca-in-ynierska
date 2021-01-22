@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  18 JAN 2021 21:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.21)  22 JAN 2021 19:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -861,40 +861,40 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 25.
-LaTeX Font Info:    Trying to load font information for FML+futm on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for FML/futm/m/it on input line 26.
+LaTeX Font Info:    Trying to load font information for FML+futm on input line 26.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmlfutm.fd
 File: fmlfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FML/futm.
 )
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 25.
-LaTeX Font Info:    Trying to load font information for FMS+futm on input line 25.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for FMS/futm/m/n on input line 26.
+LaTeX Font Info:    Trying to load font information for FMS+futm on input line 26.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmsfutm.fd
 File: fmsfutm.fd 2004/10/30 Fontinst v1.926 font definitions for FMS/futm.
 )
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 25.
-LaTeX Font Info:    Trying to load font information for FMX+futm on input line 25.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for FMX/futm/m/n on input line 26.
+LaTeX Font Info:    Trying to load font information for FMX+futm on input line 26.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/fmxfutm.fd
 File: fmxfutm.fd futm-extension
 )
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
 Package biblatex Info: Trying to load language 'polish'...
 Package biblatex Info: ... file 'polish.lbx' found.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/biblatex/lbx/polish.lbx
@@ -908,8 +908,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (./main.bbl)
-Package biblatex Info: Reference section=0 on input line 25.
-Package biblatex Info: Reference segment=0 on input line 25.
+Package biblatex Info: Reference section=0 on input line 26.
+Package biblatex Info: Reference segment=0 on input line 26.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: hyperref package is loaded.
@@ -919,8 +919,8 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Redeclaring math accent \widehat on input line 25.
-LaTeX Font Info:    Redeclaring math accent \widetilde on input line 25.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 26.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 26.
  (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count438
@@ -941,14 +941,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@lstlisting=\count444
-LaTeX Info: Redefining \microtypecontext on input line 25.
+LaTeX Info: Redefining \microtypecontext on input line 26.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 25.
+LaTeX Info: Redefining \showhyphens on input line 26.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -964,7 +964,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 25.
+Package hyperref Info: Link coloring ON on input line 26.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
@@ -974,9 +974,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count445
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 26.
+LaTeX Info: Redefining \pageref on input line 26.
+LaTeX Info: Redefining \nameref on input line 26.
  (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
@@ -1020,12 +1020,12 @@ LaTeX Info: Redefining \nameref on input line 25.
 <eiti/header.png, id=199, 483.7272pt x 76.8471pt>
 File: eiti/header.png Graphic file (type png)
 <use eiti/header.png>
-Package pdftex.def Info: eiti/header.png  used on input line 44.
+Package pdftex.def Info: eiti/header.png  used on input line 45.
 (pdftex.def)             Requested size: 438.17247pt x 69.61084pt.
 <eiti/title-inz.png, id=200, 483.7272pt x 105.39375pt>
 File: eiti/title-inz.png Graphic file (type png)
 <use eiti/title-inz.png>
-Package pdftex.def Info: eiti/title-inz.png  used on input line 44.
+Package pdftex.def Info: eiti/title-inz.png  used on input line 45.
 (pdftex.def)             Requested size: 438.17247pt x 95.4694pt.
 [1
 
@@ -1038,7 +1038,7 @@ pdfTeX warning: pdflatex (file ./eiti/oswiadczenie_autora_pracy.pdf): PDF inclus
 <eiti/oswiadczenie_autora_pracy.pdf, id=221, 597.55246pt x 845.07718pt>
 File: eiti/oswiadczenie_autora_pracy.pdf Graphic file (type pdf)
 <use eiti/oswiadczenie_autora_pracy.pdf>
-Package pdftex.def Info: eiti/oswiadczenie_autora_pracy.pdf  used on input line 66.
+Package pdftex.def Info: eiti/oswiadczenie_autora_pracy.pdf  used on input line 67.
 (pdftex.def)             Requested size: 521.4263pt x 737.46782pt.
 [5 <./eiti/oswiadczenie_autora_pracy.pdf>] [6
 
@@ -1094,20 +1094,14 @@ LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 9.19998pt on input line 14.
 LaTeX Font Info:    Font shape `U/futm/m/n' will be
 (Font)              scaled to size 7.35999pt on input line 14.
-
-Underfull \vbox (badness 7116) has occurred while \output is active []
-
- [11] [12]) (./tex/3-uzyte-technologie.tex [13] [14] [15] [16]
-Underfull \vbox (badness 2903) has occurred while \output is active []
-
- [17]
-Underfull \vbox (badness 4518) has occurred while \output is active []
-
- [18] [19]
+ [11] [12]) (./tex/3-uzyte-technologie.tex [13] [14]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [20]
-Underfull \hbox (badness 10000) in paragraph at lines 233--235
+ [15] [16] [17]
+Underfull \vbox (badness 2269) has occurred while \output is active []
+
+ [18] [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 248--250
 
  []
 
@@ -1116,7 +1110,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 ) [24] [25]
-LaTeX Font Info:    Trying to load font information for TS1+futs on input line 414.
+LaTeX Font Info:    Trying to load font information for TS1+futs on input line 432.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/fourier/ts1futs.fd
 File: ts1futs.fd 2003/09/14 Fontinst v1.801 font definitions for TS1/futs.
 )
@@ -1124,21 +1118,21 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `futs' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [26]
-Underfull \vbox (badness 1043) has occurred while \output is active []
+ [26] [27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [27] [28]) (./tex/4-testowanie.tex [29] [30] [31]
-Overfull \hbox (66.77576pt too wide) in paragraph at lines 89--90
+ [28]) (./tex/4-testowanie.tex [29] [30] [31]
+Overfull \hbox (66.77576pt too wide) in paragraph at lines 95--96
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (41.43152pt too wide) in paragraph at lines 91--93
+Overfull \hbox (41.43152pt too wide) in paragraph at lines 97--99
 [][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 [32]
-Overfull \hbox (16.08728pt too wide) in paragraph at lines 137--138
+Overfull \hbox (16.08728pt too wide) in paragraph at lines 143--144
 [][][][][][][][][][][][][][][][][][][][][] 
  []
 
@@ -1146,12 +1140,12 @@ Overfull \hbox (16.08728pt too wide) in paragraph at lines 137--138
 <img/cypress-imape.png, id=685, 1283.79625pt x 973.6375pt>
 File: img/cypress-imape.png Graphic file (type png)
 <use img/cypress-imape.png>
-Package pdftex.def Info: img/cypress-imape.png  used on input line 147.
+Package pdftex.def Info: img/cypress-imape.png  used on input line 153.
 (pdftex.def)             Requested size: 438.17247pt x 332.31003pt.
 <img/wisual-regression.png, id=687, 994.71625pt x 581.17125pt>
 File: img/wisual-regression.png Graphic file (type png)
 <use img/wisual-regression.png>
-Package pdftex.def Info: img/wisual-regression.png  used on input line 156.
+Package pdftex.def Info: img/wisual-regression.png  used on input line 162.
 (pdftex.def)             Requested size: 438.17247pt x 256.00877pt.
 
 Underfull \vbox (badness 5954) has occurred while \output is active []
@@ -1368,7 +1362,7 @@ Package pdftex.def Info: img/presentation/friend-view.png  used on input line 16
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 100.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 101.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -1384,28 +1378,28 @@ Package microtype Info: Loading generic protrusion settings for font family
 \tf@lol=\write7
 \openout7 = `main.lol'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 130.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 131.
  [56]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 131.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 131.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 131.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FA337799537CC9353ED3B7FD9B28DA89;3741.
+(rerunfilecheck)             Checksum: 5598325ED6699DF795F06514BB8EE85F;3741.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23579 strings out of 480608
- 399469 string characters out of 5903629
- 1372199 words of memory out of 5000000
- 38349 multiletter control sequences out of 15000+600000
- 647052 words of font info for 317 fonts, out of 8000000 for 9000
+ 23592 strings out of 480608
+ 399630 string characters out of 5903629
+ 1372268 words of memory out of 5000000
+ 38350 multiletter control sequences out of 15000+600000
+ 648240 words of font info for 326 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 49i,12n,90p,1499b,1977s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,12n,90p,1499b,1978s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/fourier/fourier-ms.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putr8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/adobe/utopia/putri8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (56 pages, 2411807 bytes).
+Output written on main.pdf (56 pages, 2411410 bytes).
 PDF statistics:
  1042 PDF objects out of 1200 (max. 8388607)
  900 compressed objects within 9 object streams
