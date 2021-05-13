@@ -2,7 +2,7 @@
 
 \section{Specyfikacja wymagań}
 \subsection{Słownik pojęć}
-\begin{description}
+\begin{description}[leftmargin={15pt},labelindent={0pt}]
   \item[Użytkownik] \hfill \\ Osoba, która złożyła konto w aplikacji, posiadająca unikalny e-mail oraz inne dane osobowe.
   \item[Wydarzenie] \hfill \\ Obiekt reprezentujący wydarzenie, do którego mogą dołączać użytkownicy aplikacji. Wydarzenie posiada nazwę, godzinę rozpoczęcia i zakończenia, listę uczestników, opis, współrzędne geograficzne miejsca wydarzenia, oraz listę wydatków.
   \item[Grupa] \hfill \\ Obiekt reprezentujący grupę użytkowników, która chciałaby rozliczać wspólne wydatki, bez ustalonych ram czasowych lub ustalonego miejsca. Posiada nazwę, opis, listę uczestników oraz listę wydatków.
@@ -23,7 +23,7 @@
 
 
 \subsection{Wymagania funkcjonalne}
-\begin{description}
+\begin{description}[leftmargin={15pt},labelindent={0pt}]
   \item[WF1.] \hfill \\ Użytkownik może założyć konto w aplikacji, podając adres e-mail, hasło oraz imię i nazwisko.
   \item[WF2.] \hfill \\ Użytkownik może zalogować się do aplikacji z użyciem adresu e-mail i hasła podanego przy rejestracji.
   \item[WF3.] \hfill \\ Użytkownik może dodawać innych użytkowników do znajomych.
@@ -53,11 +53,13 @@
     \end{itemize}
   \item[WF9.] \hfill \\ Użytkownik może zarządzać zaproszeniami, czyli przeglądać listę zaproszeń, akceptować lub odrzucać poszczególne zaproszenia
   \item[WF10.] \hfill \\ Użytkownik posiada statystyki dotyczące swoich wszystkich wydatków, czyli jaką kwotę powinien oddać wszystkim innym użytkownikom oraz ile wszyscy inni użytkownicy powinni mu oddać.
-  \item[WF11.] \hfill \\ Użytkownik posiada podsumowanie bilansu wydatków dla każdego użytkownika osobno.
+  \item[WF11.] \hfill \\ Użytkownik posiada podsumowanie bilansu wydatków dla każdego znajomego osobno, czyli użytkownik po wejściu na profil znajomego, będzie mógł zobaczyć jaką kwotę znajomy ma mu oddać oraz jaką kwotę użytkownik powinien oddać znajomemu.
+  \item[WF12.] \hfill \\ Użytkownik ma dostęp tylko do wydarzeń, do których należy lub do których został zaproszony.
+  \item[WF13.] \hfill \\ Użytkownik ma dostęp tylko do wydatków i płatności do których należy.
 \end{description}
 
 \subsection{Wymagania niefunkcjonalne}
-\begin{description}
+\begin{description}[leftmargin={15pt},labelindent={0pt}]
   \item[WN1.] \hfill \\ Aplikacja działa na najnowszych przeglądarkach: Chrome, Firefox oraz Edge.
   \item[WN2.] \hfill \\ Aplikacja jest renderowana po stronie klienta z wykorzystaniem reaktywnej biblioteki Javascript.
   \item[WN3.] \hfill \\ Komunikacja aplikacji z serwerem odbywa się poprzez bezpieczne połączenie https.

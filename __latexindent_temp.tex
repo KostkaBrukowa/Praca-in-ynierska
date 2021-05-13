@@ -1,148 +1,134 @@
-% Źródło innego typu, np. repozytorium na GitHubie.
-@manual{ref_heuristic_alg,
-    title        = "Rekoncyliacja w bibliotece React",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://pl.reactjs.org/docs/reconciliation.html}"
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bachelor's & Master's Thesis Template             %%
+%% Copyleft by Artur M. Brodzki & Piotr Woźniak      %%
+%% Faculty of Electronics and Information Technology %%
+%% Warsaw University of Technology, 2019-2020        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-@manual{ref_apollo_doc,
-    title = "Apollo Client",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://pl.reactjs.org/docs/reconciliation.html}"
-}
+\documentclass[
+    left=2.5cm,         % Sadly, generic margin parameter
+    right=2.5cm,        % doesnt't work, as it is
+    top=2.5cm,          % superseded by more specific
+    bottom=3cm,         % left...bottom parameters.
+    bindingoffset=6mm,  % Optional binding offset.
+    nohyphenation=false % You may turn off hyphenation, if don't like.
+]{eiti/eiti-thesis}
 
-@manual{ref_cra_doc,
-    title = "Create React App",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://github.com/facebook/create-react-app}"
-}
-@manual{ref_react_doc,
-    title = "React",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://reactjs.org/}"
-}
-@manual{ref_eslint_doc,
-    title = "Eslint",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://eslint.org/}"
-}
-@manual{ref_ts_doc,
-    title = "Typescript",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://www.typescriptlang.org/}"
-}
-@manual{ref_graphql_doc,
-    title = "Graphql",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://graphql.org/}"
-}
-@manual{ref_gqlKotlin_doc,
-    title = "Graphql-Kotlin",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://expediagroup.github.io/graphql-kotlin/docs/getting-started.html}"
-}
-@manual{ref_postgre_doc,
-    title = "PostgreSQL",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://www.postgresql.org/}"
-}
-@manual{ref_spring_doc,
-    title = "Spring",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://spring.io/}"
-}
-@manual{ref_kotlin_doc,
-    title = "Kotlin",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://kotlinlang.org/}"
-}
-@manual{ref_rtl_doc,
-    title = "React Testing Library",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://testing-library.com/docs/react-testing-library/intro/}"
-}
-@manual{ref_jest_doc,
-    title = "Jest",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://jestjs.io/}"
-}
-@manual{ref_cypress_doc,
-    title = "Cypress",
-    note  = "Dostęp zdalny (16.01.2021): \url{https://www.cypress.io/}"
-}
 
-@unpublished{ref_hex_doc,
-    author = "Alistair Cockburn",
-    title  = "Hexagonal architecture",
-    note   = "Dostęp zdalny (16.01.2021): \url{https://alistair.cockburn.us/hexagonal-architecture/}",
-    year   = "2005"
-}
+\langpol % Dla języka angielskiego mamy \langeng
+\graphicspath{{img/}}             % Katalog z obrazkami.
+\addbibresource{bib2.bib} % Plik .bib z bibliografią
+\usepackage{subfig}
+\renewcommand{\lstlistingname}{Wydruk}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{Lista \lstlistingname ów}% List of Listings -> List of Algorithms
+\setlist[description]{leftmargin={0pt},labelindent={0pt}}
 
-% EXAMPLES
-% Artykuł w recenzowanym czasopiśmie.
-@article{szczypiorski2015,
-    author    = "Szczypiorski, K. and Janicki, A. and Wendzel, S",
-    title     = "{T}he {G}ood, {T}he {B}ad {A}nd {T}he {U}gly: {E}valuation of {W}i-{F}i {S}teganography",
-    journal   = "Journal of Communications",
-    volume    = "10",
-    number    = "10",
-    pages     = "747--752",
-    publisher = "Journal of Communications (JCM)",
-    year      = "2015",
-}
+\begin{document}
 
-% Książka.
-@book{goossens93,
-    author    = "Michel Goossens and Frank Mittelbach and Alexander Samarin",
-    title     = "The LaTeX Companion",
-    publisher = "Addison-Wesley",
-    address   = "Reading, Massachusetts",
-    year      = "1993",
+%--------------------------------------
+% Strona tytułowa
+%--------------------------------------
+\EngineerThesis % Dla pracy inżynierskiej mamy \EngineerThesis
+\instytut{Informatyki}
+\kierunek{Informatyka}
+\specjalnosc{Inżynieria systemów informatycznych}
+\title{
+    Aplikacja internetowa do rozliczania\\ wspólnych wydatków
 }
+\engtitle{ % Tytuł po angielsku do angielskiego streszczenia
+    A web application for settling common expenses
+}
+\author{Jarosław Glegoła}
+\album{293092}
+\promotor{dr inż. Roman Podraza}
+\date{\the\year}
+\maketitle
 
-% Fragment książki (np. zakres stron).
-@inbook{wang97,
-    author      = "Hao ang",
-    title       = "A Logical Journey: From G{\"o}del to Philosophy.",
-    publisher   = "A Bradford Book",
-    pages       = "316",
-    year        = "1997"
-}
+%--------------------------------------
+% Streszczenie po polsku
+%--------------------------------------
+\cleardoublepage % Zaczynamy od nieparzystej strony
+\streszczenie Celem tej pracy jest opisanie procesu projektowania i tworzenia aplikacji internetowej. Aplikacja udostępnia możliwość łatwiejszego rozliczania się z wydatków. W pracy opisana jest architektura serwera oraz aplikacji klienckiej, użyte technologie i paradygmaty, sposoby testowania oraz wizualna prezentacja aplikacji.
 
-% Fragment książki (np. esej), posiadający własny tytuł.
-@incollection{goedel95,
-    author      = "Kurt G{\"o}del",
-    title       = "Texts relating to the ontological proof",
-    booktitle   = "Unpublished Essays and Lectures",
-    publisher   = "Oxford University Press",
-    pages       = "429--437",
-    year        = "1995",
-}
+\slowakluczowe Aplikacja internetowa, GraphQL, Spring Framework, Architektura heksagonalna, React
 
-% Publikacja konferencyjna.
-@inproceedings{benzmuller2014,
-    author       = "{Ch}. Benzmuller and B. W. Paleo",
-    title        = "Automating {G\"o}del’s {O}ntological {P}roof of {G}od’s {E}xistence with {H}igher-order {A}utomated {T}heorem {P}rovers",
-    booktitle    = "European	Conference on Artificial Intelligence",
-    publisher    = "IOS Press",
-    howpublished = "Dostęp zdalny (10.04.2019): \url{http://page.mi.fu-berlin.de/cbenzmueller/papers/C40.pdf}",
-    year         = "2014",
-}
+%--------------------------------------
+% Streszczenie po angielsku
+%--------------------------------------
+\newpage
+\abstract The main goal of this thesis was to describe the process of designing and creating a web application. The application allows users to settle down expenses. In the thesis was described the architecture of the server and the client side, technologies and paradigms used, how the application was tested and visual presentation of the web application.
+\keywords Web application, GraphQL, Spring Framework, Hexagonal architecture, React
 
-% Raport techniczny.
-@techreport{duqu2011,
-    author      = "Bencsáth, B. and Pék, G. and Buttyán, L. and Félegyházi M.",
-    title       = "{D}uqu: {A} {S}tuxnet-like malware found in the wild",
-    institution = "Laboratory of Cryptography and System Security, Hungary",
-    year        = "2011"
-}
+%--------------------------------------
+% Oświadczenie o autorstwie
+%--------------------------------------
+\cleardoublepage  % Zaczynamy od nieparzystej strony
+\pagestyle{plain}
+\makeauthorship
 
-% Specyfikacja techniczna.
-@manual{shs2015,
-    title        = "{FIPS} 180-4: {S}ecure {H}ash {S}tandard ({SHS})",
-    howpublished = "Dostęp zdalny (13.03.2019): \url{https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf}",
-    year         = "2015"
-}
+%--------------------------------------
+% Spis treści
+%--------------------------------------
+\cleardoublepage % Zaczynamy od nieparzystej strony
+\tableofcontents
 
-% Praca magisterska.
-@mastersthesis{wozniak2018,
-    author = "Woźniak, Piotr",
-    title  = "{P}rogramowanie kwadratowe w usuwaniu efektu rozmycia ruchu w fotografii cyfrowej",
-    school  = "Wydział Elektroniki i Technik Informacyjnych, Politechnika Warszawska",
-    year   = "2018",
-}
+%--------------------------------------
+% Rozdziały
+%--------------------------------------
+\cleardoublepage % Zaczynamy od nieparzystej strony
+\pagestyle{headings}
 
-% Nieopublikowany artykuł, dostępny np. tylko w internecie.
-@unpublished{koons2005,
-    author = "Koons, Robert C.",
-    title  = "{S}obel on {G\"o}del’s {O}ntological {P}roof",
-    note   = "Dostęp zdalny (25.04.2019): \url{http://www.robkoons.net/media/69b0dd04a9d2fc6dffff80b4ffffd524.pdf}",
-    year   = "2005"
-}
+\input{tex/1-wstep.tex}         % Wygodnie jest trzymać każdy rozdział w osobnym pliku.
+\input{tex/2-specyfikacja-wymagan.tex}         % Wygodnie jest trzymać każdy rozdział w osobnym pliku.
+\input{tex/3-uzyte-technologie.tex}         % Wygodnie jest trzymać każdy rozdział w osobnym pliku.
+\input{tex/4-testowanie.tex}         % Wygodnie jest trzymać każdy rozdział w osobnym pliku.
+\input{tex/5-prezentacja-aplikacji.tex}         % Wygodnie jest trzymać każdy rozdział w osobnym pliku.
+                            % na nowe wersje, a cały tekst pracy pozostaje nienaruszony.
+
+
+\clearpage % Rozdziały zaczynamy od nowej strony
+\section{Podsumowanie}          % Można też pisać rozdziały w jednym pliku.
+\subsection{Omówienie}
+Celem mojej pracy było napisanie aplikacji internetowej wspomagającej rozliczanie się z wydatków pomiędzy użytkownikami. Do utworzenia interfejsu użytkownika wykorzystałem podejście jednostronicowej aplikacji i biblioteki React. Dzięki tej bibliotece i mechanizmie reaktywności w aplikacji rzadko pojawiały się błędy związane z niespójnością stanu z widokiem, co znacznie przyspieszyło pisanie części klienckiej.
+
+Aplikacja została stworzona zgodnie ze specyfikacją Ant Design w trybie ciemnym. Dzięki użyciu komponentów z biblioteki AntD zgodnych z tą specyfikacją aplikacja wygląda bardzo profesjonalnie. Strona kliencka komunikowała się z serwerem z użyciem GraphQL, co było dużym uproszczeniem w tworzeniu aplikacji klienckiej. Dużym atutem takiego podejścia jest to, że mogła być użyta biblioteka, która automatycznie generowała typy schematu GraphQL.
+
+ Sam serwer został stworzony przy pomocy Spring oraz Spring Boot wykorzystując Architekturę Heksagonalną. Na końcu przetestowałem moją aplikację na trzy różne sposoby: jednostkowo, integracyjnie oraz z użyciem wizualnej regresji.
+\subsection{Dalsze prace}
+
+  Aplikacja posiada jeszcze miejsce na rozwój. Jednym z kolejnych kroków w rozbudowie aplikacji byłoby stworzenie bardziej rozbudowanych statystyk dla użytkownika. Statystyki mogłyby obejmować podsumowanie miesięczne wydatków lub tempo wydawania pieniędzy. Dodatkowym atutem byłyby także powiadomienia mailowe o nowych wydatkach lub płatnościach.
+
+  Jeżeli chodzi o komunikację w mojej aplikacji to dodanie mechanizmu wiadomości pomiędzy użytkownikami i w ramach grupy byłoby świetnym dodatkiem do zbioru funkcjonalności aplikacji.
+
+  Funkcjonalnością, która znacznie ułatwiłaby korzystanie z aplikacji, byłaby integracja z zewnętrznym serwisem płatności np. Blik. Dzięki temu użytkownik mógłby płacić za swoją część z poziomu samej aplikacji.
+
+  Dodatkowe usprawnienia przydałyby się także w kwestii bezpieczeństwa aplikacji. Aktualnie bardzo popularne w większych serwisach internetowych jest dwuetapowe uwierzytelnianie i taki mechanizm byłby bardzo przydatnym dodatkiem do aplikacji.
+
+  Jeżeli chodzi same wydatki, to dobrym pomysłem byłoby też stworzenie cyklicznych wydatków, który byłyby tworzone automatycznie przez aplikację. Ciekawym usprawnieniem byłaby też wyszukiwarka wydatków lub płatności. 
+
+
+%--------------------------------------------
+% Literatura
+%--------------------------------------------
+\cleardoublepage % Zaczynamy od nieparzystej strony
+\printbibliography
+
+%--------------------------------------------
+% Spisy (opcjonalne)
+%--------------------------------------------
+
+\newpage
+\pagestyle{plain}
+
+\vspace{0.8cm}
+
+\listoffigurestoc     % Spis rysunków.
+\vspace{1cm}          % vertical space
+\lstlistoflistings    % Spis listingow
+\vspace{1cm}          % vertical space
+
+% Używając powyższych spisów jako szablonu,
+% możesz tu dodać swój własny wykaz bądź listę,
+% np. spis algorytmów.
+
+\end{document} % Dobranoc.

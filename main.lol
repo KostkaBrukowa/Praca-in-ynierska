@@ -9,19 +9,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {5}Przykład kwerendy w języku zapytań GraphQL}{21}{lstlisting.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {6}Przykład mutacji w języku zapytań GraphQL}{21}{lstlisting.6}%
+\contentsline {lstlisting}{\numberline {6}Przykład mutacji w języku zapytań GraphQL}{22}{lstlisting.6}%
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {7}Przykład subskrypcji w języku zapytań GraphQL}{22}{lstlisting.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {8}Przykład definiowania kwerendy z użyciem \emph {graphql-kotlin}}{22}{lstlisting.8}%
+\contentsline {lstlisting}{\numberline {8}Przykład definiowania kwerendy z użyciem \emph {graphql-kotlin}}{23}{lstlisting.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {9}Przykład szablonu w Freemaker}{24}{lstlisting.9}%
+\contentsline {lstlisting}{\numberline {9}Przykład szablonu w Freemaker}{25}{lstlisting.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {10}Przykład wyniku zwróconego z szablonu}{24}{lstlisting.10}%
+\contentsline {lstlisting}{\numberline {10}Przykład wyniku zwróconego z szablonu}{25}{lstlisting.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {11}Przykład aplikacji z użyciem biblioteki javascriptowej}{25}{lstlisting.11}%
+\contentsline {lstlisting}{\numberline {11}Przykład aplikacji z użyciem biblioteki javascriptowej}{26}{lstlisting.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {12}Użycie mechanizmu zarządzania stanem w React}{26}{lstlisting.12}%
+\contentsline {lstlisting}{\numberline {12}Użycie mechanizmu zarządzania stanem w React}{27}{lstlisting.12}%
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {13}Przykład testu napisanego w bibliotece \emph {Jest}}{31}{lstlisting.13}%
 \defcounter {refsection}{0}\relax 

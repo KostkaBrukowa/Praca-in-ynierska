@@ -88,11 +88,24 @@
 
 \clearpage % Rozdziały zaczynamy od nowej strony
 \section{Podsumowanie}          % Można też pisać rozdziały w jednym pliku.
+\subsection{Omówienie}
 Celem mojej pracy było napisanie aplikacji internetowej wspomagającej rozliczanie się z wydatków pomiędzy użytkownikami. Do utworzenia interfejsu użytkownika wykorzystałem podejście jednostronicowej aplikacji i biblioteki React. Dzięki tej bibliotece i mechanizmie reaktywności w aplikacji rzadko pojawiały się błędy związane z niespójnością stanu z widokiem, co znacznie przyspieszyło pisanie części klienckiej.
 
 Aplikacja została stworzona zgodnie ze specyfikacją Ant Design w trybie ciemnym. Dzięki użyciu komponentów z biblioteki AntD zgodnych z tą specyfikacją aplikacja wygląda bardzo profesjonalnie. Strona kliencka komunikowała się z serwerem z użyciem GraphQL, co było dużym uproszczeniem w tworzeniu aplikacji klienckiej. Dużym atutem takiego podejścia jest to, że mogła być użyta biblioteka, która automatycznie generowała typy schematu GraphQL.
 
  Sam serwer został stworzony przy pomocy Spring oraz Spring Boot wykorzystując Architekturę Heksagonalną. Na końcu przetestowałem moją aplikację na trzy różne sposoby: jednostkowo, integracyjnie oraz z użyciem wizualnej regresji.
+\subsection{Dalsze prace}
+
+  Aplikacja posiada jeszcze miejsce na rozwój. Jednym z kolejnych kroków w rozbudowie aplikacji byłoby stworzenie bardziej rozbudowanych statystyk dla użytkownika. Statystyki mogłyby obejmować podsumowanie miesięczne wydatków lub tempo wydawania pieniędzy. Dodatkowym atutem byłyby także powiadomienia mailowe o nowych wydatkach lub płatnościach.
+
+  Jeżeli chodzi o komunikację w mojej aplikacji to dodanie mechanizmu wiadomości pomiędzy użytkownikami i w ramach grupy byłoby świetnym dodatkiem do zbioru funkcjonalności aplikacji.
+
+  Funkcjonalnością, która znacznie ułatwiłaby korzystanie z aplikacji, byłaby integracja z zewnętrznym serwisem płatności np. Blik. Dzięki temu użytkownik mógłby płacić za swoją część z poziomu samej aplikacji.
+
+  Dodatkowe usprawnienia przydałyby się także w kwestii bezpieczeństwa aplikacji. Aktualnie bardzo popularne w większych serwisach internetowych jest dwuetapowe uwierzytelnianie i taki mechanizm byłby bardzo przydatnym dodatkiem do aplikacji.
+
+  Jeżeli chodzi same wydatki, to dobrym pomysłem byłoby też stworzenie cyklicznych wydatków, który byłyby tworzone automatycznie przez aplikację. Ciekawym usprawnieniem byłaby też wyszukiwarka wydatków lub płatności. 
+
 
 %--------------------------------------------
 % Literatura
@@ -107,16 +120,6 @@ Aplikacja została stworzona zgodnie ze specyfikacją Ant Design w trybie ciemny
 \newpage
 \pagestyle{plain}
 
-% Wykaz symboli i skrótów.
-% Pamiętaj, żeby posortować symbole alfabetycznie
-% we własnym zakresie. Ponieważ mało kto używa takiego wykazu,
-% uznałem, że robienie automatycznie sortowanej listy
-% na poziomie LaTeXa to za duży overkill.
-% Makro \acronymlist generuje właściwy tytuł sekcji,
-% w zależności od języka.
-% Makro \acronym dodaje skrót/symbol do listy,
-% zapewniając podstawowe formatowanie.
-% //AB
 \vspace{0.8cm}
 
 \listoffigurestoc     % Spis rysunków.

@@ -110,7 +110,7 @@ Aplikacja serwerowa jest podzielona na trzy główne pakiety:
   \item resolvers
   \item adapters
 \end{itemize}
-\begin{description}
+\begin{description}[leftmargin={15pt},labelindent={0pt}]
 
   \item[Domain] \hfill \\ Pakiet domenowy udostępnia tzw. serwisy, czyli klasy, które są odpowiedzialne za logikę biznesową i udostępniają swój interfejs resolwerom. W pakiecie są też zdefiniowane modele biznesowe, czyli klasy, na których operują serwisy. Dodatkowo domena tworzy też porty bazodanowe, czyli interfejsy, udostępniające funkcje do komunikacji z bazą danych.
   \item[Resolvers] \hfill \\ Resolwery są odpowiedzialne za komunikację z klientem serwera. Definiują one zbiór wszystkich możliwych typów kwerend oraz mutacji. Dodatkowo ten pakiet definiuje tzw. obiekty transferu danych (and. Data transfer object), które definiują typy obiektów, które serwer udostępnia klientowi. Resolwery są zazwyczaj prostymi klasami, które są odpowiedzialne za serializację i deserializację danych oraz wywoływaniem odpowiednich metod serwisów domenowych.
@@ -140,9 +140,7 @@ Dla każdego obiektu jest stworzony w każdym pakiecie katalog odpowiedzialny za
 \subsubsection{Główne użyte technologie}
 Do stworzenia aplikacji serwerowej zostały użyte następujące technologie:
 
-\begin{description}
-
-  \vspace{0.4cm}
+\begin{description}[leftmargin={15pt},labelindent={0pt}]
 
   \item[Kotlin] \hfill \\ Głównym językiem programowania, jaki został użyty do napisania aplikacji serwerowej, jest Kotlin ~\cite{ref_kotlin_doc}. Kotlin jest obiektowym, statycznie typowanym językiem programowania. Kotlin jest oparty na JVM, więc technologie i biblioteki, które zostały stworzone w języku Java, mogą być także używane w języku Kotlin.
 
@@ -221,7 +219,7 @@ GraphQL wyróżnia trzy rodzaje operacji, których klient może użyć, aby uzys
 \end{enumerate}
 Wszystkie możliwe operacje muszą być zdefiniowane w schemacie GraphQL serwera. W Wydruku \ref{lst:graphqlSchema} te operacje są zdefiniowane w typach odpowiednio \emph{Query}, \emph{Mutation}, \emph{Subscription}. Klient może tworzyć zapytania oparte tylko o operacje zdefiniowane w schemacie.
 
-\begin{description}
+\begin{description}[leftmargin={15pt},labelindent={0pt}]
   \item[Kwerendy] \hfill \\ Kwerendy są konstrukcjami pozwalającymi odpytywać serwer o dane, nie modyfikując ich. Dzięki nim możemy tworzyć zapytania, które zwracają nam informacje o obiektach znajdujących się w bazie danych.
   \begin{addmargin}[6mm]{0mm}
   \begin{lstlisting}[
@@ -248,6 +246,7 @@ Wszystkie możliwe operacje muszą być zdefiniowane w schemacie GraphQL serwera
   Kwerendy mogą też posiadać zagnieżdżone typy. Grupa zawiera listę uczestników, więc w kwerendzie możemy też wyszczególnić, jakich atrybutów potrzebujemy w każdym obiekcie użytkownika.
   \newline
   \item[Mutacje] \hfill \\ Mutacje są strukturalnie podobne do kwerend, natomiast ich celem jest tworzenie lub zmiana stanu obiektów w aplikacji.
+  \clearpage
   \begin{addmargin}[6mm]{0mm}
   \begin{lstlisting}[
       numbers=left,
@@ -269,6 +268,7 @@ Wszystkie możliwe operacje muszą być zdefiniowane w schemacie GraphQL serwera
 
 \vspace{0.4cm}
 
+
 \item[Subskrypcje] \hfill \\ Subskrypcje są mechanizmem, który pozwala pobierać dane używając podejścia typu Push. W przypadku wywołania przez klienta subskrypcji, serwer nawiązuje stałe połączenie z klientem np. poprzez gniazda. Gdy nastąpi jakaś zmiana w systemie (np. utworzenie nowego powiadomienia), serwer ma za zadanie powiadomić klienta o tym wydarzeniu.
   \begin{addmargin}[6mm]{0mm}
   \begin{lstlisting}[
@@ -288,7 +288,7 @@ Wszystkie możliwe operacje muszą być zdefiniowane w schemacie GraphQL serwera
 \end{description}
 Powody, dla których wybrałem GraphQL:
 \begin{itemize}
-  \item Schemat GraphQL jest swego rodzaju kontraktem pomiędzy serwerem a klientem. Można ten schemat traktować jako dokumentację, której poprawność mogą zapewnić zewnętrzne automatyczne narzędzia, które ten schemat generują na podstawie kodu źródłowego aplikacji.
+  \item Schemat GraphQL jest kontraktem pomiędzy serwerem a klientem. Można ten schemat traktować jako dokumentację, której poprawność mogą zapewnić zewnętrzne automatyczne narzędzia, które ten schemat generują na podstawie kodu źródłowego aplikacji.
   \item Schemat jest mocno typowany, więc zmniejsza się ilość pomyłek popełnianych przez programistów, ponieważ znowu jesteśmy w stanie użyć narzędzi do automatycznej generacji typów opartych na schemacie.
   \item To podejście niweluje zjawisko nadmiernego pobierania danych, ponieważ w zapytaniu wskazujemy dokładnie, jakich danych potrzebujemy.
   \item Istnieje dużo implementacji standardu GraphQL w różnych językach, a w szczególności do Kotlina i Spring, które zostały użyte do implementacji aplikacji serwerowej.
@@ -333,7 +333,7 @@ Bardzo ciekawym narzędziem, którego też użyłem podczas implementacji częś
 W języku Javascript bardzo często zdarza się błąd wynikający z odnoszenia się do atrybutu, który nie istnieje dla danego obiektu. Zdarza z tego powodu, że kontrakt, którego używaliśmy, już nie jest aktualny. Automatyczna generacja kodu z połączeniem ze statycznym typowaniem języka Typescript jest w stanie w dużym stopniu zapobiegać takim błędom.
 
 \subsection{Warstwa kliencka}
-Aby użytkownik mógł używać aplikacji Aprint, potrzebuje on interfejsu, dzięki któremu będzie mógł zarządzać swoimi wydatkami. Aplikacja jest aplikacją internetową, której można używać poprzez przeglądarkę internetową. Aplikacja została stworzona z użyciem języka Typescript.
+Aby użytkownik mógł używać aplikacji Zrzutka, potrzebuje on interfejsu, dzięki któremu będzie mógł zarządzać swoimi wydatkami. Aplikacja jest aplikacją internetową, której można używać poprzez przeglądarkę internetową. Aplikacja została stworzona z użyciem języka Typescript.
 
 Główną zaletą aplikacji internetowych jest ich przenośność. Jeżeli programista napisze aplikację, która jest przystosowana do ekranów urządzeń mobilnych i komputerów, może być ona używana na praktycznie każdym urządzeniu, które posiada przeglądarkę internetową i dostęp do internetu. Gdyby aplikacja została napisana np. w formie aplikacji na Androida, ograniczyłbym ilość użytkowników mogących korzystać z aplikacji.
 \subsubsection{Renderowanie po stronie serwera a jednostronicowa aplikacja}
@@ -347,6 +347,7 @@ W obecnych czasach dwa najpopularniejsze sposoby na tworzenie i udostępnianie t
 \begin{description}
   \item[Renderowanie po stronie serwera] \hfill \\ W przypadku renderowania po stronie serwera pliki wysyłane użytkownikowi są zawarte w szablonach. Szablony są to pliki w języku HTML, w których zapisywane są specjalne wyrażenia, które serwer przy obsłudze zapytania może dynamicznie zamieniać na dane użytkownika. Do takich szablonów serwer może też dołączać także arkusze stylów oraz skrypty Javascript.
 % https://freemarker.apache.org/docs/dgui_quickstart_basics.html
+\clearpage
   \begin{lstlisting}[language=HTML, caption=Przykład szablonu w Freemaker]
   <html>
   <body>
@@ -415,7 +416,7 @@ W obecnych czasach dwa najpopularniejsze sposoby na tworzenie i udostępnianie t
 
 % // todo zadbaj aby struktura opisu serwera była taka sama jak klienta, czyli to 3.3.2 było na takim samym poziome
 \subsubsection{Wybór biblioteki do tworzenia interfejsów użytkownika}
-Bardzo często aplikacje internetowe są budowane z użyciem bibliotek javascriptowych. Jedną z takich bibliotek jest React \cite{ref_react_doc}, która została użyta do stworzenia aplikacji Aprint.
+Bardzo często aplikacje internetowe są budowane z użyciem bibliotek javascriptowych. Jedną z takich bibliotek jest React \cite{ref_react_doc}, która została użyta do stworzenia aplikacji Zrzutka.
 
 React udostępnia programiście interfejs do deklaratywnego tworzenia widoków użytkownika. Struktura aplikacji jest napisana za pomocą komponentów, czyli głównie funkcji w języku Javascript, które zwracają obiekty reprezentujące część wirtualnego DOM-u przeglądarki. Dodatkowo React udostępnia nam też tzw. reaktywność, czyli automatyczną aktualizację widoków, przy każdej zmianie stanu aplikacji.
 
@@ -456,7 +457,7 @@ Powyższy przykład przedstawia przykład aplikacji, która wyświetla licznik. 
 
 \subsubsection{Użyte technologie}
 Podczas pisania części klienckiej użyłem następujących technologii:
-\begin{description}
+\begin{description}[leftmargin={15pt},labelindent={0pt}]
   \item[Typescript] \hfill \\ Typescript ~\cite{ref_ts_doc} jest językiem programowania, który jest nadzbiorem języka Javasrcipt. Javasrcipt jest językiem programowania, który jest wykorzystywany przez przeglądarki do kontrolowania stron internetowych przez programistów. Jedną z cech Javascript jest to, że jest on dynamicznie typowany. Podczas pisania aplikacji w Javascript zmienne nie mają zdefiniowanego typu, przez co podczas pisania aplikacji mogą pojawiać się błędy związane z niepoprawnym używaniem zmiennych. Typescript jest nadzbiorem Javascript i bardzo ważną rzeczą, którą dodaje do Javascript, jest właśnie statyczne typowanie. Typescript zawiera kompilator, który sprawdza poprawność kodu już na etapie pisania kodu w przeciwieństwie do Javascript, gdzie potencjalne błędy syntaktyczne zostaną ukazane programiście dopiero przy uruchamianiu programu. W przypadku dużych aplikacji internetowych liczących wiele tysięcy linii kodu pomoc kompilatora jest wyjątkowo pomocna. Dodatkowym atutem jest wsparcie narzędzi programistycznych. Gdy zintegrowane środowisko deweloperskie ma informacje na temat typów klas, obiektów oraz interfejsów aplikacji, jest w stanie łatwiej podpowiadać np. odpowiednie atrybuty obiektu podczas pisania kodu, co znacznie przyspiesza pisanie aplikacji.
 
   \vspace{0.4cm}

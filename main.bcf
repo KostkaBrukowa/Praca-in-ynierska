@@ -2183,21 +2183,22 @@
     <bcf:datasource type="file" datatype="bibtex">bib2.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">ref_hex_doc</bcf:citekey>
-    <bcf:citekey order="2">ref_kotlin_doc</bcf:citekey>
-    <bcf:citekey order="3">ref_spring_doc</bcf:citekey>
-    <bcf:citekey order="4">ref_postgre_doc</bcf:citekey>
-    <bcf:citekey order="5">ref_gqlKotlin_doc</bcf:citekey>
-    <bcf:citekey order="6">ref_graphql_doc</bcf:citekey>
-    <bcf:citekey order="7">ref_react_doc</bcf:citekey>
-    <bcf:citekey order="8">ref_heuristic_alg</bcf:citekey>
-    <bcf:citekey order="9">ref_ts_doc</bcf:citekey>
-    <bcf:citekey order="10">ref_eslint_doc</bcf:citekey>
-    <bcf:citekey order="11">ref_cra_doc</bcf:citekey>
-    <bcf:citekey order="12">ref_apollo_doc</bcf:citekey>
-    <bcf:citekey order="13">ref_rtl_doc</bcf:citekey>
-    <bcf:citekey order="14">ref_jest_doc</bcf:citekey>
-    <bcf:citekey order="15">ref_cypress_doc</bcf:citekey>
+    <bcf:citekey order="1">ref_wcag</bcf:citekey>
+    <bcf:citekey order="2">ref_hex_doc</bcf:citekey>
+    <bcf:citekey order="3">ref_kotlin_doc</bcf:citekey>
+    <bcf:citekey order="4">ref_spring_doc</bcf:citekey>
+    <bcf:citekey order="5">ref_postgre_doc</bcf:citekey>
+    <bcf:citekey order="6">ref_gqlKotlin_doc</bcf:citekey>
+    <bcf:citekey order="7">ref_graphql_doc</bcf:citekey>
+    <bcf:citekey order="8">ref_react_doc</bcf:citekey>
+    <bcf:citekey order="9">ref_heuristic_alg</bcf:citekey>
+    <bcf:citekey order="10">ref_ts_doc</bcf:citekey>
+    <bcf:citekey order="11">ref_eslint_doc</bcf:citekey>
+    <bcf:citekey order="12">ref_cra_doc</bcf:citekey>
+    <bcf:citekey order="13">ref_apollo_doc</bcf:citekey>
+    <bcf:citekey order="14">ref_rtl_doc</bcf:citekey>
+    <bcf:citekey order="15">ref_jest_doc</bcf:citekey>
+    <bcf:citekey order="16">ref_cypress_doc</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
